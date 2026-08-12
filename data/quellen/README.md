@@ -21,10 +21,16 @@ muss zwingend im fertigen Artikel landen, aber jede im Artikel zitierte Quelle m
     "n": 120,
     "kernbefund": "Ein Satz.",
     "url": "https://doi.org/10.xxxx/xxxxx",
-    "crossref_verifiziert": true,
-    "crossref_geprueft_am": "2026-08-12"
+    "verifiziert": true,
+    "verifikationsmethode": "crossref-doi",
+    "geprueft_am": "2026-08-12"
   }
 ]
 ```
 
-`n`: Stichprobengröße, `null` bei Übersichtsarbeiten ohne eigene Kohorte.
+`n`: Stichprobengröße, `null` bei Übersichts-/Methodenarbeiten ohne eigene Kohorte. `doi`:
+`null` bei institutionellen Quellen ohne DOI — dann `verifikationsmethode: "direkter-abruf"`
+(Original-URL direkt geprüft statt über Crossref).
+
+Referenzbeispiel: `schlafphasen.json` (8 Quellen, Recherche-Output für den Artikel
+„Schlafphasen erklärt").

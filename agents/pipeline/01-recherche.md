@@ -30,7 +30,11 @@ Consumer-Tracker vs. Polysomnographie erkennen" — plus ein Slug für die Ausga
    nicht zur Kandidatenangabe passen, werden **verworfen** — niemals korrigiert, niemals
    geraten, keine Ersatz-DOI eingesetzt. Lieber 6 verifizierte Quellen als 10 mit
    Unsicherheiten.
-5. Nur verifizierte Einträge landen in der Ausgabedatei.
+5. Ausnahme DOI-lose institutionelle Quellen (z. B. NCBI-Bookshelf-Kapitel): statt Crossref
+   zählt der direkte Abruf der Original-URL und ein Abgleich des Inhalts mit der
+   Kandidatenangabe (`verifikationsmethode: "direkter-abruf"`). Auch hier gilt: nicht
+   erreichbar oder inhaltlich abweichend → verwerfen.
+6. Nur verifizierte Einträge landen in der Ausgabedatei.
 
 ## Ausgabe
 
@@ -46,12 +50,15 @@ Consumer-Tracker vs. Polysomnographie erkennen" — plus ein Slug für die Ausga
     "n": 120,
     "kernbefund": "Ein Satz, der den zitierfähigen Kernbefund zusammenfasst.",
     "url": "https://doi.org/10.xxxx/xxxxx",
-    "crossref_verifiziert": true,
-    "crossref_geprueft_am": "2026-08-12"
+    "verifiziert": true,
+    "verifikationsmethode": "crossref-doi",
+    "geprueft_am": "2026-08-12"
   }
 ]
 ```
 
 `n` ist `null`, wenn die Studie keine klassische Stichprobe hat (z. B. reine Übersichtsarbeit
-ohne eigene Kohorte). Diese Datei ist die einzige Quelle für Schritt 2 (Draft) — der Draft darf
-keine Studie zitieren, die hier nicht mit `crossref_verifiziert: true` steht.
+oder Methodenarbeit ohne eigene Kohorte). `doi` ist `null` bei institutionellen Quellen ohne
+DOI (`verifikationsmethode: "direkter-abruf"`, siehe Punkt 5 oben). Diese Datei ist die
+einzige Quelle für Schritt 2 (Draft) — der Draft darf keine Studie zitieren, die hier nicht mit
+`verifiziert: true` steht.
