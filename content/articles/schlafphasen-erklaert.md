@@ -46,14 +46,14 @@ quellen:
     journal: "Medicine & Science in Sports & Exercise, 51(7), 1538–1557"
     doi: "10.1249/MSS.0000000000001947"
     url: "https://doi.org/10.1249/MSS.0000000000001947"
-  - aussage: "Es existiert bislang kein einheitlicher Standard zur Validierung von Consumer-Schlaftrackern, was Genauigkeitsangaben zwischen Studien schwer vergleichbar macht."
+  - aussage: "Meta-Analyse über 24 Studien und 798 Teilnehmende findet, dass Consumer-Wearables gegenüber Polysomnographie die Gesamtschlafzeit im Mittel um rund 17 Minuten und die Schlafeffizienz um rund 4,7 Prozentpunkte unterschätzen, Einschlaflatenz und nächtliche Wachzeit (WASO) dagegen überschätzen."
     studientyp: "peer-reviewed"
-    autoren: "Menghini L, Cellini N, Goldstone A, Baker FC, de Zambotti M"
-    jahr: 2021
-    titel: "A standardized framework for testing the performance of sleep-tracking technology: step-by-step guidelines and open-source code"
-    journal: "Sleep, 44(2), zsaa170"
-    doi: "10.1093/sleep/zsaa170"
-    url: "https://doi.org/10.1093/sleep/zsaa170"
+    autoren: "Lee YJ, Lee JY, Cho JH, Kang YJ, Choi JH"
+    jahr: 2025
+    titel: "Performance of consumer wrist-worn sleep tracking devices compared to polysomnography: a meta-analysis"
+    journal: "Journal of Clinical Sleep Medicine, 21(3), 573–582"
+    doi: "10.5664/jcsm.11460"
+    url: "https://doi.org/10.5664/jcsm.11460"
   - aussage: "Bei 34 gesunden Erwachsenen zeigten sieben Consumer-Tracker durchgehend hohe Sensitivität für reine Schlaf-Erkennung (≥0,93), aber inkonsistente Sensitivität bei der Unterscheidung einzelner Schlafphasen (0,49–0,76), mit einer Tendenz, andere Stadien als Leichtschlaf fehlzuklassifizieren."
     studientyp: "peer-reviewed"
     autoren: "Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, Watson CH, Bessman SC, Hirsch DA, Cooper AD, Drummond SPA, Markwald RR"
@@ -75,7 +75,7 @@ schlagworte: ["schlafphasen", "nrem", "rem", "tiefschlaf", "schlafzyklus", "grun
 kernaussagen:
   - "Ein Schlafzyklus dauert bei Erwachsenen im Median rund 96 Minuten und wiederholt sich pro Nacht meist drei- bis viermal — mit großer individueller Schwankung, ein fixer 90-Minuten-Takt ist eine Vereinfachung."
   - "Die Anteile von Tief- und REM-Schlaf bleiben innerhalb des Erwachsenenalters relativ stabil; über die gesamte Lebensspanne betrachtet nimmt der REM-Anteil mit zunehmendem Alter ab."
-  - "Consumer-Wearables erkennen Schlaf gegenüber Wachsein zuverlässig, liefern bei der Unterscheidung einzelner Schlafphasen aber je nach Gerät stark schwankende und teils schwache Genauigkeit — eine einzelne, für alle Geräte gültige Prozentzahl gibt die Studienlage nicht her."
+  - "Consumer-Wearables erkennen Schlaf gegenüber Wachsein zuverlässig, unterschätzen die Gesamtschlafzeit aber im Mittel um rund 17 Minuten und liefern bei der Unterscheidung einzelner Schlafphasen je nach Gerät stark schwankende Genauigkeit — eine einzelne, für alle Geräte gültige Prozentzahl gibt die Studienlage nicht her."
 affiliate: true
 entwurf: true
 featured: true
@@ -110,8 +110,9 @@ Als Richtwert für gesunde Erwachsene nennt die Fachliteratur rund 5% N1 (kurzer
 Wachzustand in den Schlaf), 45% N2 (Leichtschlaf im engeren Sinn), 25% N3 (Tiefschlaf) und 25%
 REM-Schlaf (Patel et al., 2024) — die Grafik oben zeigt diese Verteilung. Diese Zahl stammt
 bewusst aus einer frei zugänglichen Übersichtsquelle statt aus den beiden großen Meta-Analysen
-unten, deren Originaltabellen hinter einer Bezahlschranke lagen — mehr dazu im Abschnitt „Was
-die Studienlage (noch) nicht beantwortet" am Ende. Wichtig ist außerdem der Rahmen, in dem
+unten, deren genaue Stadien-Tabellen sich für uns nicht zuverlässig auswerten ließen — mehr
+dazu im Abschnitt „Was die Studienlage (noch) nicht beantwortet" am Ende. Wichtig ist außerdem
+der Rahmen, in dem
 diese Zahl gilt: Eine große Meta-Analyse über 169 Studien und 5.273 gesunde
 Erwachsene findet, dass sich die Anteile von N2-, N3- und REM-Schlaf über die Alters-Dekaden im
 Erwachsenenalter hinweg kaum verändern — nur der N1-Anteil nimmt pro Dekade um etwa 0,5
@@ -137,9 +138,14 @@ Anders als ein Schlaflabor erfassen Consumer-Wearables kein EEG. Sie leiten Schl
 Schlafphasen stattdessen meist aus Herzfrequenz und Herzfrequenzvariabilität, Hauttemperatur
 und Bewegungssensorik ab (de Zambotti et al., 2019). Dieselbe Übersichtsarbeit weist darauf
 hin, dass es bislang an einheitlicher Anleitung für Validierung und Einsatz solcher Geräte
-mangelt — ein Punkt, den eine spätere Arbeit derselben Forschungsgruppe aufgreift: Es fehlt ein
-allgemein anerkannter Standard, nach dem die Genauigkeit von Schlaftrackern getestet wird, was
-Ergebnisse zwischen Studien schwer vergleichbar macht (Menghini et al., 2021).
+mangelt.
+
+Wie sich das in Zahlen niederschlägt, zeigt eine aktuelle Meta-Analyse über 24 Studien und 798
+Teilnehmende: Consumer-Wearables unterschätzen die Gesamtschlafzeit gegenüber Polysomnographie
+im Mittel um rund 17 Minuten und die Schlafeffizienz um rund 4,7 Prozentpunkte, während sie
+Einschlaflatenz und nächtliche Wachzeit (WASO) tendenziell überschätzen (Lee YJ et al., 2025).
+Das sind systematische Verzerrungen bei grundlegenden Schlafparametern — nicht erst bei der
+feineren Frage, welche Schlafphase gerade vorliegt.
 
 ## Wie genau erkennen Tracker einzelne Schlafphasen?
 
@@ -153,7 +159,7 @@ Leichtschlaf zu klassifizieren (Chinoy et al., 2021). Eine größere Multicenter
 11 Geräten bei 75 Teilnehmenden (349.114 ausgewertete Epochen) bestätigt das Bild einer starken
 Schwankung zwischen Geräten: Der **Macro-F1-Wert** — ein zusammenfassendes Genauigkeitsmaß
 zwischen 0 (nutzlos) und 1 (perfekt) — reichte für die Schlafphasen-Klassifikation von 0,26 bis
-0,69, je nach Gerät (Lee et al., 2023). Beide Studien einte: Die reine
+0,69, je nach Gerät (Lee T et al., 2023). Beide Studien einte: Die reine
 Schlaf-vs-Wach-Erkennung ist deutlich zuverlässiger als die Unterscheidung, *welche*
 Schlafphase gerade vorliegt. Für eine medizinische Einschätzung — etwa bei Verdacht auf eine
 Schlafstörung — ersetzt keines dieser Consumer-Geräte eine Untersuchung im Schlaflabor;
@@ -164,14 +170,16 @@ Polysomnographie bleibt der diagnostische Goldstandard, an dem sich alle hier ge
 
 Diese Recherche stützt sich bewusst nur auf Quellen, die sich einzeln gegenprüfen lassen (siehe
 Quellenverzeichnis unten) — und das hat Grenzen. Erstens: Die Original-Zahlen aus den beiden
-großen Meta-Analysen (Ohayon et al., 2004; Boulos et al., 2019) für die exakten
-Stadien-Prozentsätze bei jüngeren Erwachsenen lagen hinter einer Bezahlschranke und konnten
-nicht direkt eingesehen werden — die im Artikel genannte Prozentverteilung stammt deshalb aus
-einer frei zugänglichen Sekundärquelle (Patel et al., 2024), nicht aus den Primärstudien selbst.
-Zweitens: Keine der hier verwendeten Quellen nennt eine einzelne, geräteübergreifend gültige
-Genauigkeitszahl für "Tiefschlaf-Erkennung" — nur Sensitivitäts- und F1-Bereiche, die je nach
-Gerät stark streuen. Eine Aussage wie "Wearables erkennen Tiefschlaf zu X% richtig" wäre mit
-der hier verfügbaren Evidenz nicht zu belegen und wird deshalb bewusst nicht getroffen.
+großen Meta-Analysen für die exakten Stadien-Prozentsätze bei jüngeren Erwachsenen konnten wir
+nicht direkt einsehen — bei Boulos et al. (2019) lag der Volltext hinter einer Bezahlschranke,
+bei Ohayon et al. (2004) war er zwar frei zugänglich, die konkrete Tabelle ließ sich daraus für
+uns aber nicht zuverlässig extrahieren. Die im Artikel genannte Prozentverteilung stammt
+deshalb aus einer frei zugänglichen Sekundärquelle (Patel et al., 2024), nicht aus den
+Primärstudien selbst. Zweitens: Keine der hier verwendeten Quellen nennt eine einzelne,
+geräteübergreifend gültige Genauigkeitszahl für "Tiefschlaf-Erkennung" — nur Sensitivitäts- und
+F1-Bereiche, die je nach Gerät stark streuen. Eine Aussage wie "Wearables erkennen Tiefschlaf
+zu X% richtig" wäre mit der hier verfügbaren Evidenz nicht zu belegen und wird deshalb bewusst
+nicht getroffen.
 
 ## Was heißt das für die Praxis?
 

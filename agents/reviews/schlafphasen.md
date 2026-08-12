@@ -71,3 +71,24 @@ inhaltlichen Fixes nachgezogen, nicht wortwörtlich übersetzt.
 Offener Punkt für eine spätere Runde: dritte unabhängige Quelle zum
 „fehlender Validierungsstandard"-Befund, um die Autor:innen-Überschneidung zwischen
 de Zambotti et al. (2019) und Menghini et al. (2021) auszugleichen.
+
+## Nachtrag: Retroaktive Diversitätsprüfung (2026-08-12)
+
+Nach Erweiterung von Schritt 1 um harte Diversitätsregeln (siehe
+`/agents/pipeline/01-recherche.md`) wurde diese Quellenliste erneut geprüft:
+`node agents/pipeline/scripts/validate-quellen.mjs data/quellen/schlafphasen.json` schlug zunächst
+fehl — Journal „Sleep" kam 3× vor (Ohayon 2004, Menghini 2021, Chinoy 2021), erlaubt sind
+maximal 2.
+
+**Auflösung:** Menghini et al. (2021) entfernt, ersetzt durch Lee YJ et al. (2025, Journal of
+Clinical Sleep Medicine), eine aktuellere Meta-Analyse (24 Studien, 798 Teilnehmende) zu
+systematischen Verzerrungen bei Gesamtschlafzeit/Schlafeffizienz/Latenz/WASO. Das löst dabei
+gleich zwei offene Punkte auf einmal: Journal-Häufung behoben (Sleep jetzt 2×) und die oben
+dokumentierte Autor:innen-Überschneidung zwischen de Zambotti und Menghini entfällt, weil
+Menghini nicht mehr Teil des Sets ist. Validierung läuft danach fehlerfrei durch (siehe
+`/agents/reviews/schlafphasen-checkliste.md` für den aktuellen Quellenstand).
+
+Artikeltext (de + en) entsprechend angepasst: Menghini-Zitat ersetzt durch den neuen Befund,
+zusätzlich als eigener Absatz in „Was Consumer-Wearables davon wirklich messen können"
+eingebaut (Zahlen zu TST-/Effizienz-Unterschätzung ergänzen die bestehenden
+Phasen-Klassifikations-Zahlen, statt sie zu duplizieren).

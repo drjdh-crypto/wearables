@@ -46,14 +46,14 @@ quellen:
     journal: "Medicine & Science in Sports & Exercise, 51(7), 1538–1557"
     doi: "10.1249/MSS.0000000000001947"
     url: "https://doi.org/10.1249/MSS.0000000000001947"
-  - aussage: "No standardized framework for validating consumer sleep trackers exists yet, which makes accuracy figures hard to compare across studies."
+  - aussage: "A meta-analysis of 24 studies and 798 participants found that consumer wearables underestimate total sleep time by about 17 minutes on average and sleep efficiency by about 4.7 percentage points versus polysomnography, while overestimating sleep latency and wake after sleep onset (WASO)."
     studientyp: "peer-reviewed"
-    autoren: "Menghini L, Cellini N, Goldstone A, Baker FC, de Zambotti M"
-    jahr: 2021
-    titel: "A standardized framework for testing the performance of sleep-tracking technology: step-by-step guidelines and open-source code"
-    journal: "Sleep, 44(2), zsaa170"
-    doi: "10.1093/sleep/zsaa170"
-    url: "https://doi.org/10.1093/sleep/zsaa170"
+    autoren: "Lee YJ, Lee JY, Cho JH, Kang YJ, Choi JH"
+    jahr: 2025
+    titel: "Performance of consumer wrist-worn sleep tracking devices compared to polysomnography: a meta-analysis"
+    journal: "Journal of Clinical Sleep Medicine, 21(3), 573–582"
+    doi: "10.5664/jcsm.11460"
+    url: "https://doi.org/10.5664/jcsm.11460"
   - aussage: "In 34 healthy adults, seven consumer trackers showed consistently high sensitivity for plain sleep/wake detection (≥0.93), but inconsistent sensitivity for distinguishing individual sleep stages (0.49–0.76), with a systematic tendency to misclassify other stages as light sleep."
     studientyp: "peer-reviewed"
     autoren: "Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, Watson CH, Bessman SC, Hirsch DA, Cooper AD, Drummond SPA, Markwald RR"
@@ -75,7 +75,7 @@ schlagworte: ["sleep-stages", "nrem", "rem", "deep-sleep", "sleep-cycle", "funda
 kernaussagen:
   - "An adult sleep cycle lasts a median of about 96 minutes and typically repeats three to four times per night — with substantial individual variation, so a fixed 90-minute rhythm is a simplification."
   - "Deep-sleep and REM percentages stay fairly stable within adulthood; across the full human lifespan, REM percentage tends to decrease with age."
-  - "Consumer wearables reliably tell sleep from wakefulness but show widely varying, sometimes weak accuracy when distinguishing individual sleep stages by device — the evidence doesn't support a single accuracy figure that applies across devices."
+  - "Consumer wearables reliably tell sleep from wakefulness but underestimate total sleep time by about 17 minutes on average and show widely varying accuracy when distinguishing individual sleep stages by device — the evidence doesn't support a single accuracy figure that applies across devices."
 affiliate: true
 entwurf: true
 featured: true
@@ -109,8 +109,8 @@ As a reference point for healthy adults, the literature cites roughly 5% N1 (the
 transition from wakefulness into sleep), 45% N2 (light sleep proper), 25% N3 (deep sleep), and
 25% REM sleep (Patel et al., 2024) — the chart above shows this split. That figure deliberately
 comes from a freely accessible overview source rather than the two large meta-analyses below,
-whose original tables sat behind a paywall — more on that in "What the evidence doesn't answer
-(yet)" at the end. The context also matters: a
+whose exact stage tables we couldn't reliably extract — more on that in "What the evidence
+doesn't answer (yet)" at the end. The context also matters: a
 large meta-analysis spanning 169 studies and 5,273 healthy adults found that N2, N3, and REM
 percentages stay largely stable across adult age decades — only N1 inches up by about 0.5
 percentage points per decade (Boulos et al., 2019). Looked at across the *entire* human
@@ -133,9 +133,14 @@ departing from a healthy pattern.
 Unlike a sleep lab, consumer wearables don't record EEG. They typically infer sleep and sleep
 stages from heart rate and heart rate variability, skin temperature, and motion sensing instead
 (de Zambotti et al., 2019). The same review notes a lack of consistent guidance for validating
-and using such devices — a gap a later paper from the same research group addresses directly:
-there is no widely accepted standard for testing sleep-tracker accuracy, which makes results
-hard to compare across studies (Menghini et al., 2021).
+and using such devices.
+
+What that looks like in numbers: a recent meta-analysis of 24 studies and 798 participants
+found that consumer wearables underestimate total sleep time versus polysomnography by about
+17 minutes on average, and sleep efficiency by about 4.7 percentage points, while tending to
+overestimate sleep latency and wake after sleep onset (WASO) (Lee YJ et al., 2025). Those are
+systematic biases in basic sleep parameters — before we even get to the finer question of which
+sleep stage is currently underway.
 
 ## How accurately do trackers detect individual sleep stages?
 
@@ -148,7 +153,7 @@ tendency to classify other stages as light sleep (Chinoy et al., 2021). A larger
 validation of 11 devices across 75 participants (349,114 scored epochs) confirms the picture of
 strong device-to-device variation: the **macro F1 score** — a summary accuracy measure from 0
 (useless) to 1 (perfect) — ranged from 0.26 to 0.69 for sleep-stage classification, depending
-on the device (Lee et al., 2023). Both studies agree on one thing: plain sleep-versus-wake
+on the device (Lee T et al., 2023). Both studies agree on one thing: plain sleep-versus-wake
 detection is markedly more reliable than telling *which* sleep stage is currently underway. For
 a medical assessment — say, a suspected sleep disorder — none of these consumer devices
 substitute for a sleep-lab evaluation; polysomnography remains the diagnostic gold standard
@@ -157,11 +162,12 @@ that every figure cited here is measured against in the first place.
 ## What the evidence doesn't answer (yet)
 
 This piece deliberately relies only on sources that can be individually checked (see the source
-list below) — and that has limits. First: the original figures from the two large
-meta-analyses (Ohayon et al., 2004; Boulos et al., 2019) for exact stage percentages in younger
-adults sat behind a paywall and couldn't be verified directly — the percentage split cited in
-this article therefore comes from a freely accessible secondary source (Patel et al., 2024),
-not from the primary studies themselves. Second: none of the sources used here gives a single,
+list below) — and that has limits. First: we couldn't view the original figures from the two
+large meta-analyses for exact stage percentages in younger adults directly — Boulos et al.
+(2019) sat behind a paywall, and while Ohayon et al. (2004) was freely accessible, we couldn't
+reliably extract the actual table from it. The percentage split cited in this article therefore
+comes from a freely accessible secondary source (Patel et al., 2024), not from the primary
+studies themselves. Second: none of the sources used here gives a single,
 device-independent accuracy figure for "deep sleep detection" — only sensitivity and F1 ranges
 that vary widely by device. A claim like "wearables get deep sleep right X% of the time" isn't
 supported by the evidence gathered here, so it isn't made.

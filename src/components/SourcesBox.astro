@@ -29,13 +29,22 @@ const typLabel: Record<Quelle['studientyp'], string> = {
   manufacturer: t('sources.type.manufacturer'),
   institutional: t('sources.type.institutional'),
 };
+
+// "Studienlage: 8 Quellen, 2004–2026" — Jahresspanne aus den zitierten Quellen.
+const jahre = quellen.map((q) => q.jahr);
+const minJahr = jahre.length > 0 ? Math.min(...jahre) : undefined;
+const maxJahr = jahre.length > 0 ? Math.max(...jahre) : undefined;
+const countLabel =
+  minJahr !== undefined && minJahr !== maxJahr
+    ? t('sources.count_range', { count: quellen.length, min: minJahr, max: maxJahr })
+    : t('sources.count', { count: quellen.length });
 ---
 
 {
   quellen.length > 0 && (
     <aside class="sources-box" aria-labelledby="sources-heading">
       <h2 id="sources-heading">
-        {t('sources.heading')} — {t('sources.count', { count: quellen.length })}
+        {t('sources.heading')}: {countLabel}
       </h2>
       <ol>
         {quellen.map((quelle) => (
