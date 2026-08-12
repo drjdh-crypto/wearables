@@ -1,0 +1,44 @@
+---
+// Eigenständige, gestylte Fußnotenliste (unabhängig von Markdown-GFM-Fußnoten im
+// Artikeltext). Für redaktionelle Anmerkungen, die keine Quelle im Sinne von
+// SourcesBox sind, aber trotzdem eine Rückverfolgung brauchen — z. B. Hinweise zu
+// Methodik-Einschränkungen einer Datenaussage im Fließtext.
+interface Note {
+  id: string;
+  text: string;
+}
+
+interface Props {
+  notes: Note[];
+}
+
+const { notes } = Astro.props;
+---
+
+{
+  notes.length > 0 && (
+    <aside class="footnotes" aria-label="Fußnoten">
+      <ol>
+        {notes.map((note) => (
+          <li id={`fn-${note.id}`}>
+            {note.text} <a href={`#fnref-${note.id}`} aria-label="zurück zum Text">↩</a>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  )
+}
+
+<style>
+  .footnotes {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+  }
+
+  .footnotes ol {
+    padding-left: 1.2rem;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SourcesBox from '../../../components/SourcesBox.astro';
+import PersonaOpinionBlock from '../../../components/PersonaOpinionBlock.astro';
+import ProductBox from '../../../components/ProductBox.astro';
+import { enabledLocales } from '../../../i18n/config';
+import { useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.entwurf);
+  return articles
+    .filter((article) => enabledLocales.includes(article.data.sprache))
+    .map((article) => ({
+      params: { lang: article.data.sprache, slug: article.id },
+      props: { article },
+    }));
+}
+
+const { article } = Astro.props;
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+const { Content } = await render(article);
+---
+
+<BaseLayout
+  lang={lang}
+  title={article.data.titel}
+  description={article.data.beschreibung}
+  path={`/artikel/${article.id}/`}
+>
+  <article>
+    <p class="mono article-date">
+      <time datetime={article.data.datum.toISOString()}>
+        {article.data.datum.toLocaleDateString(lang)}
+      </time>
+    </p>
+    <h1>{article.data.titel}</h1>
+
+    <div class="article-body">
+      <Content />
+    </div>
+
+    {article.data.produkte.map((id: string) => <ProductBox id={id} lang={lang} />)}
+
+    <PersonaOpinionBlock personaSlugs={article.data.personas} lang={lang} seed={article.id} />
+
+    <SourcesBox quellen={article.data.quellen} lang={lang} />
+
+    <p class="ai-notice">{t('footer.ai_notice')}</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-date {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+  }
+
+  .ai-notice {
+    margin-top: var(--space-5);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+  }
+</style>

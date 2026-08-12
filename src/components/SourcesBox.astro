@@ -1,0 +1,74 @@
+---
+// "Quellen-Box": rendert das Quellenverzeichnis aus Artikel-Frontmatter (`quellen`).
+// Zitierformat gemäß CLAUDE.md Abschnitt 3 — nie manuell im Markdown-Body pflegen.
+import { useTranslations } from '../i18n/utils';
+
+interface Quelle {
+  aussage: string;
+  studientyp: 'peer-reviewed' | 'preprint' | 'manufacturer' | 'institutional';
+  autoren?: string;
+  jahr: number;
+  titel: string;
+  journal?: string;
+  doi?: string;
+  pubmed_id?: string;
+  url: string;
+}
+
+interface Props {
+  quellen: Quelle[];
+  lang: string;
+}
+
+const { quellen, lang } = Astro.props;
+const t = useTranslations(lang);
+
+const typLabel: Record<Quelle['studientyp'], string> = {
+  'peer-reviewed': t('sources.type.peer-reviewed'),
+  preprint: t('sources.type.preprint'),
+  manufacturer: t('sources.type.manufacturer'),
+  institutional: t('sources.type.institutional'),
+};
+---
+
+{
+  quellen.length > 0 && (
+    <aside class="sources-box" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">
+        {t('sources.heading')} — {t('sources.count', { count: quellen.length })}
+      </h2>
+      <ol>
+        {quellen.map((quelle) => (
+          <li>
+            <span class="badge sources-type">{typLabel[quelle.studientyp]}</span>{' '}
+            <span class="sources-citation">
+              {quelle.autoren ? `${quelle.autoren} ` : ''}
+              {`(${quelle.jahr}). `}
+              {quelle.titel}
+              {quelle.journal ? `. ${quelle.journal}` : ''}.{' '}
+            </span>
+            {quelle.doi && (
+              <a href={`https://doi.org/${quelle.doi}`} class="mono" rel="noopener">
+                DOI: {quelle.doi}
+              </a>
+            )}
+            {quelle.pubmed_id && (
+              <a
+                href={`https://pubmed.ncbi.nlm.nih.gov/${quelle.pubmed_id}/`}
+                class="mono"
+                rel="noopener"
+              >
+                PMID: {quelle.pubmed_id}
+              </a>
+            )}
+            {!quelle.doi && !quelle.pubmed_id && (
+              <a href={quelle.url} class="mono" rel="noopener">
+                {t('sources.view_link')}
+              </a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </aside>
+  )
+}

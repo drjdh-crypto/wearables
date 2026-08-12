@@ -1,0 +1,95 @@
+---
+// Produktbox mit Werbekennzeichnung (CLAUDE.md Abschnitt 6) und regionsabhängigem
+// Link. Der Region-Link kann erst client-seitig aufgelöst werden (localStorage,
+// siehe RegionSwitcher.astro) — serverseitig/statisch wird immer `fallback`
+// gerendert, das Skript ersetzt den href progressiv, sobald `pref:region` bekannt
+// ist. Wird nicht gerendert, wenn das Produkt `status !== "aktiv"` hat.
+import { getEntry } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  id: string;
+  lang: string;
+}
+
+const { id, lang } = Astro.props;
+const t = useTranslations(lang);
+const product = await getEntry('products', id);
+---
+
+{
+  product && product.data.status === 'aktiv' && (
+    <div class="product-box" data-region-links={JSON.stringify(product.data.links)}>
+      <p class="badge ad-label">{t('ad.label')}</p>
+      <p class="product-name">{product.data.name}</p>
+      <a
+        class="product-link mono"
+        href={product.data.links.fallback}
+        rel="sponsored noopener"
+        target="_blank"
+      >
+        {t('ad.cta')}
+      </a>
+      <p class="ad-disclosure">{t('ad.disclosure')}</p>
+    </div>
+  )
+}
+
+<script>
+  document.querySelectorAll<HTMLElement>('.product-box[data-region-links]').forEach((box) => {
+    const raw = box.getAttribute('data-region-links');
+    if (!raw) return;
+    let links: Record<string, string>;
+    try {
+      links = JSON.parse(raw);
+    } catch {
+      return;
+    }
+    let region: string | null = null;
+    try {
+      region = localStorage.getItem('pref:region');
+    } catch {
+      // localStorage unavailable — keep the static fallback link.
+    }
+    const href = (region && links[region]) || links.fallback;
+    const link = box.querySelector<HTMLAnchorElement>('.product-link');
+    if (link && href) {
+      link.href = href;
+    }
+  });
+</script>
+
+<style>
+  .product-box {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    padding: var(--space-3);
+    margin: var(--space-4) 0;
+  }
+
+  .ad-label {
+    margin: 0 0 var(--space-2);
+  }
+
+  .product-name {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+  }
+
+  .product-link {
+    display: inline-block;
+    color: var(--color-signal);
+    text-decoration: none;
+    border: 1px solid var(--color-signal);
+    border-radius: var(--radius-sm);
+    padding: 0.3em 0.8em;
+  }
+
+  .ad-disclosure {
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    margin: var(--space-2) 0 0;
+  }
+</style>

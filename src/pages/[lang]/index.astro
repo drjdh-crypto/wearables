@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { enabledLocales } from '../../i18n/config';
 import { useTranslations } from '../../i18n/utils';
@@ -9,10 +11,29 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = useTranslations(lang);
+
+const articles = (
+  await getCollection('articles', ({ data }) => !data.entwurf && data.sprache === lang)
+).sort((a, b) => b.data.datum.valueOf() - a.data.datum.valueOf());
 ---
 
 <BaseLayout lang={lang} title={t('home.heading')} path="/">
   <h1>{t('home.heading')}</h1>
   <p>{t('site.description')}</p>
-  <p>{t('home.no_articles')}</p>
+
+  {
+    articles.length === 0 ? (
+      <p>{t('home.no_articles')}</p>
+    ) : (
+      <ul class="article-list">
+        {articles.map((article) => (
+          <li>
+            <a href={getRelativeLocaleUrl(lang, `/artikel/${article.id}/`)}>
+              {article.data.titel}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </BaseLayout>

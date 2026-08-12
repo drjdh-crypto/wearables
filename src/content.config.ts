@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
+import { allLocales } from './i18n/config';
 
 // Persona-Slugs müssen mit den Dateien in /personas übereinstimmen.
 // Siehe /personas/README.md und CLAUDE.md Abschnitt 5.
@@ -28,36 +29,43 @@ const category = z.enum([
   'methodik-limitationen',
 ]);
 
-// Eine Quelle im Sinne der Evidenzpflicht aus CLAUDE.md Abschnitt 1.
-const source = z
+// Eine Quelle im Sinne der Evidenzpflicht aus CLAUDE.md Abschnitt 2: DOI oder
+// PubMed-ID, sonst gilt eine peer-reviewte Behauptung nicht als belegt.
+const quelle = z
   .object({
-    claim: z.string(),
-    type: z.enum(['peer-reviewed', 'preprint', 'manufacturer', 'institutional']),
-    authors: z.string().optional(),
-    year: z.number().int(),
-    title: z.string(),
+    aussage: z.string(),
+    studientyp: z.enum(['peer-reviewed', 'preprint', 'manufacturer', 'institutional']),
+    autoren: z.string().optional(),
+    jahr: z.number().int(),
+    titel: z.string(),
     journal: z.string().optional(),
     doi: z.string().optional(),
+    pubmed_id: z.string().optional(),
     url: z.string().url(),
   })
-  .refine((s) => s.type !== 'peer-reviewed' || !!s.doi, {
-    message: 'Peer-reviewte Quellen benötigen eine DOI (CLAUDE.md Abschnitt 1).',
+  .refine((q) => q.studientyp !== 'peer-reviewed' || !!(q.doi || q.pubmed_id), {
+    message: 'Peer-reviewte Quellen benötigen DOI oder PubMed-ID (CLAUDE.md Abschnitt 2).',
   });
 
 const baseArticleSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  pubDate: z.coerce.date(),
-  updatedDate: z.coerce.date().optional(),
-  author: personaSlug,
-  category,
-  tags: z.array(z.string()).default([]),
+  titel: z.string(),
+  beschreibung: z.string(),
+  sprache: z.enum(allLocales),
+  datum: z.coerce.date(),
+  aktualisiert: z.coerce.date().optional(),
+  kategorie: category,
+  schlagworte: z.array(z.string()).default([]),
   // Muss true sein, sobald der Artikel-Body mindestens einen Affiliate-Link enthält
-  // (CLAUDE.md Abschnitt 4).
+  // (CLAUDE.md Abschnitt 6).
   affiliate: z.boolean().default(false),
-  // Leer nur zulässig, wenn der Artikel keine Sachbehauptung enthält (CLAUDE.md Abschnitt 1).
-  sources: z.array(source).default([]),
-  draft: z.boolean().default(false),
+  // Leer nur zulässig, wenn der Artikel keine Sachbehauptung enthält (CLAUDE.md Abschnitt 2).
+  quellen: z.array(quelle).default([]),
+  // IDs aus /data/products.json — steuert, welche ProductBox-Komponenten gerendert werden.
+  produkte: z.array(z.string()).default([]),
+  // Personas, die im PersonaOpinionBlock dieses Artikels auftreten können (>= 3 empfohlen,
+  // siehe /content/README.md) — die Komponente wählt daraus deterministisch drei aus.
+  personas: z.array(personaSlug).default([]),
+  entwurf: z.boolean().default(false),
 });
 
 const articles = defineCollection({
@@ -67,19 +75,16 @@ const articles = defineCollection({
 
 const comparisons = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './content/comparisons' }),
-  schema: baseArticleSchema.extend({
-    // Slugs der verglichenen Produkte, referenziert /data/products.yaml
-    products: z.array(z.string()).default([]),
-  }),
+  schema: baseArticleSchema,
 });
 
 const glossary = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './content/glossary' }),
   schema: z.object({
-    term: z.string(),
-    shortDefinition: z.string(),
-    category,
-    sources: z.array(source).default([]),
+    begriff: z.string(),
+    kurzdefinition: z.string(),
+    kategorie: category,
+    quellen: z.array(quelle).default([]),
   }),
 });
 
