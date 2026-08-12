@@ -71,7 +71,12 @@ const geprueft = latestHistoryEntry(article.data.historie);
 
       {article.data.produkte.map((id: string) => <ProductBox id={id} lang={lang} />)}
 
-      <PersonaOpinionBlock personaSlugs={article.data.personas} lang={lang} seed={article.id} />
+      <PersonaOpinionBlock
+        personaSlugs={article.data.personas}
+        lang={lang}
+        seed={article.id}
+        meinungen={article.data.meinungen}
+      />
 
       <SourcesBox quellen={article.data.quellen} lang={lang} />
 

@@ -77,8 +77,21 @@ const baseArticleSchema = z.object({
   // IDs aus /data/products.json — steuert, welche ProductBox-Komponenten gerendert werden.
   produkte: z.array(z.string()).default([]),
   // Personas, die im PersonaOpinionBlock dieses Artikels auftreten können (>= 3 empfohlen,
-  // siehe /content/README.md) — die Komponente wählt daraus deterministisch drei aus.
+  // siehe /content/README.md) — die Komponente wählt daraus deterministisch drei aus, sofern
+  // `meinungen` (unten) nicht gesetzt ist.
   personas: z.array(personaSlug).default([]),
+  // Optionale themenspezifische Persona-Meinungen (Pipeline-Schritt 4, siehe
+  // /agents/pipeline/04-persona-stimmen.md) — wenn gesetzt, rendert PersonaOpinionBlock diese
+  // statt der generischen Persona-Stimme aus /personas/<slug>.md.
+  meinungen: z
+    .array(
+      z.object({
+        persona: personaSlug,
+        de: z.string(),
+        en: z.string(),
+      }),
+    )
+    .optional(),
   // Genau ein Artikel sollte featured sein — erscheint auf der Startseite als
   // Themenhub-Aufmacher (src/pages/[lang]/index.astro).
   featured: z.boolean().default(false),

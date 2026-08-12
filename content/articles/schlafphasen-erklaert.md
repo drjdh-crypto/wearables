@@ -83,6 +83,16 @@ istSaeule: true
 heroChart: "schlafphasen-anteile"
 produkte: ["oura-ring-4"]
 personas: ["dr-marlene", "ingrid", "ben", "elif", "kai"]
+meinungen:
+  - persona: "ingrid"
+    de: "Dass ausgerechnet Tiefschlaf am schwersten zu erkennen ist, überrascht mich nicht: Bewegungs- und Pulssensoren sehen im Grunde nur Ruhe und langsamen Puls — und das sieht in leichtem NREM-Schlaf oft ähnlich aus wie in echtem Tiefschlaf. Ohne EEG bleibt das eine Annäherung, keine Messung."
+    en: "That deep sleep is the hardest stage to detect doesn't surprise me: motion and pulse sensors basically just see stillness and a slow heart rate — and that looks similar in light NREM sleep as in true deep sleep. Without EEG, it stays an approximation, not a measurement."
+  - persona: "elif"
+    de: "Ich habe mich früher über einen einzigen roten Tiefschlaf-Balken stundenlang gestresst. Wenn selbst die Studienlage sagt, dass genau diese Zahl am unzuverlässigsten ist — warum sollte ich ihr dann mehr Gewicht geben als meinem eigenen Gefühl am Morgen?"
+    en: "I used to stress for hours over a single red deep-sleep bar. If even the evidence says that exact number is the least reliable one — why would I give it more weight than how I actually feel in the morning?"
+  - persona: "kai"
+    de: "Trotzdem trage ich meinen Ring jede Nacht — nicht wegen der exakten Prozentzahl, sondern wegen des Trends über Wochen. Ein Ausreißer ist Rauschen, aber wenn der Tiefschlaf über zwei Wochen konstant fällt, will ich das wissen, auch wenn kein Consumer-Gerät auf EEG-Niveau misst."
+    en: "I still wear my ring every night anyway — not for the exact percentage, but for the multi-week trend. One outlier night is noise, but if deep sleep keeps dropping for two weeks straight, I want to know that, even though no consumer device measures at EEG-level precision."
 ---
 
 ## Was sind Schlafphasen?
