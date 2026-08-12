@@ -1,0 +1,38 @@
+---
+// Quellenangabe unter einem Chart — Pflichtbestandteil, nie weglassen
+// (CLAUDE.md Abschnitt 2). Format folgt derselben Konvention wie im
+// Quellenverzeichnis: "Datenquelle: Zitat, DOI/Link — Hinweis".
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  datenquelle: { zitat: string; doi?: string; url: string };
+  hinweis: string;
+  lang: string;
+}
+
+const { datenquelle, hinweis, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<figcaption class="chart-source">
+  {t('chart.source_prefix')} {datenquelle.zitat}
+  {' '}
+  {datenquelle.doi ? (
+    <a href={`https://doi.org/${datenquelle.doi}`} rel="noopener" class="mono">
+      DOI: {datenquelle.doi}
+    </a>
+  ) : (
+    <a href={datenquelle.url} rel="noopener">
+      {t('sources.view_link')}
+    </a>
+  )}
+  {' — '}{hinweis}
+</figcaption>
+
+<style>
+  .chart-source {
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    margin-top: var(--space-2);
+  }
+</style>

@@ -137,4 +137,39 @@ const products = defineCollection({
   }),
 });
 
-export const collections = { articles, comparisons, glossary, personas, products };
+// Datenquelle eines Charts: Zitat + DOI oder URL. Charts werden nie aus
+// Rasterbildern von Studien eingebettet, sondern aus diesen Werten als SVG neu
+// gezeichnet (CLAUDE.md Abschnitt 2, "Grafiken aus Studien").
+const chartQuelle = z.object({
+  zitat: z.string(),
+  doi: z.string().optional(),
+  url: z.string().url(),
+});
+
+const chartBaseFields = {
+  titel: z.string(),
+  einheit: z.string().optional(),
+  datenquelle: chartQuelle,
+  // Pflichtfeld: macht sichtbar, dass der Chart eine eigene Darstellung ist,
+  // keine Reproduktion einer Studienabbildung.
+  hinweis: z.string().default('Eigene Darstellung.'),
+};
+
+const balkenDatum = z.object({ label: z.string(), wert: z.number() });
+const linienDatum = z.object({ x: z.union([z.string(), z.number()]), y: z.number() });
+const scatterDatum = z.object({ x: z.number(), y: z.number(), label: z.string().optional() });
+
+const chartSchema = z.discriminatedUnion('typ', [
+  z.object({ typ: z.literal('balken'), ...chartBaseFields, daten: z.array(balkenDatum).min(1) }),
+  z.object({ typ: z.literal('linie'), ...chartBaseFields, daten: z.array(linienDatum).min(2) }),
+  z.object({ typ: z.literal('scatter'), ...chartBaseFields, daten: z.array(scatterDatum).min(2) }),
+]);
+
+// Charts, siehe /data/charts/README.md. Werden über die Chart.astro-Komponente
+// gerendert (SVG, Farben aus den Theme-Tokens) und nie als Rasterbild eingebettet.
+const charts = defineCollection({
+  loader: glob({ pattern: '*.json', base: './data/charts' }),
+  schema: chartSchema,
+});
+
+export const collections = { articles, comparisons, glossary, personas, products, charts };

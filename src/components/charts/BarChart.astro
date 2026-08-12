@@ -1,0 +1,100 @@
+---
+// Balkendiagramm, SVG, Farben ausschließlich aus den Theme-Tokens (var(--…)),
+// damit der Chart in allen vier Theme/Mode-Kombinationen korrekt aussieht.
+import ChartSource from './ChartSource.astro';
+import { linearScale, niceMax } from '../../lib/chart-scale';
+
+interface Props {
+  titel: string;
+  einheit?: string;
+  daten: { label: string; wert: number }[];
+  datenquelle: { zitat: string; doi?: string; url: string };
+  hinweis: string;
+  lang: string;
+}
+
+const { titel, einheit, daten, datenquelle, hinweis, lang } = Astro.props;
+
+const width = 640;
+const height = 320;
+const marginTop = 24;
+const marginBottom = 40;
+const marginX = 16;
+const plotWidth = width - marginX * 2;
+const plotHeight = height - marginTop - marginBottom;
+
+const maxValue = niceMax(Math.max(...daten.map((d) => d.wert)));
+const yScale = linearScale([0, maxValue], [plotHeight, 0]);
+
+const barGap = 16;
+const barWidth = (plotWidth - barGap * (daten.length - 1)) / daten.length;
+const baselineY = marginTop + plotHeight;
+
+const bars = daten.map((d, i) => {
+  const x = marginX + i * (barWidth + barGap);
+  const barHeight = Math.max(plotHeight - yScale(d.wert), 0);
+  const y = baselineY - barHeight;
+  return { ...d, x, y, height: barHeight };
+});
+---
+
+<figure class="chart">
+  <p class="chart-title">{titel}{einheit ? ` (${einheit})` : ''}</p>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={titel} preserveAspectRatio="xMidYMid meet">
+    <line x1={marginX} y1={baselineY} x2={width - marginX} y2={baselineY} class="chart-axis" />
+    {bars.map((bar) => (
+      <rect x={bar.x} y={bar.y} width={barWidth} height={bar.height} class="chart-bar" />
+    ))}
+    {bars.map((bar) => (
+      <text x={bar.x + barWidth / 2} y={bar.y - 8} text-anchor="middle" class="chart-value">
+        {bar.wert}
+      </text>
+    ))}
+    {bars.map((bar) => (
+      <text x={bar.x + barWidth / 2} y={baselineY + 20} text-anchor="middle" class="chart-label">
+        {bar.label}
+      </text>
+    ))}
+  </svg>
+  <ChartSource datenquelle={datenquelle} hinweis={hinweis} lang={lang} />
+</figure>
+
+<style>
+  .chart {
+    margin: var(--space-4) 0;
+  }
+
+  .chart-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .chart-axis {
+    stroke: var(--color-border);
+    stroke-width: 1;
+  }
+
+  .chart-bar {
+    fill: var(--color-signal);
+  }
+
+  .chart-value {
+    font-family: var(--font-mono-family);
+    font-size: 13px;
+    fill: var(--color-ink);
+  }
+
+  .chart-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    fill: var(--color-ink-muted);
+  }
+</style>

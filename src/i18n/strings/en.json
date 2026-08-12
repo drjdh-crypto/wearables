@@ -14,6 +14,7 @@
   "sources.type.manufacturer": "Manufacturer data",
   "sources.type.institutional": "Institutional",
   "sources.view_link": "View source",
+  "chart.source_prefix": "Data source:",
   "ad.label": "Advertisement",
   "ad.disclosure": "Affiliate link — we may earn a commission at no extra cost to you.",
   "ad.cta": "View",

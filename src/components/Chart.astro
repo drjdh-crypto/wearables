@@ -1,0 +1,21 @@
+---
+// Öffentliche API für Charts im Artikel-Content: <Chart id="…" lang={lang} />.
+// Lädt den Eintrag aus der Content Collection "charts" (/data/charts/*.json)
+// und delegiert an die passende SVG-Komponente je nach `typ`.
+import { getEntry } from 'astro:content';
+import BarChart from './charts/BarChart.astro';
+import LineChart from './charts/LineChart.astro';
+import ScatterChart from './charts/ScatterChart.astro';
+
+interface Props {
+  id: string;
+  lang: string;
+}
+
+const { id, lang } = Astro.props;
+const entry = await getEntry('charts', id);
+---
+
+{entry && entry.data.typ === 'balken' && <BarChart {...entry.data} lang={lang} />}
+{entry && entry.data.typ === 'linie' && <LineChart {...entry.data} lang={lang} />}
+{entry && entry.data.typ === 'scatter' && <ScatterChart {...entry.data} lang={lang} />}

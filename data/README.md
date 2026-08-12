@@ -9,6 +9,7 @@ ausgewertet werden — kein Fließtext, keine redaktionellen Inhalte (die gehör
 ```
 data/
   products.json            # Produktdatenbank (aktiv, siehe unten)
+  charts/                   # Chart-Rohdaten, eine JSON-Datei pro Chart — siehe charts/README.md
   studies.yaml              # geplant: Studien-Register, DOI/PubMed-ID, Kernaussage, Studientyp
   price-history/            # geplant: Preisverlaufsdaten pro Produkt (für Kaufberatung)
   themeninventur.md         # Artikel-Themeninventur (Cluster, Arbeitstitel, Status)

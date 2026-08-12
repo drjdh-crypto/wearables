@@ -1,0 +1,79 @@
+---
+// Streudiagramm, SVG. Beide Achsen numerisch und autoskaliert (Domäne aus
+// Datenminimum/-maximum plus Randabstand). Farben ausschließlich aus den
+// Theme-Tokens.
+import ChartSource from './ChartSource.astro';
+import { linearScale, padDomain } from '../../lib/chart-scale';
+
+interface Props {
+  titel: string;
+  einheit?: string;
+  daten: { x: number; y: number; label?: string }[];
+  datenquelle: { zitat: string; doi?: string; url: string };
+  hinweis: string;
+  lang: string;
+}
+
+const { titel, einheit, daten, datenquelle, hinweis, lang } = Astro.props;
+
+const width = 640;
+const height = 320;
+const marginTop = 24;
+const marginBottom = 40;
+const marginLeft = 40;
+const marginRight = 16;
+const plotWidth = width - marginLeft - marginRight;
+const plotHeight = height - marginTop - marginBottom;
+
+const xValues = daten.map((d) => d.x);
+const yValues = daten.map((d) => d.y);
+const [xMin, xMax] = padDomain(Math.min(...xValues), Math.max(...xValues));
+const [yMin, yMax] = padDomain(Math.min(...yValues), Math.max(...yValues));
+
+const xScale = linearScale([xMin, xMax], [marginLeft, marginLeft + plotWidth]);
+const yScale = linearScale([yMin, yMax], [marginTop + plotHeight, marginTop]);
+
+const points = daten.map((d) => ({ ...d, cx: xScale(d.x), cy: yScale(d.y) }));
+const baselineY = marginTop + plotHeight;
+---
+
+<figure class="chart">
+  <p class="chart-title">{titel}{einheit ? ` (${einheit})` : ''}</p>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={titel} preserveAspectRatio="xMidYMid meet">
+    <line x1={marginLeft} y1={marginTop} x2={marginLeft} y2={baselineY} class="chart-axis" />
+    <line x1={marginLeft} y1={baselineY} x2={width - marginRight} y2={baselineY} class="chart-axis" />
+    {points.map((p) => (
+      <circle cx={p.cx} cy={p.cy} r="5" class="chart-point" />
+    ))}
+  </svg>
+  <ChartSource datenquelle={datenquelle} hinweis={hinweis} lang={lang} />
+</figure>
+
+<style>
+  .chart {
+    margin: var(--space-4) 0;
+  }
+
+  .chart-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .chart-axis {
+    stroke: var(--color-border);
+    stroke-width: 1;
+  }
+
+  .chart-point {
+    fill: var(--color-signal);
+    fill-opacity: 0.75;
+  }
+</style>
