@@ -98,8 +98,11 @@ unterscheidet (Patel et al., 2024).
 
 Als Richtwert für gesunde Erwachsene nennt die Fachliteratur rund 5% N1 (kurzer Übergang vom
 Wachzustand in den Schlaf), 45% N2 (Leichtschlaf im engeren Sinn), 25% N3 (Tiefschlaf) und 25%
-REM-Schlaf (Patel et al., 2024) — die Grafik oben zeigt diese Verteilung. Wichtig ist der
-Rahmen, in dem diese Zahl gilt: Eine große Meta-Analyse über 169 Studien und 5.273 gesunde
+REM-Schlaf (Patel et al., 2024) — die Grafik oben zeigt diese Verteilung. Diese Zahl stammt
+bewusst aus einer frei zugänglichen Übersichtsquelle statt aus den beiden großen Meta-Analysen
+unten, deren Originaltabellen hinter einer Bezahlschranke lagen — mehr dazu im Abschnitt „Was
+die Studienlage (noch) nicht beantwortet" am Ende. Wichtig ist außerdem der Rahmen, in dem
+diese Zahl gilt: Eine große Meta-Analyse über 169 Studien und 5.273 gesunde
 Erwachsene findet, dass sich die Anteile von N2-, N3- und REM-Schlaf über die Alters-Dekaden im
 Erwachsenenalter hinweg kaum verändern — nur der N1-Anteil nimmt pro Dekade um etwa 0,5
 Prozentpunkte zu (Boulos et al., 2019). Über die *gesamte* Lebensspanne betrachtet (Kindheit
@@ -130,17 +133,22 @@ Ergebnisse zwischen Studien schwer vergleichbar macht (Menghini et al., 2021).
 
 ## Wie genau erkennen Tracker einzelne Schlafphasen?
 
-Zwei unabhängige Laborvergleiche geben ein konsistentes Bild: Bei 34 gesunden Erwachsenen
-zeigten sieben Consumer-Tracker durchgehend hohe Sensitivität für die reine Unterscheidung
-Schlaf/Wach (mindestens 0,93) — bei der Unterscheidung einzelner Schlafphasen fiel die
-Sensitivität dagegen deutlich niedriger und uneinheitlicher aus (0,49 bis 0,76), mit einer
-systematischen Tendenz, andere Phasen als Leichtschlaf zu klassifizieren (Chinoy et al., 2021).
-Eine größere Multicenter-Validierung von 11 Geräten bei 75 Teilnehmenden (349.114 ausgewertete
-Epochen) bestätigt das Bild einer starken Schwankung zwischen Geräten: Die Genauigkeit bei der
-Schlafphasen-Klassifikation (Macro-F1) reichte von 0,26 bis 0,69 — ein weiter Bereich zwischen
-"kaum brauchbar" und "brauchbar", je nach Gerät (Lee et al., 2023). Beide Studien einte: Die
-reine Schlaf-vs-Wach-Erkennung ist deutlich zuverlässiger als die Unterscheidung, *welche*
-Schlafphase gerade vorliegt.
+Zwei unabhängige Laborvergleiche geben ein konsistentes Bild. Bei 34 gesunden Erwachsenen
+(eine für Laborstudien übliche, aber kleine Stichprobe) zeigten sieben Consumer-Tracker
+durchgehend hohe **Sensitivität** — also den Anteil der tatsächlichen Ereignisse, die ein
+Gerät richtig erkennt — für die reine Unterscheidung Schlaf/Wach (mindestens 0,93). Bei der
+Unterscheidung einzelner Schlafphasen fiel dieselbe Kennzahl dagegen deutlich niedriger und
+uneinheitlicher aus (0,49 bis 0,76), mit einer systematischen Tendenz, andere Phasen als
+Leichtschlaf zu klassifizieren (Chinoy et al., 2021). Eine größere Multicenter-Validierung von
+11 Geräten bei 75 Teilnehmenden (349.114 ausgewertete Epochen) bestätigt das Bild einer starken
+Schwankung zwischen Geräten: Der **Macro-F1-Wert** — ein zusammenfassendes Genauigkeitsmaß
+zwischen 0 (nutzlos) und 1 (perfekt) — reichte für die Schlafphasen-Klassifikation von 0,26 bis
+0,69, je nach Gerät (Lee et al., 2023). Beide Studien einte: Die reine
+Schlaf-vs-Wach-Erkennung ist deutlich zuverlässiger als die Unterscheidung, *welche*
+Schlafphase gerade vorliegt. Für eine medizinische Einschätzung — etwa bei Verdacht auf eine
+Schlafstörung — ersetzt keines dieser Consumer-Geräte eine Untersuchung im Schlaflabor;
+Polysomnographie bleibt der diagnostische Goldstandard, an dem sich alle hier genannten Zahlen
+überhaupt erst messen lassen.
 
 ## Was die Studienlage (noch) nicht beantwortet
 
@@ -154,3 +162,12 @@ Zweitens: Keine der hier verwendeten Quellen nennt eine einzelne, geräteübergr
 Genauigkeitszahl für "Tiefschlaf-Erkennung" — nur Sensitivitäts- und F1-Bereiche, die je nach
 Gerät stark streuen. Eine Aussage wie "Wearables erkennen Tiefschlaf zu X% richtig" wäre mit
 der hier verfügbaren Evidenz nicht zu belegen und wird deshalb bewusst nicht getroffen.
+
+## Was heißt das für die Praxis?
+
+Aus der Studienlage oben folgt eine einfache Faustregel: Der eigenen Gesamtschlafzeit und dem
+Trend über mehrere Nächte darf man mehr vertrauen als dem exakten Tiefschlaf- oder
+REM-Prozentwert einer einzelnen Nacht — genau dort ist die Unsicherheit der Geräte laut den
+zitierten Vergleichsstudien am größten. Ein einzelner niedriger Tiefschlafwert an einem Abend
+ist damit sowohl physiologisch (siehe Zyklus-Schwankung oben) als auch messtechnisch wenig
+aussagekräftig.

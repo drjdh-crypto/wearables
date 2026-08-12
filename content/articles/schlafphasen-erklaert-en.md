@@ -97,7 +97,10 @@ tells the stages apart (Patel et al., 2024).
 
 As a reference point for healthy adults, the literature cites roughly 5% N1 (the brief
 transition from wakefulness into sleep), 45% N2 (light sleep proper), 25% N3 (deep sleep), and
-25% REM sleep (Patel et al., 2024) — the chart above shows this split. The context matters: a
+25% REM sleep (Patel et al., 2024) — the chart above shows this split. That figure deliberately
+comes from a freely accessible overview source rather than the two large meta-analyses below,
+whose original tables sat behind a paywall — more on that in "What the evidence doesn't answer
+(yet)" at the end. The context also matters: a
 large meta-analysis spanning 169 studies and 5,273 healthy adults found that N2, N3, and REM
 percentages stay largely stable across adult age decades — only N1 inches up by about 0.5
 percentage points per decade (Boulos et al., 2019). Looked at across the *entire* human
@@ -126,16 +129,20 @@ hard to compare across studies (Menghini et al., 2021).
 
 ## How accurately do trackers detect individual sleep stages?
 
-Two independent lab comparisons paint a consistent picture. In 34 healthy adults, seven
-consumer trackers showed consistently high sensitivity for plain sleep-versus-wake detection
-(at least 0.93) — sensitivity for distinguishing individual sleep stages, however, was markedly
-lower and less consistent (0.49 to 0.76), with a systematic tendency to classify other stages as
-light sleep (Chinoy et al., 2021). A larger multicenter validation of 11 devices across 75
-participants (349,114 scored epochs) confirms the picture of strong device-to-device variation:
-sleep-stage classification accuracy (macro F1) ranged from 0.26 to 0.69 — a wide spread between
-"barely usable" and "usable," depending on the device (Lee et al., 2023). Both studies agree on
-one thing: plain sleep-versus-wake detection is markedly more reliable than telling *which*
-sleep stage is currently underway.
+Two independent lab comparisons paint a consistent picture. In 34 healthy adults — a small
+sample, typical for lab studies of this kind — seven consumer trackers showed consistently
+high **sensitivity** (the share of actual events a device correctly detects) for plain
+sleep-versus-wake detection (at least 0.93). Sensitivity for distinguishing individual sleep
+stages, however, was markedly lower and less consistent (0.49 to 0.76), with a systematic
+tendency to classify other stages as light sleep (Chinoy et al., 2021). A larger multicenter
+validation of 11 devices across 75 participants (349,114 scored epochs) confirms the picture of
+strong device-to-device variation: the **macro F1 score** — a summary accuracy measure from 0
+(useless) to 1 (perfect) — ranged from 0.26 to 0.69 for sleep-stage classification, depending
+on the device (Lee et al., 2023). Both studies agree on one thing: plain sleep-versus-wake
+detection is markedly more reliable than telling *which* sleep stage is currently underway. For
+a medical assessment — say, a suspected sleep disorder — none of these consumer devices
+substitute for a sleep-lab evaluation; polysomnography remains the diagnostic gold standard
+that every figure cited here is measured against in the first place.
 
 ## What the evidence doesn't answer (yet)
 
@@ -148,3 +155,11 @@ not from the primary studies themselves. Second: none of the sources used here g
 device-independent accuracy figure for "deep sleep detection" — only sensitivity and F1 ranges
 that vary widely by device. A claim like "wearables get deep sleep right X% of the time" isn't
 supported by the evidence gathered here, so it isn't made.
+
+## What this means in practice
+
+The evidence above adds up to a simple rule of thumb: trust your total sleep time and the trend
+across several nights more than the exact deep-sleep or REM percentage of any single night —
+that's precisely where device uncertainty is largest according to the comparison studies cited
+here. A single low deep-sleep reading on one night is therefore not very informative, both
+physiologically (see the cycle variation above) and in terms of measurement.
