@@ -1,0 +1,38 @@
+---
+// Language switcher — separate from RegionSwitcher (CLAUDE.md Abschnitt 7: zwei
+// getrennte Einstellungen). Persists the choice in localStorage under `pref:lang`;
+// the browser-language default is applied by the root redirect page
+// (src/pages/index.astro), never here and never via IP geolocation.
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { locales } from '../i18n/config';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const t = useTranslations(lang);
+const active = locales.filter((l) => l.enabled);
+---
+
+<div class="lang-switcher" aria-label={t('lang_switch.label')}>
+  {
+    active.map((locale) => (
+      <a
+        href={getRelativeLocaleUrl(locale.code, path)}
+        aria-current={locale.code === lang ? 'true' : undefined}
+        data-lang-option={locale.code}
+      >
+        {locale.label}
+      </a>
+    ))
+  }
+</div>
+
+<script define:vars={{ lang }}>
+  try {
+    localStorage.setItem('pref:lang', lang);
+  } catch (e) {}
+</script>

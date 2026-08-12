@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { enabledLocales } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('home.heading')} path="/">
+  <h1>{t('home.heading')}</h1>
+  <p>{t('site.description')}</p>
+  <p>{t('home.no_articles')}</p>
+</BaseLayout>

@@ -1,0 +1,19 @@
+/* Minimal baseline — replaced with the full design-token system in a later step
+   (see CLAUDE.md, design tokens task). Keeps pages buildable/readable until then. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.site-header,
+.site-nav,
+.site-switchers,
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

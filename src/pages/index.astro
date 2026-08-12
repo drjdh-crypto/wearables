@@ -1,34 +1,44 @@
 ---
-import { getCollection } from 'astro:content';
+// Unprefixed root. With i18n routing.prefixDefaultLocale = true, every real page
+// lives under /de/ or /en/ — this page's only job is to send first-time visitors
+// to the right one. Preference source, in order: stored `pref:lang` (set by
+// LanguageSwitcher on every localized page) → browser language → defaultLocale.
+// Deliberately no IP geolocation (CLAUDE.md Abschnitt 7).
+import { enabledLocales, defaultLocale } from '../i18n/config';
 
-const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const enabledJson = JSON.stringify(enabledLocales);
 ---
 
-<html lang="de">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Schlaf- & Recovery-Tracking</title>
-	</head>
-	<body>
-		<h1>Schlaf- & Recovery-Tracking</h1>
-		<p>Evidenzbasierte Einordnung von Schlaf- und Recovery-Wearables.</p>
-
-		{
-			articles.length === 0 ? (
-				<p>Noch keine veröffentlichten Artikel.</p>
-			) : (
-				<ul>
-					{articles.map((article) => (
-						<li>{article.data.title}</li>
-					))}
-				</ul>
-			)
-		}
-	</body>
+<!doctype html>
+<html lang={defaultLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Schlaf- & Recovery-Tracking</title>
+    <script define:vars={{ enabledLocales: enabledJson, defaultLocale }} is:inline>
+      (function () {
+        var enabled = JSON.parse(enabledLocales);
+        var target = defaultLocale;
+        try {
+          var stored = localStorage.getItem('pref:lang');
+          if (stored && enabled.indexOf(stored) !== -1) {
+            target = stored;
+          } else {
+            var browserLang = (navigator.language || defaultLocale).slice(0, 2).toLowerCase();
+            if (enabled.indexOf(browserLang) !== -1) {
+              target = browserLang;
+            }
+          }
+        } catch (e) {}
+        location.replace('/' + target + '/');
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>
+        <a href="/de/">Deutsch</a> · <a href="/en/">English</a>
+      </p>
+    </noscript>
+  </body>
 </html>

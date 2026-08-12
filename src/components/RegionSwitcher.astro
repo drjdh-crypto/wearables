@@ -1,0 +1,54 @@
+---
+// Region switcher — controls which regional affiliate link ProductBox shows
+// (see /data/products.json: links.{de,us,es,fallback}). Deliberately independent
+// from the UI language (CLAUDE.md Abschnitt 7): a German-reading user in the US
+// should be able to pick US links without switching the site language, and vice
+// versa. Persisted in localStorage under `pref:region`, never derived from IP.
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const regions = [
+  { code: 'de', label: t('region.de') },
+  { code: 'us', label: t('region.us') },
+  { code: 'es', label: t('region.es') },
+  { code: 'fallback', label: t('region.fallback') },
+];
+---
+
+<div class="region-switcher">
+  <label for="region-select">{t('region_switch.label')}</label>
+  <select id="region-select">
+    {regions.map((region) => (
+      <option value={region.code}>{region.label}</option>
+    ))}
+  </select>
+</div>
+
+<script>
+  const select = document.getElementById('region-select');
+  if (select instanceof HTMLSelectElement) {
+    try {
+      const stored = localStorage.getItem('pref:region');
+      if (stored) {
+        select.value = stored;
+      } else {
+        // Best-effort default from browser language, never from IP/geolocation.
+        const browserLang = navigator.language.slice(0, 2).toLowerCase();
+        const guess = ['de', 'es'].includes(browserLang) ? browserLang : 'us';
+        select.value = guess;
+      }
+    } catch (e) {}
+
+    select.addEventListener('change', () => {
+      try {
+        localStorage.setItem('pref:region', select.value);
+      } catch (e) {}
+    });
+  }
+</script>
