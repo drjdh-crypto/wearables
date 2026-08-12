@@ -19,6 +19,8 @@
   "persona.label": "KI-Perspektive: {name}",
   "persona.disclaimer": "KI-Persona — keine reale Person.",
   "persona.quality_gate_badge": "Quality-Gate",
+  "theme.toggle": "Darstellung wechseln (hell/dunkel)",
+  "theme.short": "Hell/Dunkel",
   "lang_switch.label": "Sprache",
   "region_switch.label": "Region (für Produktlinks)",
   "region.de": "Deutschland",

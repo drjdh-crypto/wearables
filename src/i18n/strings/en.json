@@ -19,6 +19,8 @@
   "persona.label": "AI perspective: {name}",
   "persona.disclaimer": "AI persona — not a real person.",
   "persona.quality_gate_badge": "Quality gate",
+  "theme.toggle": "Toggle light/dark appearance",
+  "theme.short": "Light/Dark",
   "lang_switch.label": "Language",
   "region_switch.label": "Region (for product links)",
   "region.de": "Germany",

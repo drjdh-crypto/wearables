@@ -1,19 +1,170 @@
-/* Minimal baseline — replaced with the full design-token system in a later step
-   (see CLAUDE.md, design tokens task). Keeps pages buildable/readable until then. */
-* {
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+code,
+pre,
+.mono,
+time,
+.stat {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: var(--color-signal);
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .site-header,
-.site-nav,
-.site-switchers,
-.footer-nav {
+.site-footer {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer {
+  border-bottom: none;
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-5);
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+.site-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.site-tagline {
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+}
+
+.site-nav a,
+.footer-nav a {
+  color: var(--color-ink);
+  text-decoration: none;
+  margin-right: var(--space-3);
+}
+
+.site-nav a:hover,
+.footer-nav a:hover {
+  color: var(--color-signal);
+}
+
+.site-switchers {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.footer-rights {
+  font-size: 0.8rem;
+  color: var(--color-ink-muted);
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-signal-contrast);
+  background: var(--color-signal);
+  padding: 0.15em 0.5em;
+  border-radius: var(--radius-sm);
+}
+
+.persona-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.persona-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  background: var(--color-surface);
+}
+
+.persona-role {
+  font-weight: 400;
+  color: var(--color-ink-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.persona-voice {
+  font-style: italic;
+}
+
+.persona-disclaimer {
+  font-size: 0.8rem;
+  color: var(--color-ink-muted);
+}
+
+select,
+button,
+input {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  padding: 0.3em 0.6em;
+}
+
+button {
+  cursor: pointer;
 }

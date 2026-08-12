@@ -4,6 +4,7 @@ import { enabledLocales } from '../i18n/config';
 import { useTranslations } from '../i18n/utils';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import RegionSwitcher from '../components/RegionSwitcher.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -59,6 +60,7 @@ const pageDescription = description ?? t('site.description');
       <div class="site-switchers">
         <LanguageSwitcher lang={lang} path={path} />
         <RegionSwitcher lang={lang} />
+        <ThemeToggle lang={lang} />
       </div>
     </header>
 

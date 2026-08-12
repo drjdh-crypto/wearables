@@ -1,0 +1,55 @@
+/*
+ * Design-Tokens — Fachjournal-Ästhetik.
+ * Off-White-Grund + Tinte-Dunkelblau als Basis, EINE Signalfarbe ausschließlich für
+ * Daten/Charts/Hervorhebungen. Serifen für Headlines, Sans für Fließtext, Monospace
+ * für Zahlen. Keine Verläufe, kein Glassmorphism — flache Flächen, Haarlinien-Border.
+ *
+ * Dark Mode von Anfang an: Light ist der Default auf :root, die OS-Präferenz greift
+ * automatisch (@media prefers-color-scheme), ein manueller Toggle (ThemeToggle.astro)
+ * kann sie über [data-theme] übersteuern. Neue Tokens IMMER an allen drei Stellen
+ * pflegen (Light-Default, prefers-color-scheme, [data-theme="dark"]).
+ */
+
+:root {
+  --color-bg: #f6f3ec;
+  --color-surface: #ffffff;
+  --color-ink: #10202e;
+  --color-ink-muted: #48555f;
+  --color-border: #d9d2c2;
+  --color-signal: #a8461f;
+  --color-signal-contrast: #ffffff;
+
+  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+
+  --radius-sm: 2px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --content-width: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #12181f;
+    --color-surface: #1a222b;
+    --color-ink: #e8e3d8;
+    --color-ink-muted: #9ba6b0;
+    --color-border: #2a333d;
+    --color-signal: #e08653;
+    --color-signal-contrast: #12181f;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #12181f;
+  --color-surface: #1a222b;
+  --color-ink: #e8e3d8;
+  --color-ink-muted: #9ba6b0;
+  --color-border: #2a333d;
+  --color-signal: #e08653;
+  --color-signal-contrast: #12181f;
+}

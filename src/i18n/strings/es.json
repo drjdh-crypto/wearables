@@ -19,6 +19,8 @@
   "persona.label": "Perspectiva de IA: {name}",
   "persona.disclaimer": "Persona de IA — no es una persona real.",
   "persona.quality_gate_badge": "Control de calidad",
+  "theme.toggle": "Cambiar apariencia clara/oscura",
+  "theme.short": "Claro/Oscuro",
   "lang_switch.label": "Idioma",
   "region_switch.label": "Región (para enlaces de producto)",
   "region.de": "Alemania",
