@@ -10,7 +10,7 @@ ausgewertet werden — kein Fließtext, keine redaktionellen Inhalte (die gehör
 data/
   products.json            # Produktdatenbank (aktiv, siehe unten)
   charts/                   # Chart-Rohdaten, eine JSON-Datei pro Chart — siehe charts/README.md
-  studies.yaml              # geplant: Studien-Register, DOI/PubMed-ID, Kernaussage, Studientyp
+  quellen/                  # Crossref-verifizierte Studien pro Artikel-Slug — siehe quellen/README.md
   price-history/            # geplant: Preisverlaufsdaten pro Produkt (für Kaufberatung)
   themeninventur.md         # Artikel-Themeninventur (Cluster, Arbeitstitel, Status)
 ```
@@ -41,10 +41,10 @@ tatsächlich aktiv und geprüft sind — bis dahin stehen `PLACEHOLDER`-Werte in
 
 ## Prinzipien
 
-- `studies.yaml` (geplant) wird die zentrale Quelle für DOIs/PubMed-IDs, die in
-  Artikel-Frontmatter (`quellen`) verwendet werden — Duplikate vermeiden, auf existierende
-  Einträge referenzieren statt IDs mehrfach abzutippen.
+- `quellen/<slug>.json` ist die Recherche-Grundlage für Artikel-Frontmatter (`quellen`) —
+  produziert von Schritt 1 der Redaktions-Pipeline (`/agents/pipeline/01-recherche.md`), jede
+  DOI dort ist Crossref-verifiziert. Details siehe `quellen/README.md`.
 - Preis-/Produktdaten regelmäßig aktualisieren; `status` konsequent pflegen, damit inaktive
   Partnerprogramme nicht versehentlich weiter beworben werden.
-- Keine unbelegten Zahlen in `studies.yaml` — jeder Eintrag entspricht Abschnitt 2 aus
-  [`CLAUDE.md`](../CLAUDE.md) (Quellenpflicht).
+- Keine unbelegten Zahlen in `quellen/*.json` — jeder Eintrag entspricht Abschnitt 2 aus
+  [`CLAUDE.md`](../CLAUDE.md) (Quellenpflicht) und ist Crossref-geprüft.
