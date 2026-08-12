@@ -14,9 +14,11 @@ interface Props {
   description?: string;
   /** Canonical path within a locale, e.g. "/personas/". Used to build hreflang alternates. */
   path?: string;
+  /** Wider content column for hub/listing pages (homepage, cluster pages) — article pages stay at the default, narrower reading width. */
+  wide?: boolean;
 }
 
-const { lang, title, description, path = '/' } = Astro.props;
+const { lang, title, description, path = '/', wide = false } = Astro.props;
 const t = useTranslations(lang);
 const pageDescription = description ?? t('site.description');
 ---
@@ -71,7 +73,7 @@ const pageDescription = description ?? t('site.description');
       </div>
     </header>
 
-    <main>
+    <main class={wide ? 'wide' : ''}>
       <slot />
     </main>
 

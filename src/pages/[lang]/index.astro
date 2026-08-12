@@ -1,9 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { enabledLocales } from '../../i18n/config';
+import Chart from '../../components/Chart.astro';
+import { enabledLocales, defaultLocale } from '../../i18n/config';
 import { useTranslations } from '../../i18n/utils';
+import { HOMEPAGE_CLUSTERS } from '../../lib/clusters';
 
 export function getStaticPaths() {
   return enabledLocales.map((lang) => ({ params: { lang } }));
@@ -12,28 +14,87 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = useTranslations(lang);
 
-const articles = (
-  await getCollection('articles', ({ data }) => !data.entwurf && data.sprache === lang)
-).sort((a, b) => b.data.datum.valueOf() - a.data.datum.valueOf());
+const articles = await getCollection(
+  'articles',
+  ({ data }) => !data.entwurf && data.sprache === lang,
+);
+
+const featured = articles.find((a) => a.data.featured);
+
+const clusters = HOMEPAGE_CLUSTERS.map((kategorie) => ({
+  kategorie,
+  artikel: articles.filter((a) => a.data.kategorie === kategorie).slice(0, 3),
+}));
+
+// Kuratierte Auswahl für den Persona-Teaser: eine Quality-Gate-Stimme, eine
+// enthusiastische, eine Betroffenenperspektive, eine Einsteiger-Perspektive.
+const teaserSlugs = ['dr-marlene', 'kai', 'elif', 'ben'];
+const personaEntries = (
+  await Promise.all(teaserSlugs.map((slug) => getEntry('personas', slug)))
+).filter((entry) => entry !== undefined);
 ---
 
-<BaseLayout lang={lang} title={t('home.heading')} path="/">
-  <h1>{t('home.heading')}</h1>
-  <p>{t('site.description')}</p>
-
+<BaseLayout lang={lang} title={t('home.heading')} wide>
   {
-    articles.length === 0 ? (
-      <p>{t('home.no_articles')}</p>
+    featured ? (
+      <section class="hero-featured">
+        <p class="tag">{t('home.featured_label')}</p>
+        <h1>
+          <a href={getRelativeLocaleUrl(lang, `/artikel/${featured.id}/`)}>{featured.data.titel}</a>
+        </h1>
+        <p>{featured.data.beschreibung}</p>
+        {featured.data.heroChart && <Chart id={featured.data.heroChart} lang={lang} />}
+      </section>
     ) : (
-      <ul class="article-list">
-        {articles.map((article) => (
-          <li>
-            <a href={getRelativeLocaleUrl(lang, `/artikel/${article.id}/`)}>
-              {article.data.titel}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <section class="hero-featured">
+        <h1>{t('home.heading')}</h1>
+        <p>{t('site.description')}</p>
+      </section>
     )
   }
+
+  <section class="cluster-grid">
+    {
+      clusters.map(({ kategorie, artikel }) => (
+        <article class="cluster-card">
+          <h2>
+            <a href={getRelativeLocaleUrl(lang, `/themen/${kategorie}/`)}>
+              {t(`kategorie.${kategorie}.titel`)}
+            </a>
+          </h2>
+          <p>{t(`kategorie.${kategorie}.intro`)}</p>
+          {artikel.length === 0 ? (
+            <p class="cluster-empty">{t('home.cluster_empty')}</p>
+          ) : (
+            <ul>
+              {artikel.map((a) => (
+                <li>
+                  <a href={getRelativeLocaleUrl(lang, `/artikel/${a.id}/`)}>{a.data.titel}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+          <a class="cluster-more" href={getRelativeLocaleUrl(lang, `/themen/${kategorie}/`)}>
+            {t('home.cluster_more')}
+          </a>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="persona-teaser">
+    <h2>{t('personas.heading')}</h2>
+    <p>{t('personas.intro')}</p>
+    <div class="persona-teaser-grid">
+      {
+        personaEntries.map((persona) => (
+          <a class="persona-teaser-card" href={getRelativeLocaleUrl(lang, '/personas/')}>
+            <p class="persona-teaser-name">{persona!.data.name}</p>
+            <p class="persona-teaser-role">{persona!.data.role}</p>
+          </a>
+        ))
+      }
+    </div>
+    <a href={getRelativeLocaleUrl(lang, '/personas/')}>{t('personas.see_all')}</a>
+  </section>
 </BaseLayout>

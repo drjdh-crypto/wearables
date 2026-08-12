@@ -107,6 +107,10 @@ main {
   padding: var(--space-5) var(--space-4);
 }
 
+main.wide {
+  max-width: 75rem;
+}
+
 .footer-rights {
   font-size: 0.8rem;
   color: var(--color-ink-muted);
@@ -187,4 +191,101 @@ input {
 
 button {
   cursor: pointer;
+}
+
+/* Startseite als Themenhub */
+.hero-featured {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-featured h1 a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.hero-featured h1 a:hover {
+  color: var(--color-signal);
+}
+
+.cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.cluster-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  padding: var(--space-3);
+}
+
+.cluster-card h2 {
+  font-size: 1.05rem;
+  margin: 0 0 var(--space-2);
+}
+
+.cluster-card h2 a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.cluster-card h2 a:hover {
+  color: var(--color-signal);
+}
+
+.cluster-card ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+
+.cluster-card li {
+  margin-bottom: var(--space-1);
+}
+
+.cluster-empty {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  font-style: italic;
+}
+
+.cluster-more {
+  font-size: 0.85rem;
+}
+
+.persona-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.persona-teaser-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  padding: var(--space-3);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.persona-teaser-card:hover {
+  border-color: var(--color-signal);
+}
+
+.persona-teaser-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin: 0;
+}
+
+.persona-teaser-role {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  margin: 0.2em 0 0;
 }

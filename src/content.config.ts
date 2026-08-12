@@ -19,15 +19,18 @@ export const PERSONA_SLUGS = [
 
 const personaSlug = z.enum(PERSONA_SLUGS);
 
-// Kategorien gemäß /content/README.md
-const category = z.enum([
+// Kategorien gemäß /content/README.md — zugleich die Cluster-Slugs für
+// /[lang]/themen/[cluster]/ (siehe src/pages/[lang]/themen/[cluster].astro).
+export const CATEGORY_VALUES = [
   'tracking-genauigkeit',
   'schlafphysiologie',
   'hrv-recovery',
   'geraete-vergleich',
   'praxis-alltag',
   'methodik-limitationen',
-]);
+] as const;
+
+const category = z.enum(CATEGORY_VALUES);
 
 // Eine Quelle im Sinne der Evidenzpflicht aus CLAUDE.md Abschnitt 2: DOI oder
 // PubMed-ID, sonst gilt eine peer-reviewte Behauptung nicht als belegt.
@@ -65,6 +68,11 @@ const baseArticleSchema = z.object({
   // Personas, die im PersonaOpinionBlock dieses Artikels auftreten können (>= 3 empfohlen,
   // siehe /content/README.md) — die Komponente wählt daraus deterministisch drei aus.
   personas: z.array(personaSlug).default([]),
+  // Genau ein Artikel sollte featured sein — erscheint auf der Startseite als
+  // Themenhub-Aufmacher (src/pages/[lang]/index.astro).
+  featured: z.boolean().default(false),
+  // Chart-ID aus /data/charts/ für den Hero-Chart auf Startseite/Artikelkopf.
+  heroChart: z.string().optional(),
   entwurf: z.boolean().default(false),
 });
 
