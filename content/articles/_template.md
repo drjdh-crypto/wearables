@@ -2,7 +2,7 @@
 title: "Template — nicht veröffentlichen"
 description: "Vorlage für neue Artikel. draft:true verhindert Veröffentlichung."
 pubDate: 2026-08-12
-author: "dr-somnia"
+author: "dr-marlene"
 category: "tracking-genauigkeit"
 tags: ["template"]
 affiliate: false

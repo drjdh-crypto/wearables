@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { enabledLocales, defaultLocale } from '../../../i18n/config';
+import { useTranslations } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+
+const personas = (await getCollection('personas')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<BaseLayout lang={lang} title={t('personas.heading')} path="/personas/">
+  <h1>{t('personas.heading')}</h1>
+  <p>{t('personas.intro')}</p>
+
+  <ul class="persona-list">
+    {
+      personas.map((persona) => {
+        const voice = persona.data.voices[lang] ?? persona.data.voices[defaultLocale];
+        return (
+          <li class="persona-card">
+            <h2>
+              {persona.data.name} <span class="persona-role">— {persona.data.role}</span>
+            </h2>
+            {persona.data.quality_gate && (
+              <span class="badge">{t('persona.quality_gate_badge')}</span>
+            )}
+            <p class="persona-voice">&ldquo;{voice.intro}&rdquo;</p>
+            <p class="persona-disclaimer">{t('persona.disclaimer')}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>

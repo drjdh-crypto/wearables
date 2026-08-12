@@ -2,19 +2,21 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 // Persona-Slugs müssen mit den Dateien in /personas übereinstimmen.
-// Siehe /personas/README.md und CLAUDE.md Abschnitt 3.
-const personaSlug = z.enum([
-  'dr-somnia',
-  'coach-pulse',
-  'der-biohacker',
-  'die-skeptikerin',
-  'der-techniker',
-  'die-elternstimme',
-  'der-minimalist',
-  'die-chronobiologin',
-  'der-veteran',
-  'die-patientin',
-]);
+// Siehe /personas/README.md und CLAUDE.md Abschnitt 5.
+export const PERSONA_SLUGS = [
+  'dr-marlene',
+  'tobias',
+  'dr-yusuf',
+  'kai',
+  'ingrid',
+  'sandra',
+  'ben',
+  'franka',
+  'milan',
+  'elif',
+] as const;
+
+const personaSlug = z.enum(PERSONA_SLUGS);
 
 // Kategorien gemäß /content/README.md
 const category = z.enum([
@@ -81,4 +83,26 @@ const glossary = defineCollection({
   }),
 });
 
-export const collections = { articles, comparisons, glossary };
+// Eine Sprachfassung einer Persona-Stimme (CLAUDE.md Abschnitt 5, /personas/README.md).
+const personaVoice = z.object({
+  tonfall: z.string(),
+  intro: z.string(),
+});
+
+const personas = defineCollection({
+  loader: glob({ pattern: ['*.md', '!README.md'], base: './personas' }),
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    quality_gate: z.boolean(),
+    grundhaltung: z.string(),
+    konfliktlinien: z.array(personaSlug).default([]),
+    voices: z.object({
+      de: personaVoice,
+      en: personaVoice,
+      es: personaVoice,
+    }),
+  }),
+});
+
+export const collections = { articles, comparisons, glossary, personas };
