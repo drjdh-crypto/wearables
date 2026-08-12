@@ -49,8 +49,10 @@
     --color-ink: #ededed;
     --color-ink-muted: #888888;
     --color-border: #333333;
-    --color-signal: #3291ff;
-    --color-signal-contrast: #000000;
+    /* Kühles, entsättigtes Eisblau/Cyan statt gesättigtem "Google-Blau" —
+       nur im Dark Mode angepasst, Light bleibt beim ursprünglichen #0070f3. */
+    --color-signal: #7ec8e3;
+    --color-signal-contrast: #071019;
   }
 }
 
@@ -61,8 +63,8 @@
   --color-ink: #ededed;
   --color-ink-muted: #888888;
   --color-border: #333333;
-  --color-signal: #3291ff;
-  --color-signal-contrast: #000000;
+  --color-signal: #7ec8e3;
+  --color-signal-contrast: #071019;
 }
 
 /* ---------- Health, Light — wärmer, editorial ---------- */
