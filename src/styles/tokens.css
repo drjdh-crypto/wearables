@@ -1,29 +1,38 @@
 /*
- * Design-Tokens — Fachjournal-Ästhetik.
- * Off-White-Grund + Tinte-Dunkelblau als Basis, EINE Signalfarbe ausschließlich für
- * Daten/Charts/Hervorhebungen. Serifen für Headlines, Sans für Fließtext, Monospace
- * für Zahlen. Keine Verläufe, kein Glassmorphism — flache Flächen, Haarlinien-Border.
+ * Design-Tokens — zwei Themes ("Lean", "Health"), je mit Light-/Dark-Variante,
+ * macht vier Token-Sets. Komponenten dürfen NIE Farben/Radien/Schriften
+ * hartkodieren — ausschließlich diese Custom Properties verwenden.
  *
- * Dark Mode von Anfang an: Light ist der Default auf :root, die OS-Präferenz greift
- * automatisch (@media prefers-color-scheme), ein manueller Toggle (ThemeToggle.astro)
- * kann sie über [data-theme] übersteuern. Neue Tokens IMMER an allen drei Stellen
- * pflegen (Light-Default, prefers-color-scheme, [data-theme="dark"]).
+ * Auswahl über zwei unabhängige HTML-Attribute (siehe ThemeSwitcher.astro /
+ * ModeToggle.astro, localStorage: pref:theme bzw. pref:mode):
+ *   [data-theme="health"]  — Theme-Wahl, Default (kein Attribut) = "lean"
+ *   [data-mode="dark"]     — Farbmodus-Override, Default = OS-Präferenz
+ *
+ * Jeder Block unten ist bewusst vollständig (nicht nur die Differenz zum
+ * vorigen Block), damit ein Theme beim Lesen als in sich geschlossene Palette
+ * verständlich ist und nichts an voriger Kaskade "erraten" werden muss.
  */
 
 :root {
-  --color-bg: #f6f3ec;
-  --color-surface: #ffffff;
-  --color-ink: #10202e;
-  --color-ink-muted: #48555f;
-  --color-border: #d9d2c2;
-  --color-signal: #a8461f;
+  /* ---------- Lean, Light (Standard) — Vercel-Anmutung ---------- */
+  --color-bg: #ffffff;
+  --color-surface: #fafafa;
+  --color-ink: #0a0a0a;
+  --color-ink-muted: #666666;
+  --color-border: #eaeaea;
+  --color-signal: #0070f3;
   --color-signal-contrast: #ffffff;
 
-  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  --font-sans-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-serif-family: 'Source Serif 4', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-mono-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  /* Semantische Tokens: Lean ist konsequent serifenlos (Vercel-Anmutung), nur
+     Zahlen/Daten bekommen dezente Monospace-Akzente. */
+  --font-heading: var(--font-sans-family);
+  --font-body: var(--font-sans-family);
 
-  --radius-sm: 2px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
@@ -32,24 +41,72 @@
   --content-width: 42rem;
 }
 
+/* ---------- Lean, Dark — via OS-Präferenz, kein expliziter Mode gesetzt ---------- */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
+  :root:not([data-mode='light']) {
+    --color-bg: #000000;
+    --color-surface: #111111;
+    --color-ink: #ededed;
+    --color-ink-muted: #888888;
+    --color-border: #333333;
+    --color-signal: #3291ff;
+    --color-signal-contrast: #000000;
+  }
+}
+
+/* ---------- Lean, Dark — explizit per ModeToggle gesetzt ---------- */
+:root[data-mode='dark'] {
+  --color-bg: #000000;
+  --color-surface: #111111;
+  --color-ink: #ededed;
+  --color-ink-muted: #888888;
+  --color-border: #333333;
+  --color-signal: #3291ff;
+  --color-signal-contrast: #000000;
+}
+
+/* ---------- Health, Light — wärmer, editorial ---------- */
+:root[data-theme='health'] {
+  --color-bg: #f6f3ec;
+  --color-surface: #ffffff;
+  --color-ink: #10202e;
+  --color-ink-muted: #48555f;
+  --color-border: #d9d2c2;
+  --color-signal: #3d7a6a;
+  --color-signal-contrast: #ffffff;
+
+  --font-heading: var(--font-serif-family);
+  --font-body: var(--font-sans-family);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --space-1: 0.3rem;
+  --space-2: 0.6rem;
+  --space-3: 1.15rem;
+  --space-4: 1.75rem;
+  --space-5: 2.85rem;
+}
+
+/* ---------- Health, Dark — via OS-Präferenz ---------- */
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='health']:not([data-mode='light']) {
     --color-bg: #12181f;
     --color-surface: #1a222b;
     --color-ink: #e8e3d8;
     --color-ink-muted: #9ba6b0;
     --color-border: #2a333d;
-    --color-signal: #e08653;
-    --color-signal-contrast: #12181f;
+    --color-signal: #5fa394;
+    --color-signal-contrast: #0b1210;
   }
 }
 
-:root[data-theme='dark'] {
+/* ---------- Health, Dark — explizit per ModeToggle gesetzt ---------- */
+:root[data-theme='health'][data-mode='dark'] {
   --color-bg: #12181f;
   --color-surface: #1a222b;
   --color-ink: #e8e3d8;
   --color-ink-muted: #9ba6b0;
   --color-border: #2a333d;
-  --color-signal: #e08653;
-  --color-signal-contrast: #12181f;
+  --color-signal: #5fa394;
+  --color-signal-contrast: #0b1210;
 }

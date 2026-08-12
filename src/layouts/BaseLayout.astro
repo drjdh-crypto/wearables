@@ -4,7 +4,8 @@ import { enabledLocales } from '../i18n/config';
 import { useTranslations } from '../i18n/utils';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import RegionSwitcher from '../components/RegionSwitcher.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
+import ModeToggle from '../components/ModeToggle.astro';
+import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -36,13 +37,18 @@ const pageDescription = description ?? t('site.description');
     <link rel="alternate" hreflang="x-default" href={getRelativeLocaleUrl('de', path)} />
 
     <script is:inline>
-      // Applies a stored theme preference before paint to avoid a flash of the
-      // wrong theme. Falls back to the OS preference (handled entirely in CSS)
-      // when nothing is stored yet — see /src/styles/tokens.css.
+      // Applies stored theme/mode preferences before paint to avoid a flash of
+      // the wrong look. Two independent settings (CLAUDE.md/Design-Tokens):
+      // pref:theme (lean/health) and pref:mode (light/dark, falls back to OS
+      // preference via CSS when unset) — see /src/styles/tokens.css.
       try {
-        const stored = localStorage.getItem('pref:theme');
-        if (stored === 'light' || stored === 'dark') {
-          document.documentElement.setAttribute('data-theme', stored);
+        const theme = localStorage.getItem('pref:theme');
+        if (theme === 'health') {
+          document.documentElement.setAttribute('data-theme', 'health');
+        }
+        const mode = localStorage.getItem('pref:mode');
+        if (mode === 'light' || mode === 'dark') {
+          document.documentElement.setAttribute('data-mode', mode);
         }
       } catch (e) {}
     </script>
@@ -60,7 +66,8 @@ const pageDescription = description ?? t('site.description');
       <div class="site-switchers">
         <LanguageSwitcher lang={lang} path={path} />
         <RegionSwitcher lang={lang} />
-        <ThemeToggle lang={lang} />
+        <ThemeSwitcher lang={lang} />
+        <ModeToggle lang={lang} />
       </div>
     </header>
 

@@ -14,15 +14,16 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   line-height: 1.6;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-ink);
@@ -33,7 +34,7 @@ pre,
 .mono,
 time,
 .stat {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono-family);
 }
 
 a {
@@ -71,7 +72,7 @@ a:hover {
 }
 
 .site-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -115,7 +116,7 @@ main {
    itself a data signal about an article's editorial status, not decoration. */
 .badge {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-mono-family);
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -131,7 +132,7 @@ main {
    Signalfarbe nur für Daten/Charts). */
 .tag {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-mono-family);
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -159,7 +160,7 @@ main {
 .persona-role {
   font-weight: 400;
   color: var(--color-ink-muted);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 1rem;
 }
 
@@ -175,7 +176,7 @@ main {
 select,
 button,
 input {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.85rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);

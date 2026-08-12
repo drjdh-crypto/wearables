@@ -1,0 +1,67 @@
+---
+// Theme choice ("Lean" Vercel-style vs. "Health" editorial-warm), independent
+// from ModeToggle.astro (Light/Dark) — CLAUDE.md/Design-Tokens: zwei getrennte
+// Einstellungen. Persisted in localStorage under `pref:theme`, applied via
+// [data-theme] on <html> (see /src/styles/tokens.css). Default ("Lean") needs
+// no attribute at all.
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="theme-switcher" aria-label={t('theme_switch.label')}>
+  <label>
+    <input type="radio" name="theme" value="lean" checked />
+    {t('theme.lean')}
+  </label>
+  <label>
+    <input type="radio" name="theme" value="health" />
+    {t('theme.health')}
+  </label>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const radios = document.querySelectorAll<HTMLInputElement>('.theme-switcher input[name="theme"]');
+
+  let current = 'lean';
+  try {
+    current = localStorage.getItem('pref:theme') ?? 'lean';
+  } catch (e) {}
+
+  radios.forEach((radio) => {
+    radio.checked = radio.value === current;
+    radio.addEventListener('change', () => {
+      if (!radio.checked) return;
+      if (radio.value === 'health') {
+        root.setAttribute('data-theme', 'health');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      try {
+        localStorage.setItem('pref:theme', radio.value);
+      } catch (e) {}
+    });
+  });
+</script>
+
+<style>
+  .theme-switcher {
+    display: flex;
+    gap: var(--space-2);
+    font-size: 0.8rem;
+    color: var(--color-ink-muted);
+  }
+
+  .theme-switcher label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    cursor: pointer;
+  }
+</style>
