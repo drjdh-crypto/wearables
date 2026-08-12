@@ -1,17 +1,16 @@
 {
   "typ": "balken",
-  "titel": "Anteile der Schlafphasen in einer typischen Nacht",
+  "titel": "Anteile der Schlafphasen in einer typischen Nacht (Erwachsene)",
   "einheit": "%",
   "daten": [
-    { "label": "Leichtschlaf", "wert": 50 },
-    { "label": "Tiefschlaf", "wert": 18 },
-    { "label": "REM-Schlaf", "wert": 23 },
-    { "label": "Wachliegen", "wert": 9 }
+    { "label": "N1 (Übergang)", "wert": 5 },
+    { "label": "N2 (Leichtschlaf)", "wert": 45 },
+    { "label": "N3 (Tiefschlaf)", "wert": 25 },
+    { "label": "REM-Schlaf", "wert": 25 }
   ],
   "datenquelle": {
-    "zitat": "Platzhalter-Quelle (2024). Anteile der Schlafphasen bei gesunden Erwachsenen. Demo-Zitat für den Beispielartikel — vor Veröffentlichung durch eine echte, geprüfte Studie ersetzen.",
-    "doi": "10.0000/platzhalter-schlafphasen",
-    "url": "https://doi.org/10.0000/platzhalter-schlafphasen"
+    "zitat": "Patel AK, Reddy V, Shumway KR, Araujo JF (2024). Physiology, Sleep Stages. StatPearls [Internet]. NCBI Bookshelf, NBK526132.",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK526132/"
   },
-  "hinweis": "Eigene Darstellung. Platzhalterwerte für Demo-Zwecke, keine echte Studie."
+  "hinweis": "Eigene Darstellung nach StatPearls (2024). Richtwerte für gesunde Erwachsene — einzelne Nächte weichen individuell teils deutlich ab, siehe Artikeltext."
 }
