@@ -1,0 +1,32 @@
+[
+  {
+    "id": "oura-ring-4",
+    "name": "Oura Ring 4",
+    "kategorie": "ring",
+    "links": {
+      "de": "https://www.amazon.de/dp/PLACEHOLDER?tag=PLACEHOLDER-21",
+      "us": "https://www.amazon.com/dp/PLACEHOLDER?tag=PLACEHOLDER-20",
+      "es": "https://www.amazon.es/dp/PLACEHOLDER?tag=PLACEHOLDER-21",
+      "fallback": "https://ouraring.com/"
+    },
+    "netzwerk": "Amazon PartnerNet",
+    "provision": "4%",
+    "cookie_laufzeit": "24 Stunden",
+    "status": "aktiv"
+  },
+  {
+    "id": "whoop-5",
+    "name": "Whoop 5.0",
+    "kategorie": "band",
+    "links": {
+      "de": "https://join.whoop.com/de/?ref=PLACEHOLDER",
+      "us": "https://join.whoop.com/us/?ref=PLACEHOLDER",
+      "es": "",
+      "fallback": "https://www.whoop.com/"
+    },
+    "netzwerk": "Whoop Affiliate Program (Impact)",
+    "provision": "10% der ersten Mitgliedschaftsperiode",
+    "cookie_laufzeit": "30 Tage",
+    "status": "aktiv"
+  }
+]

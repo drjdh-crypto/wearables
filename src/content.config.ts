@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 // Persona-Slugs müssen mit den Dateien in /personas übereinstimmen.
 // Siehe /personas/README.md und CLAUDE.md Abschnitt 5.
@@ -105,4 +105,31 @@ const personas = defineCollection({
   }),
 });
 
-export const collections = { articles, comparisons, glossary, personas };
+// Regionslink: leerer String bedeutet "für diese Region kein eigener Link", die
+// ProductBox-Komponente fällt dann auf `fallback` zurück. `fallback` selbst muss
+// immer eine echte URL sein.
+const regionLink = z.union([z.string().url(), z.literal('')]);
+
+// Produktdatenbank, siehe /data/README.md. Jeder Eintrag braucht eine eindeutige
+// `id` (Pflicht für den file()-Loader) und wird von der ProductBox-Komponente
+// (CLAUDE.md Abschnitt 6, "Werbekennzeichnung") konsumiert.
+const products = defineCollection({
+  loader: file('./data/products.json'),
+  schema: z.object({
+    id: z.string(),
+    name: z.string(),
+    kategorie: z.string(),
+    links: z.object({
+      de: regionLink,
+      us: regionLink,
+      es: regionLink,
+      fallback: z.string().url(),
+    }),
+    netzwerk: z.string(),
+    provision: z.string(),
+    cookie_laufzeit: z.string(),
+    status: z.enum(['aktiv', 'inaktiv', 'geplant']),
+  }),
+});
+
+export const collections = { articles, comparisons, glossary, personas, products };
