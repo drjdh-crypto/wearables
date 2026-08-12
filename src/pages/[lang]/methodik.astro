@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { enabledLocales } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+
+const sections = ['selection', 'sources', 'conflicts', 'ai', 'personas'] as const;
+---
+
+<BaseLayout lang={lang} title={t('methodik.heading')} description={t('methodik.intro')} path="/methodik/">
+  <h1>{t('methodik.heading')}</h1>
+  <p>{t('methodik.intro')}</p>
+
+  {
+    sections.map((section) => (
+      <section>
+        <h2>{t(`methodik.section.${section}.heading`)}</h2>
+        <p>{t(`methodik.section.${section}.body`)}</p>
+      </section>
+    ))
+  }
+</BaseLayout>
