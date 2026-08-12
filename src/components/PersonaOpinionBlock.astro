@@ -5,6 +5,7 @@
 // Artikel (Hash über `seed`, typischerweise der Artikel-Slug) statt zufällig bei
 // jedem Build, damit derselbe Artikel nicht bei jedem Deploy andere Stimmen zeigt.
 import { getCollection } from 'astro:content';
+import PersonaAvatar from './PersonaAvatar.astro';
 import { useTranslations } from '../i18n/utils';
 import { defaultLocale } from '../i18n/config';
 
@@ -44,14 +45,17 @@ const chosen = pickThree(eligible, seed);
         const voice = persona.data.voices[lang] ?? persona.data.voices[defaultLocale];
         return (
           <div class="persona-opinion">
-            <p class="persona-opinion-label">
-              {t('persona.label', { name: persona.data.name })}
-              {persona.data.quality_gate && (
-                <span class="badge">{t('persona.quality_gate_badge')}</span>
-              )}
-            </p>
-            <p class="persona-voice">&ldquo;{voice.intro}&rdquo;</p>
-            <p class="persona-disclaimer">{t('persona.disclaimer')}</p>
+            <PersonaAvatar slug={persona.id} name={persona.data.name} size={40} />
+            <div class="persona-opinion-text">
+              <p class="persona-opinion-label">
+                {t('persona.label', { name: persona.data.name })}
+                {persona.data.quality_gate && (
+                  <span class="badge">{t('persona.quality_gate_badge')}</span>
+                )}
+              </p>
+              <p class="persona-voice">&ldquo;{voice.intro}&rdquo;</p>
+              <p class="persona-disclaimer">{t('persona.disclaimer')}</p>
+            </div>
           </div>
         );
       })}
@@ -67,8 +71,14 @@ const chosen = pickThree(eligible, seed);
   }
 
   .persona-opinion {
+    display: flex;
+    gap: var(--space-3);
     border-left: 2px solid var(--color-signal);
     padding-left: var(--space-3);
+  }
+
+  .persona-opinion-text {
+    min-width: 0;
   }
 
   .persona-opinion-label {

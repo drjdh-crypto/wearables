@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Chart from '../../components/Chart.astro';
+import PersonaAvatar from '../../components/PersonaAvatar.astro';
 import { enabledLocales, defaultLocale } from '../../i18n/config';
 import { useTranslations } from '../../i18n/utils';
 import { HOMEPAGE_CLUSTERS } from '../../lib/clusters';
@@ -89,6 +90,7 @@ const personaEntries = (
       {
         personaEntries.map((persona) => (
           <a class="persona-teaser-card" href={getRelativeLocaleUrl(lang, '/personas/')}>
+            <PersonaAvatar slug={persona!.id} name={persona!.data.name} size={48} />
             <p class="persona-teaser-name">{persona!.data.name}</p>
             <p class="persona-teaser-role">{persona!.data.role}</p>
           </a>

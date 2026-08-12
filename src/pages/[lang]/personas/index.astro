@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PersonaAvatar from '../../../components/PersonaAvatar.astro';
 import { enabledLocales, defaultLocale } from '../../../i18n/config';
 import { useTranslations } from '../../../i18n/utils';
 
@@ -14,7 +15,7 @@ const t = useTranslations(lang);
 const personas = (await getCollection('personas')).sort((a, b) => a.data.name.localeCompare(b.data.name));
 ---
 
-<BaseLayout lang={lang} title={t('personas.heading')} path="/personas/">
+<BaseLayout lang={lang} title={t('personas.heading')} path="/personas/" wide>
   <h1>{t('personas.heading')}</h1>
   <p>{t('personas.intro')}</p>
 
@@ -24,9 +25,12 @@ const personas = (await getCollection('personas')).sort((a, b) => a.data.name.lo
         const voice = persona.data.voices[lang] ?? persona.data.voices[defaultLocale];
         return (
           <li class="persona-card">
-            <h2>
-              {persona.data.name} <span class="persona-role">— {persona.data.role}</span>
-            </h2>
+            <div class="persona-card-head">
+              <PersonaAvatar slug={persona.id} name={persona.data.name} size={56} />
+              <h2>
+                {persona.data.name} <span class="persona-role">— {persona.data.role}</span>
+              </h2>
+            </div>
             {persona.data.quality_gate && (
               <span class="badge">{t('persona.quality_gate_badge')}</span>
             )}
@@ -38,3 +42,20 @@ const personas = (await getCollection('personas')).sort((a, b) => a.data.name.lo
     }
   </ul>
 </BaseLayout>
+
+<style>
+  ul.persona-list {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .persona-card-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .persona-card-head h2 {
+    margin: 0;
+  }
+</style>

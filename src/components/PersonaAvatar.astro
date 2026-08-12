@@ -1,0 +1,81 @@
+---
+// Stilisierter, bewusst nicht-fotorealistischer Avatar: überlappende
+// geometrische Formen, deterministisch aus dem Persona-Slug erzeugt. Farben
+// ausschließlich über var(--color-…), funktioniert dadurch automatisch in
+// allen vier Theme/Mode-Kombinationen (siehe CLAUDE.md/Design-Tokens).
+import { generateAvatarShapes } from '../lib/persona-avatar';
+
+interface Props {
+  slug: string;
+  name: string;
+  size?: number;
+}
+
+const { slug, name, size = 64 } = Astro.props;
+const shapes = generateAvatarShapes(slug);
+const clipId = `persona-avatar-clip-${slug}`;
+---
+
+<svg viewBox="0 0 64 64" width={size} height={size} role="img" aria-label={name} class="persona-avatar">
+  <defs>
+    <clipPath id={clipId}>
+      <circle cx="32" cy="32" r="32" />
+    </clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="31" class="avatar-bg" />
+  <g clip-path={`url(#${clipId})`}>
+    {
+      shapes.map((shape) =>
+        shape.kind === 'circle' ? (
+          <circle
+            cx={shape.cx}
+            cy={shape.cy}
+            r={shape.size / 2}
+            class="avatar-shape"
+            style={`opacity:${shape.opacity}`}
+          />
+        ) : shape.kind === 'rect' ? (
+          <rect
+            x={shape.cx - shape.size / 2}
+            y={shape.cy - shape.size / 2}
+            width={shape.size}
+            height={shape.size}
+            rx="3"
+            transform={`rotate(${shape.rotation} ${shape.cx} ${shape.cy})`}
+            class="avatar-shape"
+            style={`opacity:${shape.opacity}`}
+          />
+        ) : (
+          <polygon
+            points={`${shape.cx},${shape.cy - shape.size / 2} ${shape.cx - shape.size / 2},${shape.cy + shape.size / 2} ${shape.cx + shape.size / 2},${shape.cy + shape.size / 2}`}
+            transform={`rotate(${shape.rotation} ${shape.cx} ${shape.cy})`}
+            class="avatar-shape"
+            style={`opacity:${shape.opacity}`}
+          />
+        ),
+      )
+    }
+  </g>
+  <circle cx="32" cy="32" r="31" class="avatar-ring" />
+</svg>
+
+<style>
+  .persona-avatar {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .avatar-bg {
+    fill: var(--color-surface);
+  }
+
+  .avatar-ring {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 1;
+  }
+
+  .avatar-shape {
+    fill: var(--color-ink);
+  }
+</style>
