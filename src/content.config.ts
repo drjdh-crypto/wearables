@@ -71,6 +71,9 @@ const baseArticleSchema = z.object({
   // Genau ein Artikel sollte featured sein — erscheint auf der Startseite als
   // Themenhub-Aufmacher (src/pages/[lang]/index.astro).
   featured: z.boolean().default(false),
+  // Höchstens ein Artikel pro (kategorie, sprache) sollte istSaeule sein — der
+  // Säulen-Artikel auf der Pillar-Seite /[lang]/themen/[cluster]/.
+  istSaeule: z.boolean().default(false),
   // Chart-ID aus /data/charts/ für den Hero-Chart auf Startseite/Artikelkopf.
   heroChart: z.string().optional(),
   entwurf: z.boolean().default(false),

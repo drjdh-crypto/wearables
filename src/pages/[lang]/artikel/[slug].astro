@@ -4,6 +4,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SourcesBox from '../../../components/SourcesBox.astro';
 import PersonaOpinionBlock from '../../../components/PersonaOpinionBlock.astro';
 import ProductBox from '../../../components/ProductBox.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { enabledLocales } from '../../../i18n/config';
 import { useTranslations } from '../../../i18n/utils';
 
@@ -37,6 +38,13 @@ const { Content } = await render(article);
     </p>
     <h1>{article.data.titel}</h1>
 
+    <p class="cluster-link">
+      {t('article.cluster_link_prefix')}{' '}
+      <a href={getRelativeLocaleUrl(lang, `/themen/${article.data.kategorie}/`)}>
+        {t(`kategorie.${article.data.kategorie}.titel`)}
+      </a>
+    </p>
+
     <div class="article-body">
       <Content />
     </div>
@@ -55,6 +63,11 @@ const { Content } = await render(article);
   .article-date {
     color: var(--color-ink-muted);
     font-size: 0.8rem;
+  }
+
+  .cluster-link {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
   }
 
   .ai-notice {
