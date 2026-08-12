@@ -1,12 +1,16 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Chart from '../../../components/Chart.astro';
+import KeyFindingsBox from '../../../components/KeyFindingsBox.astro';
+import TableOfContents from '../../../components/TableOfContents.astro';
 import SourcesBox from '../../../components/SourcesBox.astro';
 import PersonaOpinionBlock from '../../../components/PersonaOpinionBlock.astro';
 import ProductBox from '../../../components/ProductBox.astro';
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import { enabledLocales } from '../../../i18n/config';
 import { useTranslations } from '../../../i18n/utils';
+import { estimateReadingMinutes, latestHistoryEntry } from '../../../lib/reading-time';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.entwurf);
@@ -21,7 +25,10 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { lang } = Astro.params;
 const t = useTranslations(lang);
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
+
+const readingMinutes = estimateReadingMinutes(article.body);
+const geprueft = latestHistoryEntry(article.data.historie);
 ---
 
 <BaseLayout
@@ -29,38 +36,71 @@ const { Content } = await render(article);
   title={article.data.titel}
   description={article.data.beschreibung}
   path={`/artikel/${article.id}/`}
+  wide
 >
-  <article>
-    <p class="mono article-date">
-      <time datetime={article.data.datum.toISOString()}>
-        {article.data.datum.toLocaleDateString(lang)}
-      </time>
-    </p>
-    <h1>{article.data.titel}</h1>
+  <div class="article-layout">
+    <TableOfContents headings={headings} lang={lang} />
 
-    <p class="cluster-link">
-      {t('article.cluster_link_prefix')}{' '}
-      <a href={getRelativeLocaleUrl(lang, `/themen/${article.data.kategorie}/`)}>
-        {t(`kategorie.${article.data.kategorie}.titel`)}
-      </a>
-    </p>
+    <article class="article-main">
+      <p class="cluster-link">
+        {t('article.cluster_link_prefix')}{' '}
+        <a href={getRelativeLocaleUrl(lang, `/themen/${article.data.kategorie}/`)}>
+          {t(`kategorie.${article.data.kategorie}.titel`)}
+        </a>
+      </p>
 
-    <div class="article-body">
-      <Content />
-    </div>
+      <h1>{article.data.titel}</h1>
 
-    {article.data.produkte.map((id: string) => <ProductBox id={id} lang={lang} />)}
+      <p class="article-meta mono">
+        {t('article.reading_time', { minutes: readingMinutes })}
+        {' · '}
+        {t('article.reviewed_on', { date: geprueft.datum.toLocaleDateString(lang) })}
+      </p>
 
-    <PersonaOpinionBlock personaSlugs={article.data.personas} lang={lang} seed={article.id} />
+      {article.data.heroChart && <Chart id={article.data.heroChart} lang={lang} />}
 
-    <SourcesBox quellen={article.data.quellen} lang={lang} />
+      <KeyFindingsBox
+        kernaussagen={article.data.kernaussagen}
+        quellenanzahl={article.data.quellen.length}
+        lang={lang}
+      />
 
-    <p class="ai-notice">{t('footer.ai_notice')}</p>
-  </article>
+      <div class="article-body">
+        <Content />
+      </div>
+
+      {article.data.produkte.map((id: string) => <ProductBox id={id} lang={lang} />)}
+
+      <PersonaOpinionBlock personaSlugs={article.data.personas} lang={lang} seed={article.id} />
+
+      <SourcesBox quellen={article.data.quellen} lang={lang} />
+
+      <p class="ai-notice">{t('footer.ai_notice')}</p>
+    </article>
+  </div>
 </BaseLayout>
 
 <style>
-  .article-date {
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .article-layout {
+      grid-template-columns: 14rem minmax(0, 1fr);
+      gap: var(--space-5);
+    }
+
+    :global(.article-toc) {
+      position: sticky;
+      top: var(--space-4);
+    }
+  }
+
+  .article-meta {
     color: var(--color-ink-muted);
     font-size: 0.8rem;
   }
@@ -68,6 +108,16 @@ const { Content } = await render(article);
   .cluster-link {
     font-size: 0.85rem;
     color: var(--color-ink-muted);
+  }
+
+  .article-body {
+    max-width: 70ch;
+  }
+
+  /* Charts dürfen breiter ausbrechen als der ~70-Zeichen-Fließtext, bleiben
+     aber innerhalb der Artikel-Spalte (kein Viewport-Bleed). */
+  .article-body :global(.chart) {
+    max-width: min(100%, 54rem);
   }
 
   .ai-notice {

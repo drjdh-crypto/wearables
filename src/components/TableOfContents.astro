@@ -1,0 +1,73 @@
+---
+// Inhaltsverzeichnis aus den von render() gelieferten Markdown-Headings
+// (nur H2/H3). Auf Desktop sticky in der Sidebar (siehe .article-toc in
+// [slug].astro), auf schmalen Viewports rutscht es per Grid einfach vor den
+// Fließtext.
+import { useTranslations } from '../i18n/utils';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  lang: string;
+}
+
+const { headings, lang } = Astro.props;
+const t = useTranslations(lang);
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  items.length > 0 && (
+    <nav class="article-toc" aria-label={t('toc.heading')}>
+      <p class="toc-heading">{t('toc.heading')}</p>
+      <ul>
+        {items.map((heading) => (
+          <li class={`toc-depth-${heading.depth}`}>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .article-toc {
+    font-size: 0.85rem;
+  }
+
+  .toc-heading {
+    font-family: var(--font-mono-family);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  .article-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4em;
+  }
+
+  .article-toc a {
+    color: var(--color-ink-muted);
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: var(--color-signal);
+  }
+
+  .toc-depth-3 {
+    padding-left: 1rem;
+  }
+</style>

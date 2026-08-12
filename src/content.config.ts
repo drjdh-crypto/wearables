@@ -50,14 +50,25 @@ const quelle = z
     message: 'Peer-reviewte Quellen benötigen DOI oder PubMed-ID (CLAUDE.md Abschnitt 2).',
   });
 
+// Ein Eintrag in der Update-Historie eines Artikels. Der jüngste Eintrag
+// (nach `datum` sortiert) liefert das "Zuletzt geprüft am"-Datum im
+// Artikel-Layout — keine separate, potenziell widersprüchliche Datumsangabe.
+const historieEintrag = z.object({
+  datum: z.coerce.date(),
+  notiz: z.string(),
+});
+
 const baseArticleSchema = z.object({
   titel: z.string(),
   beschreibung: z.string(),
   sprache: z.enum(allLocales),
   datum: z.coerce.date(),
-  aktualisiert: z.coerce.date().optional(),
+  // Mindestens ein Eintrag (üblicherweise "Erstveröffentlichung"). Siehe Kommentar oben.
+  historie: z.array(historieEintrag).min(1),
   kategorie: category,
   schlagworte: z.array(z.string()).default([]),
+  // Sätze für die Kernaussagen-Box ("Das sagt die Studienlage"), empfohlen: genau 3.
+  kernaussagen: z.array(z.string()).min(1).max(5),
   // Muss true sein, sobald der Artikel-Body mindestens einen Affiliate-Link enthält
   // (CLAUDE.md Abschnitt 6).
   affiliate: z.boolean().default(false),
