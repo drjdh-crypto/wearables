@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Schlaf- & Recovery-Tracking</title>
+	</head>
+	<body>
+		<h1>Schlaf- & Recovery-Tracking</h1>
+		<p>Evidenzbasierte Einordnung von Schlaf- und Recovery-Wearables.</p>
+
+		{
+			articles.length === 0 ? (
+				<p>Noch keine veröffentlichten Artikel.</p>
+			) : (
+				<ul>
+					{articles.map((article) => (
+						<li>{article.data.title}</li>
+					))}
+				</ul>
+			)
+		}
+	</body>
+</html>
