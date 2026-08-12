@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { enabledLocales } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('datenschutz.heading')} path="/datenschutz/">
+  <p class="tag legal-placeholder">{t('legal.placeholder_notice')}</p>
+  <h1>{t('datenschutz.heading')}</h1>
+
+  <h2>{t('datenschutz.section.controller.heading')}</h2>
+  <p class="legal-address">{t('datenschutz.section.controller.body')}</p>
+
+  <h2>{t('datenschutz.section.localstorage.heading')}</h2>
+  <p>{t('datenschutz.section.localstorage.body')}</p>
+
+  <h2>{t('datenschutz.section.analytics.heading')}</h2>
+  <p>{t('datenschutz.section.analytics.body')}</p>
+
+  <h2>{t('datenschutz.section.rights.heading')}</h2>
+  <p>{t('datenschutz.section.rights.body')}</p>
+
+  <h2>{t('datenschutz.section.contact.heading')}</h2>
+  <p class="legal-address">{t('datenschutz.section.contact.body')}</p>
+</BaseLayout>
+
+<style>
+  .legal-address {
+    white-space: pre-line;
+  }
+</style>

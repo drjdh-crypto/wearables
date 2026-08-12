@@ -34,5 +34,21 @@
   "personas.intro": "Zehn feste KI-Perspektiven, die in Meinungsblöcken auftreten — offen gekennzeichnet, dürfen widersprechen, müssen aber nicht.",
   "legal.placeholder_notice": "Platzhalter — vor Veröffentlichung durch geprüften Rechtstext ersetzen.",
   "impressum.heading": "Impressum",
-  "datenschutz.heading": "Datenschutzerklärung"
+  "impressum.section.responsible.heading": "Angaben gemäß § 5 TMG",
+  "impressum.section.responsible.body": "[Name/Firma]\n[Straße, Hausnummer]\n[PLZ, Ort]\n[Land]",
+  "impressum.section.contact.heading": "Kontakt",
+  "impressum.section.contact.body": "E-Mail: [platzhalter@example.com]\nTelefon: [Platzhalter]",
+  "impressum.section.responsible_content.heading": "Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)",
+  "impressum.section.responsible_content.body": "[Name, Anschrift wie oben]",
+  "datenschutz.heading": "Datenschutzerklärung",
+  "datenschutz.section.controller.heading": "Verantwortlicher",
+  "datenschutz.section.controller.body": "[Name/Firma, Anschrift, Kontakt — siehe Impressum]",
+  "datenschutz.section.localstorage.heading": "Lokale Speicherung (kein Cookie-Banner)",
+  "datenschutz.section.localstorage.body": "Diese Seite verwendet ausschließlich funktionalen localStorage im Browser — für die Sprachwahl (pref:lang), die Region für Produktlinks (pref:region) und die Hell/Dunkel-Darstellung (pref:theme). Es werden keine Tracking-Cookies gesetzt und keine Profile über mehrere Websites hinweg gebildet. Nach aktueller Einschätzung ist dafür keine Einwilligung nach § 25 TTDSG/ePrivacy nötig, weshalb kein Cookie-Banner eingeblendet wird.",
+  "datenschutz.section.analytics.heading": "Analytics",
+  "datenschutz.section.analytics.body": "Aktuell wird keine Analytics-Software eingesetzt. Geplant ist der Einsatz einer cookielosen, IP-anonymisierten Analytics-Lösung; diese Erklärung wird vor Aktivierung aktualisiert.",
+  "datenschutz.section.rights.heading": "Ihre Rechte",
+  "datenschutz.section.rights.body": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gemäß Art. 15–21 DSGVO. [Platzhalter — Ausübung/Kontaktweg ergänzen.]",
+  "datenschutz.section.contact.heading": "Kontakt",
+  "datenschutz.section.contact.body": "E-Mail: [platzhalter@example.com]"
 }

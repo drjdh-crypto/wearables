@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { enabledLocales } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('impressum.heading')} path="/impressum/">
+  <p class="tag legal-placeholder">{t('legal.placeholder_notice')}</p>
+  <h1>{t('impressum.heading')}</h1>
+
+  <h2>{t('impressum.section.responsible.heading')}</h2>
+  <p class="legal-address">{t('impressum.section.responsible.body')}</p>
+
+  <h2>{t('impressum.section.responsible_content.heading')}</h2>
+  <p class="legal-address">{t('impressum.section.responsible_content.body')}</p>
+
+  <h2>{t('impressum.section.contact.heading')}</h2>
+  <p class="legal-address">{t('impressum.section.contact.body')}</p>
+</BaseLayout>
+
+<style>
+  .legal-address {
+    white-space: pre-line;
+  }
+</style>

@@ -20,7 +20,7 @@ const product = await getEntry('products', id);
 {
   product && product.data.status === 'aktiv' && (
     <div class="product-box" data-region-links={JSON.stringify(product.data.links)}>
-      <p class="badge ad-label">{t('ad.label')}</p>
+      <p class="tag ad-label">{t('ad.label')}</p>
       <p class="product-name">{product.data.name}</p>
       <a
         class="product-link mono"

@@ -34,5 +34,21 @@
   "personas.intro": "Ten fixed AI perspectives that appear in opinion blocks — openly labeled, free to disagree, but never required to.",
   "legal.placeholder_notice": "Placeholder — replace with reviewed legal text before going live.",
   "impressum.heading": "Legal notice",
-  "datenschutz.heading": "Privacy policy"
+  "impressum.section.responsible.heading": "Provider information",
+  "impressum.section.responsible.body": "[Name/Company]\n[Street, number]\n[Postcode, city]\n[Country]",
+  "impressum.section.contact.heading": "Contact",
+  "impressum.section.contact.body": "Email: [placeholder@example.com]\nPhone: [Placeholder]",
+  "impressum.section.responsible_content.heading": "Responsible for content",
+  "impressum.section.responsible_content.body": "[Name, address as above]",
+  "datenschutz.heading": "Privacy policy",
+  "datenschutz.section.controller.heading": "Data controller",
+  "datenschutz.section.controller.body": "[Name/Company, address, contact — see legal notice]",
+  "datenschutz.section.localstorage.heading": "Local storage (no cookie banner)",
+  "datenschutz.section.localstorage.body": "This site uses only functional browser localStorage — for the language choice (pref:lang), the region used for product links (pref:region), and light/dark appearance (pref:theme). No tracking cookies are set and no cross-site profiles are built. Under current assessment this does not require consent under ePrivacy-style rules, which is why no cookie banner is shown.",
+  "datenschutz.section.analytics.heading": "Analytics",
+  "datenschutz.section.analytics.body": "No analytics software is currently in use. A cookieless, IP-anonymized analytics solution is planned; this policy will be updated before it is activated.",
+  "datenschutz.section.rights.heading": "Your rights",
+  "datenschutz.section.rights.body": "You have the right to access, rectification, erasure, restriction of processing, data portability and objection under applicable data protection law. [Placeholder — add exercise/contact details.]",
+  "datenschutz.section.contact.heading": "Contact",
+  "datenschutz.section.contact.body": "Email: [placeholder@example.com]"
 }

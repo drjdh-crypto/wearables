@@ -34,5 +34,21 @@
   "personas.intro": "Diez perspectivas de IA fijas que aparecen en bloques de opinión — claramente identificadas, pueden discrepar, pero no están obligadas a hacerlo.",
   "legal.placeholder_notice": "Marcador de posición — sustituir por texto legal revisado antes de publicar.",
   "impressum.heading": "Aviso legal",
-  "datenschutz.heading": "Política de privacidad"
+  "impressum.section.responsible.heading": "Datos del proveedor",
+  "impressum.section.responsible.body": "[Nombre/Empresa]\n[Calle, número]\n[Código postal, ciudad]\n[País]",
+  "impressum.section.contact.heading": "Contacto",
+  "impressum.section.contact.body": "Correo: [placeholder@example.com]\nTeléfono: [Marcador de posición]",
+  "impressum.section.responsible_content.heading": "Responsable del contenido",
+  "impressum.section.responsible_content.body": "[Nombre, dirección como arriba]",
+  "datenschutz.heading": "Política de privacidad",
+  "datenschutz.section.controller.heading": "Responsable del tratamiento",
+  "datenschutz.section.controller.body": "[Nombre/Empresa, dirección, contacto — ver aviso legal]",
+  "datenschutz.section.localstorage.heading": "Almacenamiento local (sin banner de cookies)",
+  "datenschutz.section.localstorage.body": "Este sitio usa únicamente localStorage funcional del navegador — para el idioma (pref:lang), la región de los enlaces de producto (pref:region) y la apariencia clara/oscura (pref:theme). No se establecen cookies de seguimiento ni se crean perfiles entre sitios. Según la valoración actual, esto no requiere consentimiento bajo la normativa ePrivacy, por lo que no se muestra ningún banner de cookies.",
+  "datenschutz.section.analytics.heading": "Analítica",
+  "datenschutz.section.analytics.body": "Actualmente no se utiliza ningún software de analítica. Está previsto el uso de una solución de analítica sin cookies y con IP anonimizada; esta política se actualizará antes de activarla.",
+  "datenschutz.section.rights.heading": "Tus derechos",
+  "datenschutz.section.rights.body": "Tienes derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición conforme a la normativa aplicable. [Marcador de posición — añadir vía de ejercicio/contacto.]",
+  "datenschutz.section.contact.heading": "Contacto",
+  "datenschutz.section.contact.body": "Correo: [placeholder@example.com]"
 }

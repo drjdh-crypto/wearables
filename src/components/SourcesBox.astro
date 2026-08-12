@@ -40,7 +40,7 @@ const typLabel: Record<Quelle['studientyp'], string> = {
       <ol>
         {quellen.map((quelle) => (
           <li>
-            <span class="badge sources-type">{typLabel[quelle.studientyp]}</span>{' '}
+            <span class="tag sources-type">{typLabel[quelle.studientyp]}</span>{' '}
             <span class="sources-citation">
               {quelle.autoren ? `${quelle.autoren} ` : ''}
               {`(${quelle.jahr}). `}
