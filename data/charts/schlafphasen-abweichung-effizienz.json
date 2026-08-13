@@ -1,0 +1,14 @@
+{
+  "typ": "bereich",
+  "titel": "Abweichung Schlafeffizienz: Wearable vs. Polysomnographie",
+  "einheit": " Prozentpunkte",
+  "daten": [
+    { "label": "Schlafeffizienz", "von": -7.079, "bis": -2.302, "mitte": -4.691 }
+  ],
+  "datenquelle": {
+    "zitat": "Lee YJ et al. (2025). Performance of consumer wrist-worn sleep tracking devices compared to polysomnography: a meta-analysis. Journal of Clinical Sleep Medicine, 21(3), 573–582.",
+    "doi": "10.5664/jcsm.11460",
+    "url": "https://doi.org/10.5664/jcsm.11460"
+  },
+  "hinweis": "Eigene Darstellung nach Lee YJ et al. (2025) — gepoolte Mittelwertdifferenz (Raute) und 95%-Konfidenzintervall (Balken) über 24 Studien; 0 = Polysomnographie-Referenzwert."
+}

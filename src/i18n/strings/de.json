@@ -22,7 +22,7 @@
   "sources.type.manufacturer": "Herstellerangabe",
   "sources.type.institutional": "Institutionell",
   "sources.n": "n = {n}",
-  "praxisfazit.label": "Was heißt das für die Praxis?",
+  "praxisfazit.heading": "Was heißt das für die Praxis?",
   "sources.view_link": "Quelle ansehen",
   "review.heading": "Entwurf — Vorschau",
   "review.intro": "Nur für die Prüfung: nicht veröffentlicht, nicht verlinkt, nicht indexiert.",

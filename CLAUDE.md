@@ -59,21 +59,23 @@ sind für Lesende ohne Mehrwert bis irreführend (klingt nach Ausrede statt nach
   interne Dokumentation wie `docs/`, `agents/`, Commit-Nachrichten oder `offenePunkte` selbst —
   dort ist Prozesssprache erwartet und richtig.
 
-### Praxis-Fazit je Quelle
+### Praxis-Fazit
 
-Wo eine zitierte Quelle eine sinnvolle praktische Konsequenz für Lesende hat, bekommt sie ein
-kompaktes Praxis-Fazit: ein einziger Satz, der beantwortet „Was heißt das für die Praxis?" —
-gerendert über die `PraxisFazit`-Komponente **direkt an der Stelle im Fließtext**, an der die
-zugehörige Quelle besprochen wird, nicht gesammelt in einem Abschnitt am Artikelende.
+Jeder Artikel mit praktischer Relevanz bekommt **eine** Praxis-Fazit-Box am Artikelende: „Was
+heißt das für die Praxis?" mit 2–4 Punkten, die die wichtigsten Konsequenzen aus dem
+**Gesamttext** zusammenfassen — nicht ein Kästchen pro Quelle und nicht über den Artikel
+verteilt. Feld `praxisfazit` (Liste, 2–4 Einträge) im Artikel-Frontmatter (siehe
+`/content/README.md`), gerendert über die `PraxisFazit`-Komponente.
 
-- Der Satz **muss aus dem `kernbefund` der Quelle folgen** — keine allgemeine
-  Ratgeberweisheit, die auch ohne die konkrete Studie stimmen würde. Test: Ließe sich der Satz
-  genauso in einem Artikel ohne diese Quelle schreiben? Wenn ja, ist er zu allgemein.
-- Nicht jede Quelle braucht ein Praxis-Fazit — rein definitorische oder methodische Quellen
-  (z. B. eine Referenzquelle für Begriffsdefinitionen) oft nicht. Sinnvoll ist es, wo ein
-  Befund eine konkrete Handlungs- oder Interpretationsimplikation für Lesende hat.
-- Feld `praxisfazit` in `/data/quellen/<slug>.json` (siehe `/data/quellen/README.md`) und im
-  Frontmatter-Schema der jeweiligen Quelle (siehe `/content/README.md`).
+- **Alltagssprache, kein Fachjargon.** Begriffe wie „Sensitivität", „Macro-F1", „WASO" oder
+  „Polysomnographie" gehören in den Fließtext (dort mit Erklärung beim ersten Vorkommen), nicht
+  in die Praxis-Fazit-Box — dort werden sie umschrieben oder weggelassen („wie zuverlässig ein
+  Gerät Schlafphasen erkennt" statt „Sensitivität bei der Schlafphasen-Klassifikation").
+- Jeder Punkt **muss aus den im Artikel zitierten Quellen folgen** — keine allgemeine
+  Ratgeberweisheit, die auch ohne die zitierten Studien stimmen würde. Test: Ließe sich der
+  Punkt genauso in einem Artikel ohne diese Quellen schreiben? Wenn ja, ist er zu allgemein.
+- Nicht jeder Artikel braucht eine Praxis-Fazit-Box — rein definitorische Artikel (z. B.
+  Glossareinträge) meist nicht.
 
 ### Diagramme
 
@@ -88,15 +90,23 @@ Achse, die keine eigene Aussage trägt (z. B. keine y-Achsen-Beschriftung „Wer
 - Anteile einer Gesamtheit (z. B. Schlafphasen-Verteilung einer Nacht) → gestapeltes/
   proportionales Diagramm, nicht mehrere separate Balken, die die Lesenden selbst zu 100%
   addieren müssten.
-- Spannweiten/Unsicherheit (z. B. Genauigkeit schwankt je nach Gerät zwischen X und Y) →
-  Spannweiten-/Bereichsdiagramm, das die Bandbreite direkt zeigt statt nur eine einzelne
-  Kennzahl.
+- Spannweiten/Streuung über mehrere Geräte oder Studien (z. B. Genauigkeit schwankt je nach
+  Gerät zwischen X und Y, oder eine Meta-Analyse berichtet einen gepoolten Effekt mit
+  Konfidenzintervall) → boxplot-artiges Spannweiten-Diagramm: Spannweite als Balken, Median/
+  Mittelwert als eigene Markierung (Raute) **nur, wenn die Quelle diesen Wert selbst berichtet**
+  — den Mittelpunkt der Spannweite zu erfinden, wenn nur ein Minimum/Maximum vorliegt, ist eine
+  unbelegte Behauptung, keine Darstellung. Diese Darstellung überall dort einsetzen, wo mehrere
+  Geräte/Studien verglichen werden — sie zeigt die Streuung, die oft der eigentliche Punkt ist.
 - Abweichung von einer Referenz (z. B. Tracker misst X Minuten weniger als Polysomnographie) →
   Diagramm mit sichtbarer Nulllinie/Referenzlinie, nicht ein Balken, der bei 0 beginnt und die
   Abweichung dadurch verschleiert.
 - Echte Entwicklung über eine geordnete/kontinuierliche Achse (Zeit, Alter) → Liniendiagramm —
   nur verwenden, wenn tatsächlich durchgehende, aus der Quelle rekonstruierbare Werte entlang
   dieser Achse vorliegen, nicht für zwei, drei Stützpunkte.
+- **Kein Diagramm für Einzelwerte.** Ein Diagramm wird nur gebaut, wenn es mehrere Datenpunkte,
+  eine echte Streuung oder einen Vergleich zeigt — eine einzelne Zahl ohne Streuung (z. B. "die
+  Gesamtschlafzeit war im Mittel 17 Minuten kürzer", ohne Konfidenzintervall/Spannweite) bleibt
+  im Fließtext. Kein Balken für einen einzelnen Punktwert, auch nicht als Hero-Chart.
 - Kein Diagramm ohne eigenen analytischen Punkt — ein Diagramm, das nur illustriert, was der
   Satz daneben schon sagt, ohne zusätzliche Information (Bandbreite, Vergleich, Struktur) zu
   liefern, wird weggelassen.

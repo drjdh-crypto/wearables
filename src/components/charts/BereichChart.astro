@@ -1,16 +1,17 @@
 ---
-// Spannweiten-/Abweichungs-Diagramm ("bereich", CLAUDE.md Abschnitt 2, "Diagramme") — ein oder
-// mehrere schwebende Balken von `von` bis `bis` auf einer gemeinsamen Achse mit sichtbarer
-// Referenzlinie. Für Genauigkeits-Bandbreiten ("0,26 bis 0,69 je nach Gerät") oder Abweichungen
-// von einem Referenzwert ("−17 Minuten ggü. Polysomnographie") — beides Fälle, in denen eine
-// einzelne Kennzahl die Aussage nicht trägt, die Spanne/Richtung aber schon.
+// Spannweiten-/Boxplot-artiges Diagramm ("bereich", CLAUDE.md Abschnitt 2, "Diagramme") — ein
+// oder mehrere schwebende Balken von `von` bis `bis` auf einer gemeinsamen Achse, optional mit
+// einer Median-/Mittelwert-Markierung (`mitte`), mit sichtbarer Referenzlinie. Für
+// Spannweiten/Streuungen über mehrere Geräte oder Studien ("0,26 bis 0,69 je nach Gerät") oder
+// Abweichungen von einem Referenzwert mit Konfidenzintervall — nie für eine einzelne Zahl ohne
+// Streuung (dafür bleibt die Zahl im Fließtext, siehe CLAUDE.md).
 import ChartSource from './ChartSource.astro';
 import { linearScale, padDomain } from '../../lib/chart-scale';
 
 interface Props {
   titel: string;
   einheit?: string;
-  daten: { label: string; von: number; bis: number }[];
+  daten: { label: string; von: number; bis: number; mitte?: number }[];
   datenquelle: { zitat: string; doi?: string; url: string };
   hinweis: string;
   lang: string;
@@ -20,14 +21,13 @@ interface Props {
 const { titel, einheit, daten, datenquelle, hinweis, lang, domain } = Astro.props;
 
 const width = 600;
-const rowHeight = 52;
+const rowHeight = 64;
 const marginLeft = 12;
 const marginRight = 12;
 const marginTop = 8;
-const plotWidth = width - marginLeft - marginRight;
 const height = marginTop + daten.length * rowHeight + 8;
 
-const allValues = daten.flatMap((d) => [d.von, d.bis, 0]);
+const allValues = daten.flatMap((d) => [d.von, d.bis, d.mitte, 0].filter((v): v is number => v != null));
 const [domainMin, domainMax] = domain ?? padDomain(Math.min(...allValues), Math.max(...allValues), 0.12);
 const xScale = linearScale([domainMin, domainMax], [marginLeft, width - marginRight]);
 const zeroVisible = domainMin < 0 && domainMax > 0;
@@ -37,9 +37,11 @@ const fmt = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(2));
 
 const rows = daten.map((d, i) => {
   const y = marginTop + i * rowHeight;
+  const barY = y + 40;
   const x1 = xScale(Math.min(d.von, d.bis));
   const x2 = xScale(Math.max(d.von, d.bis));
-  return { ...d, y, x1, x2, barY: y + 30 };
+  const mitteX = d.mitte != null ? xScale(d.mitte) : undefined;
+  return { ...d, y, barY, x1, x2, mitteX };
 });
 ---
 
@@ -55,12 +57,27 @@ const rows = daten.map((d, i) => {
         <line x1={row.x1} y1={row.barY} x2={row.x2} y2={row.barY} class="bereich-bar" />
         <circle cx={row.x1} cy={row.barY} r="4" class="bereich-cap" />
         <circle cx={row.x2} cy={row.barY} r="4" class="bereich-cap" />
-        <text x={row.x1} y={row.barY - 8} text-anchor={row.x1 <= row.x2 ? 'end' : 'start'} class="bereich-value">
+        <text x={row.x1} y={row.barY + 18} text-anchor={row.x1 <= row.x2 ? 'end' : 'start'} class="bereich-value">
           {fmt(row.von)}
         </text>
-        <text x={row.x2} y={row.barY - 8} text-anchor={row.x2 >= row.x1 ? 'start' : 'end'} class="bereich-value bereich-value-end">
+        <text x={row.x2} y={row.barY + 18} text-anchor={row.x2 >= row.x1 ? 'start' : 'end'} class="bereich-value bereich-value-end">
           {fmt(row.bis)}{einheit ?? ''}
         </text>
+        {row.mitteX != null && (
+          <>
+            <rect
+              x={row.mitteX - 5}
+              y={row.barY - 5}
+              width="10"
+              height="10"
+              transform={`rotate(45 ${row.mitteX} ${row.barY})`}
+              class="bereich-mitte"
+            />
+            <text x={row.mitteX} y={row.barY - 12} text-anchor="middle" class="bereich-mitte-value">
+              {fmt(row.mitte as number)}{einheit ?? ''}
+            </text>
+          </>
+        )}
       </>
     ))}
   </svg>
@@ -101,6 +118,7 @@ const rows = daten.map((d, i) => {
     stroke: var(--color-signal);
     stroke-width: 6;
     stroke-linecap: round;
+    opacity: 0.5;
   }
 
   .bereich-cap {
@@ -109,6 +127,19 @@ const rows = daten.map((d, i) => {
 
   .bereich-value {
     font-family: var(--font-mono-family);
+    font-size: 12px;
+    fill: var(--color-ink-muted);
+  }
+
+  .bereich-mitte {
+    fill: var(--color-signal);
+    stroke: var(--color-surface);
+    stroke-width: 1.5;
+  }
+
+  .bereich-mitte-value {
+    font-family: var(--font-mono-family);
+    font-weight: 600;
     font-size: 13px;
     fill: var(--color-ink);
   }

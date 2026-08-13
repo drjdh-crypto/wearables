@@ -1,0 +1,16 @@
+{
+  "typ": "bereich",
+  "titel": "Abweichung Wearable vs. Polysomnographie (Minuten)",
+  "einheit": " Min.",
+  "daten": [
+    { "label": "Gesamtschlafzeit", "von": -26.332, "bis": -7.375, "mitte": -16.854 },
+    { "label": "Einschlafzeit", "von": 0.606, "bis": 4.542, "mitte": 2.574 },
+    { "label": "Nächtliche Wachzeit (WASO)", "von": 4.522, "bis": 21.988, "mitte": 13.255 }
+  ],
+  "datenquelle": {
+    "zitat": "Lee YJ et al. (2025). Performance of consumer wrist-worn sleep tracking devices compared to polysomnography: a meta-analysis. Journal of Clinical Sleep Medicine, 21(3), 573–582.",
+    "doi": "10.5664/jcsm.11460",
+    "url": "https://doi.org/10.5664/jcsm.11460"
+  },
+  "hinweis": "Eigene Darstellung nach Lee YJ et al. (2025) — gepoolte Mittelwertdifferenz (Raute) und 95%-Konfidenzintervall (Balken) über 24 Studien; 0 = Polysomnographie-Referenzwert, positive Werte = Überschätzung durch das Wearable."
+}

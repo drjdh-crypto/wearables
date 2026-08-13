@@ -8,6 +8,8 @@ historie:
     notiz: "Quellen komplett durch die Redaktions-Pipeline ersetzt (Recherche + Crossref-Verifikation, siehe /data/quellen/schlafphasen.json); Artikel zurück auf entwurf, wartet auf menschliches Review."
   - datum: 2026-08-13
     notiz: "Redaktionelle Überarbeitung: Prozesssprache aus dem Fließtext entfernt, Praxis-Fazit-Boxen je Quelle ergänzt, Hero-Chart durch Anteils-Diagramm ersetzt, zwei Inline-Diagramme ergänzt (Genauigkeits-Spanne, Abweichung Gesamtschlafzeit), Datei zu MDX konvertiert. Weiterhin entwurf, wartet auf menschliches Review."
+  - datum: 2026-08-14
+    notiz: "Korrekturen: Praxis-Fazit-Boxen je Quelle durch eine einzelne Box am Artikelende ersetzt (Alltagssprache, aus dem Gesamttext); Einzelwert-Diagramm zur Gesamtschlafzeit entfernt (kein Chart für Einzelwerte ohne Streuung); stattdessen zwei boxplot-artige Spannweiten-Diagramme mit echten Konfidenzintervallen aus Lee YJ et al. (2025) recherchiert und ergänzt; Genauigkeits-Diagramm um Schlaf-Wach-Vergleichszeile erweitert. Weiterhin entwurf, wartet auf menschliches Review."
 quellen:
   - aussage: "NREM-Schlaf gliedert sich in die Stadien N1, N2 und N3 (Tiefschlaf), REM-Schlaf ist die vierte Hauptkategorie; eine typische Nacht besteht bei Erwachsenen aus rund 5% N1, 45% N2, 25% N3 und 25% REM-Schlaf."
     studientyp: "institutional"
@@ -45,7 +47,6 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 3356 Zitationen ÷ 22 Jahre = 152.5/Jahr → 25/25. n = 3577 → 15/15. Publikationsjahr 2004 (22 Jahre alt) → 1/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Ein mit den Lebensjahren sinkender REM-Anteil ist ein normaler Alterungseffekt, kein Warnzeichen für sich allein."
   - aussage: "Innerhalb der Erwachsenen-Dekaden bleiben die Anteile von N2-, N3- und REM-Schlaf über 169 Studien und 5.273 gesunde Erwachsene hinweg weitgehend stabil (statistisch nicht signifikant verändert), nur der N1-Anteil steigt pro Dekade um rund 0,5 Prozentpunkte."
     studientyp: "peer-reviewed"
     autoren: "Boulos MI, Jairam T, Kendzerska T, Im J, Mekhael A, Murray BJ"
@@ -65,7 +66,6 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 308 Zitationen ÷ 7 Jahre = 44.0/Jahr → 15/25. n = 5273 → 15/15. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=The%20Lancet%20Respiratory%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Bleiben Tief- und REM-Anteile über die eigenen Erwachsenenjahre im Tracking in etwa stabil, ist das der Normalfall — eine auffällige Verschiebung ist eher ein Hinweis auf eine reale Veränderung als auf gewöhnliches Altern."
   - aussage: "Bei 369 Teilnehmenden und 6.064 polysomnographisch erfassten Schlafzyklen lag die mediane Zyklusdauer bei 96 Minuten, mit typischerweise 3 bis 4 vollständigen Zyklen pro Nacht und großer individueller Schwankung."
     studientyp: "peer-reviewed"
     autoren: "Cajochen C, Reichert CF, Münch M, Gabel V, Stefani O, Chellappa SL, Schmidt C"
@@ -85,7 +85,6 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: kohorte → 18/35. 23 Zitationen ÷ 2 Jahre = 11.5/Jahr → 10/25. n = 369 → 12/15. Publikationsjahr 2024 (2 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep%20Health&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Wer an einem Abend deutlich mehr oder weniger als vier Zyklen im Tracking sieht, weicht damit nicht automatisch von einem gesunden Muster ab — die individuelle Schwankung ist groß."
   - aussage: "Consumer-Wearables erfassen Schlaf meist über Herzfrequenz(-variabilität), Hauttemperatur und Bewegungssensorik statt über EEG — ohne einheitliche Validierungsstandards bleibt die Genauigkeit vieler Geräte kaum unabhängig einschätzbar."
     studientyp: "peer-reviewed"
     autoren: "de Zambotti M, Cellini N, Goldstone A, Colrain IM, Baker FC"
@@ -104,8 +103,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: review → 12/35. 544 Zitationen ÷ 7 Jahre = 77.7/Jahr → 20/25. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Medicine%20%26%20Science%20in%20Sports%20%26%20Exercise&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Ein Wearable-Ergebnis ersetzt keine EEG-basierte Einschätzung — bei anhaltenden Schlafproblemen sagt der Score allein nichts Verlässliches über die Ursache."
-  - aussage: "Meta-Analyse über 24 Studien und 798 Teilnehmende findet, dass Consumer-Wearables gegenüber Polysomnographie die Gesamtschlafzeit im Mittel um rund 17 Minuten und die Schlafeffizienz um rund 4,7 Prozentpunkte unterschätzen, Einschlaflatenz und nächtliche Wachzeit (WASO) dagegen überschätzen."
+  - aussage: "Meta-Analyse über 24 Studien und 798 Teilnehmende findet, dass Consumer-Wearables gegenüber Polysomnographie die Gesamtschlafzeit im Mittel um rund 16,9 Minuten (95%-KI −26,3 bis −7,4) und die Schlafeffizienz um rund 4,7 Prozentpunkte (95%-KI −7,1 bis −2,3) unterschätzen, die Einschlaflatenz um rund 2,6 Minuten (95%-KI 0,6 bis 4,5) und die nächtliche Wachzeit (WASO) um rund 13,3 Minuten (95%-KI 4,5 bis 22,0) dagegen überschätzen."
     studientyp: "peer-reviewed"
     autoren: "Lee YJ, Lee JY, Cho JH, Kang YJ, Choi JH"
     jahr: 2025
@@ -124,7 +122,6 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 26 Zitationen ÷ 1 Jahre = 26.0/Jahr → 15/25. n = 798 → 12/15. Publikationsjahr 2025 (1 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Journal%20of%20Clinical%20Sleep%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Die vom Tracker angezeigte Gesamtschlafzeit lässt sich am ehesten als leichte Unterschätzung lesen, nicht als exakter Wert."
   - aussage: "Bei 34 gesunden Erwachsenen zeigten sieben Consumer-Tracker durchgehend hohe Sensitivität für reine Schlaf-Erkennung (≥0,93), aber inkonsistente Sensitivität bei der Unterscheidung einzelner Schlafphasen (0,49–0,76), mit einer Tendenz, andere Stadien als Leichtschlaf fehlzuklassifizieren."
     studientyp: "peer-reviewed"
     autoren: "Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, Watson CH, Bessman SC, Hirsch DA, Cooper AD, Drummond SPA, Markwald RR"
@@ -144,7 +141,6 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: querschnitt → 16/35. 429 Zitationen ÷ 5 Jahre = 85.8/Jahr → 20/25. n = 34 → 6/15. Publikationsjahr 2021 (5 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Ob ein Tracker Schlaf von Wachsein unterscheidet, lässt sich bei den meisten Geräten gut verlassen — bei der Frage, welche Schlafphase gerade vorliegt, ist mehr Vorsicht angebracht."
   - aussage: "Bei 75 Teilnehmenden und 349.114 ausgewerteten Epochen schwankte die Genauigkeit von 11 Consumer-Trackern bei der Schlafphasen-Klassifikation stark zwischen den Geräten (Macro-F1-Werte zwischen 0,26 und 0,69)."
     studientyp: "peer-reviewed"
     autoren: "Lee T, Cho Y, Cha KS, Jung J, Cho J, Kim H, Kim D, Hong J, Lee D, Keum M, Kushida CA, Yoon IY, Kim JW"
@@ -164,13 +160,17 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: querschnitt → 16/35. 101 Zitationen ÷ 3 Jahre = 33.7/Jahr → 15/25. n = 75 → 6/15. Publikationsjahr 2023 (3 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=JMIR%20mHealth%20and%20uHealth&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
-    praxisfazit: "Wie genau die Schlafphasen-Erkennung ausfällt, hängt stark vom konkreten Gerät ab — ein guter Wert für ein Modell lässt sich nicht automatisch auf ein anderes übertragen."
 kategorie: "schlafphysiologie"
 schlagworte: ["schlafphasen", "nrem", "rem", "tiefschlaf", "schlafzyklus", "grundlagen"]
 kernaussagen:
   - "Ein Schlafzyklus dauert bei Erwachsenen im Median rund 96 Minuten und wiederholt sich pro Nacht meist drei- bis viermal — mit großer individueller Schwankung, ein fixer 90-Minuten-Takt ist eine Vereinfachung."
   - "Die Anteile von Tief- und REM-Schlaf bleiben innerhalb des Erwachsenenalters relativ stabil; über die gesamte Lebensspanne betrachtet nimmt der REM-Anteil mit zunehmendem Alter ab."
   - "Consumer-Wearables erkennen Schlaf gegenüber Wachsein zuverlässig, unterschätzen die Gesamtschlafzeit aber im Mittel um rund 17 Minuten und liefern bei der Unterscheidung einzelner Schlafphasen je nach Gerät stark schwankende Genauigkeit — eine einzelne, für alle Geräte gültige Prozentzahl gibt die Studienlage nicht her."
+praxisfazit:
+  - "Verändern sich Tiefschlaf- und Traumschlaf-Anteile über die Jahre in den eigenen Trackingdaten kaum, ist das normal — und ein mit dem Alter sinkender Traumschlaf-Anteil ist ein gewöhnlicher Alterungseffekt, kein Warnsignal für sich allein."
+  - "Zeigt das Tracking an einem Abend deutlich mehr oder weniger als drei bis vier Schlafzyklen, ist das für sich genommen kein Grund zur Sorge — von Nacht zu Nacht schwankt das bei gesunden Menschen stark."
+  - "Ein Wearable kann nicht ins Gehirn schauen wie ein Schlaflabor — bei anhaltenden Schlafproblemen sagt die App allein nichts Verlässliches über die Ursache, dafür braucht es ärztlichen Rat."
+  - "Der Gesamtschlafzeit und dem Trend über mehrere Nächte darf man mehr vertrauen als der genauen Prozentzahl für Tiefschlaf oder Traumschlaf einer einzelnen Nacht — dort schwankt die Genauigkeit zwischen den Geräten am stärksten."
 affiliate: true
 entwurf: true
 offenePunkte:
@@ -178,6 +178,7 @@ offenePunkte:
   - "Keine der acht Quellen liefert eine einzelne, geräteübergreifende Genauigkeitszahl für Tiefschlaf-Erkennung — nur Sensitivitäts-/F1-Bereiche je Gerät."
   - "Diversitätsprüfung (validate-quellen.mjs) läuft grün, aber Boulos (2019) ist die einzige Nicht-Open-Access-Quelle — im Text nur über das per Abstract Zugängliche hinaus zitiert, stichprobenartig gegenprüfen."
   - "Kein Diagramm für 'Zyklusdauer im Nachtverlauf' ergänzt: Cajochen et al. (2024) liefert Median/Zykluszahl, aber keine aus dem Paper rekonstruierbare Wertereihe je Zyklusposition — ein Liniendiagramm dazu wäre nicht durch die Quelle gedeckt (CLAUDE.md Abschnitt 2, 'Diagramme')."
+  - "Konfidenzintervalle für Lee YJ et al. (2025) über Europe-PMC-Abstract-Extraktion recherchiert (nicht aus dem Volltext) — vor Freigabe gegen den PDF-Volltext gegenprüfen."
 featured: true
 istSaeule: true
 heroChart: "schlafphasen-anteile"
@@ -195,7 +196,6 @@ meinungen:
     en: "I still wear my ring every night anyway — not for the exact percentage, but for the multi-week trend. One outlier night is noise, but if deep sleep keeps dropping for two weeks straight, I want to know that, even though no consumer device measures at EEG-level precision."
 ---
 
-import PraxisFazit from '../../src/components/PraxisFazit.astro';
 import Chart from '../../src/components/Chart.astro';
 
 ## Was sind Schlafphasen?
@@ -223,19 +223,15 @@ zunehmendem Alter, während die Anteile von Stadium 1 und 2 zunehmen (Ohayon et 
 beiden Befunde widersprechen sich nicht — sie beschreiben nur unterschiedliche Zeiträume: relativ
 stabil *innerhalb* des Erwachsenenalters, aber verändert im Vergleich über Lebensphasen hinweg.
 
-<PraxisFazit lang={frontmatter.sprache}>Bleiben Tief- und REM-Anteile über die eigenen Erwachsenenjahre im Tracking in etwa stabil, ist das der Normalfall — eine auffällige Verschiebung ist eher ein Hinweis auf eine reale Veränderung als auf gewöhnliches Altern.</PraxisFazit>
-
-<PraxisFazit lang={frontmatter.sprache}>Ein mit den Lebensjahren sinkender REM-Anteil ist ein normaler Alterungseffekt, kein Warnzeichen für sich allein.</PraxisFazit>
-
 ## Der Schlafzyklus: warum 90 bis 110 Minuten nur ein Richtwert sind
 
 Ein einzelner Zyklus aus NREM- und REM-Schlaf dauert bei Erwachsenen üblicherweise 90 bis 110
 Minuten (Patel et al., 2024). Eine retrospektive Auswertung von 6.064 polysomnographisch
 erfassten Zyklen bei 369 Teilnehmenden liefert dazu eine konkretere Zahl: Der Median lag bei 96
 Minuten, mit typischerweise drei bis vier vollständigen Zyklen pro Nacht — allerdings bei
-großer individueller Schwankungsbreite zwischen den Teilnehmenden (Cajochen et al., 2024).
-
-<PraxisFazit lang={frontmatter.sprache}>Wer an einem Abend deutlich mehr oder weniger als vier Zyklen im Tracking sieht, weicht damit nicht automatisch von einem gesunden Muster ab — die individuelle Schwankung ist groß.</PraxisFazit>
+großer individueller Schwankungsbreite zwischen den Teilnehmenden (Cajochen et al., 2024). Wer
+also an einem Abend deutlich mehr oder weniger als vier Zyklen "sieht", weicht damit nicht
+zwangsläufig von einem gesunden Muster ab.
 
 ## Was Consumer-Wearables davon wirklich messen können
 
@@ -245,18 +241,18 @@ und Bewegungssensorik ab (de Zambotti et al., 2019). Dieselbe Übersichtsarbeit 
 hin, dass es bislang an einheitlicher Anleitung für Validierung und Einsatz solcher Geräte
 mangelt.
 
-<PraxisFazit lang={frontmatter.sprache}>Ein Wearable-Ergebnis ersetzt keine EEG-basierte Einschätzung — bei anhaltenden Schlafproblemen sagt der Score allein nichts Verlässliches über die Ursache.</PraxisFazit>
-
 Wie sich das in Zahlen niederschlägt, zeigt eine aktuelle Meta-Analyse über 24 Studien und 798
 Teilnehmende: Consumer-Wearables unterschätzen die Gesamtschlafzeit gegenüber Polysomnographie
-im Mittel um rund 17 Minuten und die Schlafeffizienz um rund 4,7 Prozentpunkte, während sie
-Einschlaflatenz und nächtliche Wachzeit (WASO) tendenziell überschätzen (Lee YJ et al., 2025).
-Das sind systematische Verzerrungen bei grundlegenden Schlafparametern — nicht erst bei der
-feineren Frage, welche Schlafphase gerade vorliegt.
+im Mittel um rund 17 Minuten und die Schlafeffizienz um rund 4,7 Prozentpunkte, während sie die
+Einschlaflatenz um rund 2,6 Minuten und die nächtliche Wachzeit (WASO) um rund 13,3 Minuten
+überschätzen (Lee YJ et al., 2025). Das sind systematische Verzerrungen bei grundlegenden
+Schlafparametern — nicht erst bei der feineren Frage, welche Schlafphase gerade vorliegt. Die
+Diagramme unten zeigen dazu nicht nur diese Mittelwerte, sondern auch die Schwankungsbreite
+zwischen den 24 zugrunde liegenden Studien (95%-Konfidenzintervall).
 
-<Chart id="schlafphasen-tst-abweichung" lang={frontmatter.sprache} />
+<Chart id="schlafphasen-abweichung-minuten" lang={frontmatter.sprache} />
 
-<PraxisFazit lang={frontmatter.sprache}>Die vom Tracker angezeigte Gesamtschlafzeit lässt sich am ehesten als leichte Unterschätzung lesen, nicht als exakter Wert.</PraxisFazit>
+<Chart id="schlafphasen-abweichung-effizienz" lang={frontmatter.sprache} />
 
 ## Wie genau erkennen Tracker einzelne Schlafphasen?
 
@@ -272,16 +268,12 @@ Schwankung zwischen Geräten: Der **Macro-F1-Wert** — ein zusammenfassendes Ge
 zwischen 0 (nutzlos) und 1 (perfekt) — reichte für die Schlafphasen-Klassifikation von 0,26 bis
 0,69, je nach Gerät (Lee T et al., 2023). Beide Studien einte: Die reine
 Schlaf-vs-Wach-Erkennung ist deutlich zuverlässiger als die Unterscheidung, *welche*
-Schlafphase gerade vorliegt. Für eine medizinische Einschätzung — etwa bei Verdacht auf eine
-Schlafstörung — ersetzt keines dieser Consumer-Geräte eine Untersuchung im Schlaflabor;
-Polysomnographie bleibt der diagnostische Goldstandard, an dem sich alle hier genannten Zahlen
-überhaupt erst messen lassen.
+Schlafphase gerade vorliegt — das Diagramm unten zeigt diesen Unterschied direkt. Für eine
+medizinische Einschätzung — etwa bei Verdacht auf eine Schlafstörung — ersetzt keines dieser
+Consumer-Geräte eine Untersuchung im Schlaflabor; Polysomnographie bleibt der diagnostische
+Goldstandard, an dem sich alle hier genannten Zahlen überhaupt erst messen lassen.
 
 <Chart id="schlafphasen-genauigkeit-bereich" lang={frontmatter.sprache} />
-
-<PraxisFazit lang={frontmatter.sprache}>Ob ein Tracker Schlaf von Wachsein unterscheidet, lässt sich bei den meisten Geräten gut verlassen — bei der Frage, welche Schlafphase gerade vorliegt, ist mehr Vorsicht angebracht.</PraxisFazit>
-
-<PraxisFazit lang={frontmatter.sprache}>Wie genau die Schlafphasen-Erkennung ausfällt, hängt stark vom konkreten Gerät ab — ein guter Wert für ein Modell lässt sich nicht automatisch auf ein anderes übertragen.</PraxisFazit>
 
 ## Was die Studienlage (noch) nicht beantwortet
 

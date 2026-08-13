@@ -37,6 +37,9 @@ kernaussagen:                 # 1–5 Sätze, empfohlen genau 3 — Kernaussagen
   - "…"
   - "…"
   - "…"
+praxisfazit:                   # optional, 2–4 Punkte — EINE Box am Artikelende, Alltagssprache
+  - "…"                          # ohne Fachjargon, muss aus dem Gesamttext folgen (CLAUDE.md Abschnitt 2)
+  - "…"
 affiliate: false               # true, sobald der Artikel mind. einen Eintrag in `produkte` hat
 entwurf: false                 # true = wird nicht öffentlich gebaut/gelistet, aber unter /entwurf/<id>/ vorschaubar
 offenePunkte:                  # optional, nur relevant solange entwurf:true — erscheint im mobilen
@@ -64,27 +67,27 @@ quellen:
     score: 55                       # optional, Quellen-Relevanzindex — nur im ReviewBlock sichtbar
     teilwerte: { studientyp: 18, zitationsrate: 10, n: 6, aktualitaet: 15, journal: 0, preprint_malus: 0 }
     begruendung: "…"                # optional, Score-Herleitung — nur im ReviewBlock sichtbar
-    praxisfazit: "…"                # optional, ein Satz "Was heißt das für die Praxis?" (CLAUDE.md Abschnitt 2)
 ---
 ```
 
 `quellen` ist eine Liste — mehrere Behauptungen im Artikel referenzieren dieselbe oder
 unterschiedliche Einträge über `aussage`. Peer-reviewte Einträge (`studientyp:
 peer-reviewed`) brauchen zwingend `doi` oder `pubmed_id`, sonst schlägt der Build fehl (Zod-
-Validierung in `src/content.config.ts`). `n`, `evidenzstufe`, `score`, `teilwerte`,
-`begruendung` und `praxisfazit` kommen aus `agents/pipeline/scripts/score-quellen.mjs` bzw. aus
-Schritt 2 (Draft) — siehe `/data/quellen/README.md`.
+Validierung in `src/content.config.ts`). `n`, `evidenzstufe`, `score`, `teilwerte` und
+`begruendung` kommen aus `agents/pipeline/scripts/score-quellen.mjs` — siehe
+`/data/quellen/README.md`.
 
 Artikel sind normalerweise `.md`. Wird ein Chart *mitten im Fließtext* gebraucht (nicht nur als
-Hero-Chart) oder ein `<PraxisFazit>` inline platziert, die Datei stattdessen als `.mdx` anlegen
-und die Komponente direkt im Body verwenden (MDX-Integration ist installiert, Astro-Komponenten
-funktionieren dann in der Prosa):
+Hero-Chart), die Datei stattdessen als `.mdx` anlegen und die Komponente direkt im Body
+verwenden (MDX-Integration ist installiert, Astro-Komponenten funktionieren dann in der Prosa):
 
 ```mdx
 <Chart id="…" lang={lang} />
-
-<PraxisFazit lang={lang}>Der Satz, der aus dem `kernbefund` dieser Quelle folgt.</PraxisFazit>
 ```
+
+`PraxisFazit` wird dagegen **nicht** inline im Body verwendet, sondern automatisch vom
+Artikel-Layout aus dem Frontmatter-Feld `praxisfazit` gerendert (eine Box am Artikelende, siehe
+oben) — Artikel ohne sonstige Inline-Komponenten bleiben deshalb `.md`.
 
 Kategorien (`kategorie`) orientieren sich an der Themeninventur, siehe
 `/data/themeninventur.md`:
@@ -107,16 +110,16 @@ Die Artikel-Route (`src/pages/[lang]/artikel/[slug].astro`) baut sich in dieser 
 4. `KeyFindingsBox` — "Das sagt die Studienlage": `kernaussagen` + Quellenanzahl
 5. Inhaltsverzeichnis (`TableOfContents`, aus H2/H3 des Bodys) — Desktop: sticky Sidebar
 6. Fließtext, ~70 Zeichen Spaltenbreite (`.article-body`); Charts im Body dürfen breiter
-   ausbrechen (siehe MDX-Hinweis oben). `<PraxisFazit>`-Boxen stehen jeweils direkt an der
-   Stelle, an der die zugehörige Quelle besprochen wird — nie gesammelt in einem eigenen
-   Abschnitt (CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle").
-7. `ProductBox` je Eintrag in `produkte` (Werbekennzeichnung + regionsabhängiger Link)
-8. `PersonaOpinionBlock` — zeigt `meinungen`, falls im Frontmatter gesetzt (themenspezifische
+   ausbrechen (siehe MDX-Hinweis oben).
+7. `PraxisFazit` — EINE Box "Was heißt das für die Praxis?" mit `praxisfazit` (2–4 Punkte,
+   Alltagssprache), falls im Frontmatter gesetzt (CLAUDE.md Abschnitt 2, "Praxis-Fazit").
+8. `ProductBox` je Eintrag in `produkte` (Werbekennzeichnung + regionsabhängiger Link)
+9. `PersonaOpinionBlock` — zeigt `meinungen`, falls im Frontmatter gesetzt (themenspezifische
    Statements aus Pipeline-Schritt 4, siehe `/agents/pipeline/04-persona-stimmen.md); sonst
    Fallback: wählt deterministisch 3 Stimmen aus `personas` mit deren generischer
    `voices.<lang>.intro`. Immer als "KI-Perspektive: [Name]" gekennzeichnet
-9. `SourcesBox` — nummeriertes Quellenverzeichnis aus `quellen`, mit DOI-/PubMed-Links
-10. Dezenter KI-Kennzeichnungshinweis am Artikelende (CLAUDE.md Abschnitt 4)
+10. `SourcesBox` — nummeriertes Quellenverzeichnis aus `quellen`, mit DOI-/PubMed-Links
+11. Dezenter KI-Kennzeichnungshinweis am Artikelende (CLAUDE.md Abschnitt 4)
 
 Solange `entwurf: true`, existiert zusätzlich `src/pages/entwurf/[slug].astro` unter
 `/entwurf/<id>/` — dasselbe Layout, `noindex`, plus mobiler `ReviewBlock` mit `quellen` als

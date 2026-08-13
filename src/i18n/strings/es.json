@@ -22,7 +22,7 @@
   "sources.type.manufacturer": "Datos del fabricante",
   "sources.type.institutional": "Institucional",
   "sources.n": "n = {n}",
-  "praxisfazit.label": "Qué significa esto en la práctica",
+  "praxisfazit.heading": "Qué significa esto en la práctica",
   "sources.view_link": "Ver fuente",
   "review.heading": "Borrador — Vista previa",
   "review.intro": "Solo para revisión: no publicado, no enlazado, no indexado.",

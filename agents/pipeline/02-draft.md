@@ -35,16 +35,19 @@ Den Artikel (de + en) ausschließlich aus den in Schritt 1 verifizierten Quellen
 - Enthält der Artikel einen Hero-Chart oder Inline-Diagramme, beruhen deren Werte auf einer der
   verifizierten Quellen; die Chart-`datenquelle` referenziert sie (DOI + Zitat), siehe
   `/data/charts/README.md`. Diagrammtyp und Mobile-First-Regeln: CLAUDE.md Abschnitt 2
-  „Diagramme".
-- Für Quellen mit sinnvollem Praxisbezug: `praxisfazit` in `/data/quellen/<slug>.json` befüllen
-  (ein Satz, der direkt aus dem `kernbefund` dieser Quelle folgt, keine allgemeine
-  Ratgeberweisheit) und an der passenden Stelle im Fließtext als `<PraxisFazit>`-Komponente
-  einbetten (siehe `/content/README.md`) — nicht gesammelt am Artikelende.
+  „Diagramme" — **kein Diagramm für Einzelwerte ohne Streuung**, nur bei mehreren Datenpunkten,
+  einer Verteilung oder einem Vergleich. Berichtet eine Quelle eine Spannweite/ein
+  Konfidenzintervall über mehrere Geräte oder Studien, als `bereich`-Chart darstellen
+  (Median/Mittelwert als `mitte` nur, wenn die Quelle diesen Wert selbst berichtet).
+- `praxisfazit` (Artikel-Frontmatter, 2–4 Punkte): EINE Liste am Artikelende, die die
+  wichtigsten Konsequenzen aus dem **gesamten** Draft zusammenfasst — nicht pro Quelle, nicht
+  im Fließtext verteilt. Alltagssprache, kein Fachjargon (siehe CLAUDE.md Abschnitt 2,
+  „Praxis-Fazit"). Wird vom Artikel-Layout automatisch gerendert, nicht im Body verwenden.
 - `entwurf: true` bleibt gesetzt — Schritt 2 veröffentlicht nichts.
 - Zwei Artikeldateien: `<slug>.md` (`sprache: de`) und `<slug>-en.md` (`sprache: en`) — `.mdx`
-  statt `.md`, sobald der Artikel `<PraxisFazit>` oder andere inline eingebettete Komponenten
-  verwendet (Content-Collection akzeptiert beide, siehe `src/content.config.ts`). Inhaltlich
-  deckungsgleich in Aussage und Quellenbezug, aber eigenständig formuliert, keine
+  statt `.md`, sobald der Artikel `<Chart>` oder andere inline eingebettete Komponenten mitten
+  im Fließtext verwendet (Content-Collection akzeptiert beide, siehe `src/content.config.ts`).
+  Inhaltlich deckungsgleich in Aussage und Quellenbezug, aber eigenständig formuliert, keine
   Wort-für-Wort-Übersetzung.
 
 ## Ausgabe

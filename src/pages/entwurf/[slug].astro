@@ -12,6 +12,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Chart from '../../components/Chart.astro';
 import KeyFindingsBox from '../../components/KeyFindingsBox.astro';
+import PraxisFazit from '../../components/PraxisFazit.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import SourcesBox from '../../components/SourcesBox.astro';
 import PersonaOpinionBlock from '../../components/PersonaOpinionBlock.astro';
@@ -74,6 +75,8 @@ const geprueft = latestHistoryEntry(article.data.historie);
       <div class="article-body">
         <Content />
       </div>
+
+      {article.data.praxisfazit && <PraxisFazit punkte={article.data.praxisfazit} lang={lang} />}
 
       {article.data.produkte.map((id: string) => <ProductBox id={id} lang={lang} />)}
 

@@ -1,43 +1,49 @@
 ---
-// Praxis-Fazit einer einzelnen Quelle — CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle": ein
-// Satz "Was heißt das für die Praxis?", direkt an der Stelle im Fließtext platziert, an der die
-// zugehörige Quelle besprochen wird (nicht gesammelt am Artikelende). Nutzung im MDX-Body:
-//   <PraxisFazit lang={lang}>Der Satz, der aus dem kernbefund der Quelle folgt.</PraxisFazit>
+// Praxis-Fazit-Box — CLAUDE.md Abschnitt 2, "Praxis-Fazit": EINE Box am Artikelende mit 2-4
+// Punkten, die die wichtigsten Konsequenzen aus dem Gesamttext zusammenfassen, in
+// Alltagssprache ohne Fachjargon. Wird vom Artikel-Layout automatisch gerendert
+// (article.data.praxisfazit), nicht inline im Body verwendet.
 import { useTranslations } from '../i18n/utils';
 
 interface Props {
+  punkte: string[];
   lang: string;
 }
 
-const { lang } = Astro.props;
+const { punkte, lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<aside class="praxisfazit">
-  <p class="praxisfazit-label mono">{t('praxisfazit.label')}</p>
-  <p class="praxisfazit-text"><slot /></p>
-</aside>
+{
+  punkte.length > 0 && (
+    <aside class="praxisfazit">
+      <h2>{t('praxisfazit.heading')}</h2>
+      <ul>
+        {punkte.map((punkt) => <li>{punkt}</li>)}
+      </ul>
+    </aside>
+  )
+}
 
 <style>
   .praxisfazit {
+    border: 1px solid var(--color-border);
     border-left: 3px solid var(--color-signal);
+    border-radius: var(--radius-sm);
     background: var(--color-surface);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: var(--space-2) var(--space-3);
-    margin: var(--space-3) 0;
+    padding: var(--space-3) var(--space-4);
+    margin: var(--space-5) 0;
   }
 
-  .praxisfazit-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-signal);
-    margin: 0 0 4px;
+  .praxisfazit h2 {
+    font-size: 1.1rem;
+    margin: 0 0 var(--space-2);
   }
 
-  .praxisfazit-text {
+  .praxisfazit ul {
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: var(--space-2);
   }
 </style>

@@ -79,11 +79,6 @@ const quelle = z
     // Hart ausgeschlossen (Crossref-Retraction-Check), niemals true in einem veröffentlichten
     // Artikel — score-quellen.mjs setzt in diesem Fall score auf 0.
     zurueckgezogen: z.boolean().default(false),
-    // Ein Satz "Was heißt das für die Praxis?", muss aus `kernbefund`/`aussage` dieser Quelle
-    // folgen (CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle") — keine allgemeine
-    // Ratgeberweisheit. Optional: nicht jede Quelle hat einen sinnvollen Praxisbezug. Wird über
-    // die PraxisFazit-Komponente inline im Fließtext gerendert, nicht automatisch platziert.
-    praxisfazit: z.string().optional(),
   })
   .refine((q) => q.studientyp !== 'peer-reviewed' || !!(q.doi || q.pubmed_id), {
     message: 'Peer-reviewte Quellen benötigen DOI oder PubMed-ID (CLAUDE.md Abschnitt 2).',
@@ -111,6 +106,10 @@ const baseArticleSchema = z.object({
   schlagworte: z.array(z.string()).default([]),
   // Sätze für die Kernaussagen-Box ("Das sagt die Studienlage"), empfohlen: genau 3.
   kernaussagen: z.array(z.string()).min(1).max(5),
+  // Praxis-Fazit-Box ("Was heißt das für die Praxis?"), EINE Box am Artikelende, 2-4 Punkte,
+  // Alltagssprache ohne Fachjargon (CLAUDE.md Abschnitt 2, "Praxis-Fazit") — folgt aus dem
+  // Gesamttext, nicht aus einer einzelnen Quelle. Optional: nicht jeder Artikel braucht eine.
+  praxisfazit: z.array(z.string()).min(2).max(4).optional(),
   // Muss true sein, sobald der Artikel-Body mindestens einen Affiliate-Link enthält
   // (CLAUDE.md Abschnitt 6).
   affiliate: z.boolean().default(false),
@@ -240,9 +239,17 @@ const balkenDatum = z.object({ label: z.string(), wert: z.number() });
 const linienDatum = z.object({ x: z.union([z.string(), z.number()]), y: z.number() });
 const scatterDatum = z.object({ x: z.number(), y: z.number(), label: z.string().optional() });
 // Spannweite (min/max) — z.B. Genauigkeit "0,26 bis 0,69 je nach Gerät" oder eine Abweichung
-// von einer Referenz ("von" = Referenzwert/0, "bis" = gemessener Wert). Siehe CLAUDE.md
-// Abschnitt 2, "Diagramme".
-const bereichDatum = z.object({ label: z.string(), von: z.number(), bis: z.number() });
+// von einer Referenz ("von" = Referenzwert/0, "bis" = gemessener Wert). `mitte` optional: nur
+// setzen, wenn die Quelle tatsächlich einen Median/Mittelwert berichtet (z. B. eine
+// Meta-Analyse mit gepooltem Effekt) — nicht den Mittelpunkt von `von`/`bis` erfinden, wenn die
+// Quelle nur eine Spannweite ohne zentrale Kennzahl angibt. Siehe CLAUDE.md Abschnitt 2,
+// "Diagramme".
+const bereichDatum = z.object({
+  label: z.string(),
+  von: z.number(),
+  bis: z.number(),
+  mitte: z.number().optional(),
+});
 
 const chartSchema = z.discriminatedUnion('typ', [
   z.object({ typ: z.literal('balken'), ...chartBaseFields, daten: z.array(balkenDatum).min(1) }),

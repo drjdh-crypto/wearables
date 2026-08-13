@@ -22,7 +22,7 @@
   "sources.type.manufacturer": "Manufacturer data",
   "sources.type.institutional": "Institutional",
   "sources.n": "n = {n}",
-  "praxisfazit.label": "What this means in practice",
+  "praxisfazit.heading": "What this means in practice",
   "sources.view_link": "View source",
   "review.heading": "Draft — Preview",
   "review.intro": "For review only: not published, not linked, not indexed.",
