@@ -282,9 +282,44 @@ const PHENOMENON_CLUSTERS = [
     id: 'licht-chronobiologie',
     label: 'Licht/Chronobiologie',
     query: 'light exposure circadian sleep chronobiology',
-    match: /\blicht\b|blaulicht|lichtexposition|lichttherapie/i,
+    // "Verdunkelung" bewusst mit drin: gleiches Phänomen (Lichtexposition im Schlafzimmer),
+    // nur die Verhinderung statt die Anwesenheit von Licht — ohne dieses Wort blieben mehrere
+    // Schlafumgebung-Ring-Themen ("Verdunkelung und Melatoninausschüttung" usw.) unzugeordnet.
+    match: /\blicht\b|blaulicht|lichtexposition|lichttherapie|verdunkelung/i,
   },
 ].map((c) => ({ ...c, layer: 'phaenomen-population' }));
+
+// Dritte Cluster-Ebene: Raumklima-/Umgebungsfaktoren — ergänzt nach der ersten Ring-Messung
+// (siehe docs/themeninventur.md), weil der Schlafumgebung-Ring mit den ersten beiden Ebenen
+// (Geräte/Mechanismus, Phänomen/Population) unterversorgt blieb: 57 % seiner Themen
+// (Raumtemperatur, Lärm, Luftqualität) hatten keinen Cluster, weil bis dahin nur Geräte
+// (Matratzensensoren) und keine reinen Umgebungsfaktoren modelliert waren.
+const RAUMKLIMA_CLUSTERS = [
+  {
+    id: 'raumtemperatur-schlaf',
+    label: 'Schlaftemperatur/Raumklima',
+    query: 'bedroom temperature sleep quality thermoregulation cooling',
+    match: /raumtemperatur|schlafzimmertemperatur|temperaturregelung|aktive kühlung|kühlung im bett/i,
+  },
+  {
+    id: 'laerm-akustik-schlaf',
+    label: 'Lärm/Akustik im Schlaf',
+    query: 'noise sleep disturbance white noise acoustic environment',
+    match: /lärm|dezibel|weißes rauschen|weisses rauschen|geräusch|akustik|ohrstöpsel/i,
+  },
+  {
+    id: 'luftqualitaet-co2-schlaf',
+    label: 'Luftqualität/CO2 im Schlafzimmer',
+    query: 'indoor air quality CO2 bedroom sleep ventilation',
+    match: /luftqualität|\bco2\b|kohlendioxid|luftreiniger/i,
+  },
+  {
+    id: 'luftfeuchtigkeit-schlaf',
+    label: 'Luftfeuchtigkeit im Schlafzimmer',
+    query: 'humidity bedroom sleep quality',
+    match: /luftfeuchtigkeit|luftbefeuchter/i,
+  },
+].map((c) => ({ ...c, layer: 'umgebungsfaktoren' }));
 
 // Fängt Themen auf, die keinem der obigen Cluster zugeordnet werden können (generische
 // Wearable-/Tracker-Diskussion ohne Geräte-/Mechanismus-Bezug) — sonst würden sie ganz ohne
@@ -324,7 +359,7 @@ function parseThemen() {
   return themen;
 }
 
-const ALLE_CLUSTER = [...CLUSTERS, ...PHENOMENON_CLUSTERS, FALLBACK_CLUSTER];
+const ALLE_CLUSTER = [...CLUSTERS, ...PHENOMENON_CLUSTERS, ...RAUMKLIMA_CLUSTERS, FALLBACK_CLUSTER];
 
 // Ordnet ein Thema seinen Clustern zu — optional beschränkt auf eine Layer-Teilmenge, damit
 // sich der Beitrag der Phänomen-/Populations-Cluster gegenüber den Geräte-/Mechanismus-

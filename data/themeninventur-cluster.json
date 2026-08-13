@@ -1,5 +1,5 @@
 {
-  "geprueft_am": "2026-08-13T20:15:40.374Z",
+  "geprueft_am": "2026-08-13T20:45:43.620Z",
   "cluster": [
     {
       "id": "ppg-sensorik",
@@ -817,6 +817,90 @@
       },
       "hits": 2501,
       "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "raumtemperatur-schlaf",
+      "label": "Schlaftemperatur/Raumklima",
+      "query": "bedroom temperature sleep quality thermoregulation cooling",
+      "layer": "umgebungsfaktoren",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 36,
+        "reviews_in_sample": 8,
+        "recent_in_sample": 16
+      },
+      "hits": 36,
+      "reviews": 8,
+      "recent": 16,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "laerm-akustik-schlaf",
+      "label": "Lärm/Akustik im Schlaf",
+      "query": "noise sleep disturbance white noise acoustic environment",
+      "layer": "umgebungsfaktoren",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 718,
+        "reviews_in_sample": 9,
+        "recent_in_sample": 25
+      },
+      "hits": 718,
+      "reviews": 9,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "luftqualitaet-co2-schlaf",
+      "label": "Luftqualität/CO2 im Schlafzimmer",
+      "query": "indoor air quality CO2 bedroom sleep ventilation",
+      "layer": "umgebungsfaktoren",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 125,
+        "reviews_in_sample": 4,
+        "recent_in_sample": 23
+      },
+      "hits": 125,
+      "reviews": 4,
+      "recent": 23,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "luftfeuchtigkeit-schlaf",
+      "label": "Luftfeuchtigkeit im Schlafzimmer",
+      "query": "humidity bedroom sleep quality",
+      "layer": "umgebungsfaktoren",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 623,
+        "reviews_in_sample": 3,
+        "recent_in_sample": 25
+      },
+      "hits": 623,
+      "reviews": 3,
       "recent": 25,
       "hatAbfragefehler": true
     },
@@ -3502,17 +3586,18 @@
       "cluster_original": "geraete-vergleich",
       "ring": "kern",
       "cluster": [
-        "matratzensensorik"
+        "matratzensensorik",
+        "raumtemperatur-schlaf"
       ],
-      "poolHits": 50,
-      "poolReviews": 7,
-      "poolRecent": 24,
+      "poolHits": 86,
+      "poolReviews": 15,
+      "poolRecent": 40,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "matratzensensorik"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [matratzensensorik]: 50 Treffer, 7 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [matratzensensorik, raumtemperatur-schlaf]: 86 Treffer, 15 Review(s), 40 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Garmin Venu vs. Garmin Forerunner: Welche Serie fürs Schlaftracking?",
@@ -4223,17 +4308,18 @@
       "cluster_original": "geraete-vergleich",
       "ring": "kern",
       "cluster": [
-        "licht-chronobiologie"
+        "licht-chronobiologie",
+        "laerm-akustik-schlaf"
       ],
-      "poolHits": 2501,
-      "poolReviews": 7,
-      "poolRecent": 25,
+      "poolHits": 3219,
+      "poolReviews": 16,
+      "poolRecent": 50,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "consumer-wearables-allgemein"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [licht-chronobiologie]: 2501 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [licht-chronobiologie, laerm-akustik-schlaf]: 3219 Treffer, 16 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Bester Schlaftracker mit medizinisch anmutenden Zusatzfeatures (EKG, SpO2-Alarm)",
@@ -6999,70 +7085,79 @@
       "titel": "Warum eine kühle Raumtemperatur den Schlaf physiologisch begünstigt",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "raumtemperatur-schlaf"
+      ],
+      "poolHits": 36,
+      "poolReviews": 8,
+      "poolRecent": 16,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [raumtemperatur-schlaf]: 36 Treffer, 8 Review(s), 16 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Optimale Schlafzimmertemperatur laut Studienlage",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "raumtemperatur-schlaf"
+      ],
+      "poolHits": 36,
+      "poolReviews": 8,
+      "poolRecent": 16,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [raumtemperatur-schlaf]: 36 Treffer, 8 Review(s), 16 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Luftfeuchtigkeit im Schlafzimmer: Welcher Bereich gilt als günstig?",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftfeuchtigkeit-schlaf"
+      ],
+      "poolHits": 623,
+      "poolReviews": 3,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftfeuchtigkeit-schlaf]: 623 Treffer, 3 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Lärm im Schlaf: Ab welchem Dezibel-Wert wird die Schlafarchitektur gestört?",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
       "cluster": [
-        "schlaf-architektur-grundlagen"
+        "schlaf-architektur-grundlagen",
+        "laerm-akustik-schlaf"
       ],
-      "poolHits": 558,
-      "poolReviews": 11,
-      "poolRecent": 25,
+      "poolHits": 1276,
+      "poolReviews": 20,
+      "poolRecent": 50,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "schlaf-architektur-grundlagen"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [schlaf-architektur-grundlagen, laerm-akustik-schlaf]: 1276 Treffer, 20 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Weißes Rauschen und Schlaf: Was die Studienlage zur Wirkung sagt",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "laerm-akustik-schlaf"
+      ],
+      "poolHits": 718,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [laerm-akustik-schlaf]: 718 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Verdunkelung und Melatoninausschüttung: Der Zusammenhang zwischen Licht und Schlaf",
@@ -7086,14 +7181,16 @@
       "titel": "CO2-Konzentration im Schlafzimmer: Beeinflusst schlechte Luft die Schlafqualität?",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftqualitaet-co2-schlaf"
+      ],
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Matratzenhärte und Schlafqualität: Was Studien zum Zusammenhang zeigen",
@@ -7170,18 +7267,19 @@
       "ring": "schlafumgebung",
       "cluster": [
         "schlafstadien-klassifikation",
-        "hauttemperatur-sensorik"
+        "hauttemperatur-sensorik",
+        "raumtemperatur-schlaf"
       ],
-      "poolHits": 4603,
-      "poolReviews": 20,
-      "poolRecent": 49,
+      "poolHits": 4639,
+      "poolReviews": 28,
+      "poolRecent": 65,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "schlafstadien-klassifikation",
         "hauttemperatur-sensorik"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [schlafstadien-klassifikation, hauttemperatur-sensorik]: 4603 Treffer, 20 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [schlafstadien-klassifikation, hauttemperatur-sensorik, raumtemperatur-schlaf]: 4639 Treffer, 28 Review(s), 65 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Farbtemperatur von Nachtlicht: Warum warmweißes Licht weniger stört",
@@ -7202,14 +7300,16 @@
       "titel": "Schlafzimmer-Luftqualität und Allergien: Zusammenhang mit Schlafunterbrechungen",
       "cluster_original": "grundlagen",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftqualitaet-co2-schlaf"
+      ],
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Der Erste-Nacht-Effekt in neuer Umgebung: Was dahintersteckt",
@@ -7310,30 +7410,32 @@
       "cluster_original": "genauigkeits-check",
       "ring": "schlafumgebung",
       "cluster": [
-        "consumer-wearables-allgemein"
+        "luftqualitaet-co2-schlaf"
       ],
-      "poolHits": 531,
-      "poolReviews": 9,
-      "poolRecent": 25,
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "consumer-wearables-allgemein"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Wie gut korrelieren App-basierte Lärmmessungen mit tatsächlicher Schlafstörung?",
       "cluster_original": "genauigkeits-check",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "laerm-akustik-schlaf"
+      ],
+      "poolHits": 718,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [laerm-akustik-schlaf]: 718 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Withings vs. Emfit: Messprinzip und Genauigkeit im Vergleich",
@@ -7422,14 +7524,16 @@
       "titel": "Luftreiniger mit Schlaf-Tracking-Funktion: Was messen sie wirklich?",
       "cluster_original": "genauigkeits-check",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftqualitaet-co2-schlaf"
+      ],
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Wie stark schwanken Matratzensensor-Messwerte bei zwei Personen im selben Bett?",
@@ -7469,31 +7573,34 @@
       "titel": "Bestes smartes Thermostat für Schlafzimmer-Temperaturregelung",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "raumtemperatur-schlaf"
+      ],
+      "poolHits": 36,
+      "poolReviews": 8,
+      "poolRecent": 16,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [raumtemperatur-schlaf]: 36 Treffer, 8 Review(s), 16 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Eight Sleep Pod vs. klassischer Wearable-Tracker: Aktive Kühlung vs. passives Tracking",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
       "cluster": [
-        "matratzensensorik"
+        "matratzensensorik",
+        "raumtemperatur-schlaf"
       ],
-      "poolHits": 50,
-      "poolReviews": 7,
-      "poolRecent": 24,
+      "poolHits": 86,
+      "poolReviews": 15,
+      "poolRecent": 40,
       "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [
         "matratzensensorik"
       ],
       "tragfaehigClusterGeraetMechanismus": true,
-      "begruendung": "Cluster [matratzensensorik]: 50 Treffer, 7 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+      "begruendung": "Cluster [matratzensensorik, raumtemperatur-schlaf]: 86 Treffer, 15 Review(s), 40 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Beste Weißes-Rauschen-Geräte für den Schlaf im Vergleich",
@@ -7512,14 +7619,16 @@
       "titel": "Beste Verdunkelungslösungen fürs Schlafzimmer im Test der Studienlage",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "licht-chronobiologie"
+      ],
+      "poolHits": 2501,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [licht-chronobiologie]: 2501 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Günstige Alternativen zu Eight Sleep: Was leisten Budget-Matratzenauflagen?",
@@ -7543,14 +7652,16 @@
       "titel": "Beste Luftreiniger fürs Schlafzimmer bei Allergien",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftqualitaet-co2-schlaf"
+      ],
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Gewichtsdecken im Vergleich: Welches Gewicht ist für wen geeignet?",
@@ -7595,14 +7706,16 @@
       "titel": "CO2-Ampeln fürs Schlafzimmer im Vergleich",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftqualitaet-co2-schlaf"
+      ],
+      "poolHits": 125,
+      "poolReviews": 4,
+      "poolRecent": 23,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftqualitaet-co2-schlaf]: 125 Treffer, 4 Review(s), 23 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Emfit QS vs. Withings Sleep Analyzer: Matratzensensor-Vergleich",
@@ -7640,14 +7753,16 @@
       "titel": "Ohrstöpsel vs. Weißes-Rauschen-Gerät: Was hilft nachweislich besser gegen Lärm?",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "laerm-akustik-schlaf"
+      ],
+      "poolHits": 718,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [laerm-akustik-schlaf]: 718 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Blaulichtfilter-Lampen fürs Schlafzimmer im Vergleich",
@@ -7681,27 +7796,31 @@
       "titel": "Beste Luftbefeuchter für trockene Raumluft im Winter",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "luftfeuchtigkeit-schlaf"
+      ],
+      "poolHits": 623,
+      "poolReviews": 3,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [luftfeuchtigkeit-schlaf]: 623 Treffer, 3 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Verdunkelungsvorhänge vs. Schlafmasken: Was ist wirksamer belegt?",
       "cluster_original": "kaufberatung",
       "ring": "schlafumgebung",
-      "cluster": [],
-      "poolHits": 0,
-      "poolReviews": 0,
-      "poolRecent": 0,
-      "tragfaehigCluster": null,
+      "cluster": [
+        "licht-chronobiologie"
+      ],
+      "poolHits": 2501,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
       "clusterGeraetMechanismus": [],
       "tragfaehigClusterGeraetMechanismus": null,
-      "begruendung": "Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+      "begruendung": "Cluster [licht-chronobiologie]: 2501 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
     },
     {
       "titel": "Eight Sleep Pod 3 vs. Pod 4: Was hat sich an der Sensorik verändert?",
