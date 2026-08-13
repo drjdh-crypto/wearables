@@ -409,6 +409,166 @@ Gesundheitsdaten im Sinne der DSGVO.
 
 ---
 
+# Ring-Kandidaten (außerhalb des Kerns)
+
+Themenlisten für die beiden Kandidaten-Ringe aus `docs/themeninventur.md` ("Empfehlung: welche
+Ringe öffnen") — noch nicht Teil des Kerns, dienen der realen Tragfähigkeitsmessung statt einer
+Schätzung. Format identisch zu den Kern-Abschnitten oben, zusätzlich mit einem `ring:`-Tag im
+Header, den `themeninventur-check.mjs`/`themeninventur-cluster-check.mjs` auswerten.
+
+## H1. Stress & Erholung: Grundlagen (25) — `category: grundlagen` `ring: stress-erholung`
+
+- [ ] Cortisol und HRV: Zwei verschiedene Stressmarker im Vergleich
+- [ ] Was ist die Stressantwort? Sympathikus, Parasympathikus und das autonome Nervensystem
+- [ ] HRV als Erholungsindikator: Was die Kennzahl wirklich misst
+- [ ] Cortisol-Tagesrhythmus: Warum der Wert morgens hoch und abends niedrig ist
+- [ ] Allostatische Last: Wie chronischer Stress den Körper messbar verändert
+- [ ] Warum Erholung mehr ist als nur Schlaf: Aktive vs. passive Recovery
+- [ ] Das Konzept der Trainingsmonotonie und wie Recovery-Scores sie erfassen
+- [ ] Vagusnerv und HRV-Biofeedback: Wie Atemübungen den Parasympathikus aktivieren
+- [ ] Baseline-HRV: Warum der individuelle Ausgangswert wichtiger ist als der Absolutwert
+- [ ] Übertrainingssyndrom: Frühe physiologische Warnzeichen
+- [ ] Resonanzatmung (Coherent Breathing): Was bei sechs Atemzügen pro Minute passiert
+- [ ] Stress-Recovery-Balance: Das Modell hinter vielen Recovery-Scores
+- [ ] Warum Frauen und Männer unterschiedliche HRV-Baselines haben können
+- [ ] Chronischer Stress und Schlafqualität: Der Teufelskreis aus physiologischer Sicht
+- [ ] Was ist „Readiness"? Wie Recovery-Scores mehrere Signale kombinieren
+- [ ] Atemfrequenz als Stressindikator: Was die Kennzahl zusätzlich zur HRV zeigt
+- [ ] Hauttemperatur und Stress: Warum kalte Hände ein Signal sein können
+- [ ] Elektrodermale Aktivität (EDA/Hautleitfähigkeit): Ein weiterer Stress-Sensor-Kanal
+- [ ] Burnout aus physiologischer Sicht: Was sich in HRV-Daten zeigt — und was nicht
+- [ ] Der Unterschied zwischen akutem und chronischem Stress in Trackingdaten
+- [ ] Warum Alkohol am Vorabend die Recovery-Werte am Morgen senkt
+- [ ] Menstruationszyklus und HRV: Was sich über die Zyklusphasen verändert
+- [ ] Trainingsperiodisierung: Wie Recovery-Daten Belastungssteuerung unterstützen können
+- [ ] Mentale vs. körperliche Erschöpfung: Erkennt ein Wearable den Unterschied?
+- [ ] Was ist Heart Rate Recovery (HRR) und was sagt sie über die Fitness aus?
+
+## H2. Stress & Erholung: Genauigkeits-Check (20) — `category: genauigkeits-check` `ring: stress-erholung`
+
+- [ ] Wie genau messen Wearables HRV im Vergleich zum EKG?
+- [ ] Recovery-Scores im Herstellervergleich: Gleiche Rohdaten, unterschiedliche Algorithmen?
+- [ ] Kann ein Wearable Cortisol messen? Der Unterschied zwischen Proxy und direkter Messung
+- [ ] Validierung von Stress-Erkennungs-Algorithmen: Was die Studienlage hergibt
+- [ ] HRV-Biofeedback-Apps im Wirksamkeitscheck: Was Studien zeigen
+- [ ] Warum HRV-Messungen morgens im Bett am zuverlässigsten sind
+- [ ] Bewegungsartefakte bei HRV-Messung: Warum Ruhe während der Messung wichtig ist
+- [ ] Wie stark schwankt die Recovery-Score-Berechnung zwischen Firmware-Updates?
+- [ ] EDA-Sensoren in Consumer-Wearables: Wie belastbar sind die Messwerte?
+- [ ] Kann ein Ring HRV genauso gut messen wie ein Brustgurt?
+- [ ] Overtraining-Erkennung: Wie zuverlässig warnen Recovery-Scores wirklich?
+- [ ] Wie stark beeinflusst Alkohol die HRV-Messgenauigkeit in der Interpretation?
+- [ ] Studienlage zu Atemfrequenz-Tracking als Stressindikator
+- [ ] Diskrepanz zwischen subjektivem Stressempfinden und HRV-Score: Wie oft weichen sie ab?
+- [ ] Wie vergleichbar sind Recovery-Scores verschiedener Hersteller bei denselben Rohdaten?
+- [ ] Placebo-Effekt bei Recovery-Scores: Beeinflusst die angezeigte Zahl das Verhalten messbar?
+- [ ] Wie gut erkennen Wearables akuten psychischen Stress vs. körperliche Anstrengung?
+- [ ] Validierung von Muse-EEG-Stirnbändern gegen klinisches EEG bei Meditation
+- [ ] Wie zuverlässig ist Heart Rate Recovery (HRR) als Fitness-Proxy in Consumer-Geräten?
+- [ ] Grenzen der HRV-Interpretation bei Menschen mit Herzrhythmusstörungen
+
+## H3. Stress & Erholung: Kaufberatung/Gerätevergleich (20) — `category: kaufberatung` `ring: stress-erholung`
+
+- [ ] Whoop vs. Oura: Welcher Recovery-Score passt zu welchem Nutzungsverhalten?
+- [ ] Garmin Body Battery vs. Whoop Recovery: Methodischer Vergleich
+- [ ] Beste Wearables für HRV-Biofeedback-Training im Vergleich
+- [ ] Elite HRV vs. HRV4Training: App-Vergleich für gezieltes HRV-Training
+- [ ] Lief Smart Patch: Wie funktioniert das EKG-basierte Stress-Wearable?
+- [ ] Muse S: Was leistet das EEG-Stirnband für Meditation und Stresstracking wirklich?
+- [ ] Apple Watch Stress-/Achtsamkeits-Features im Vergleich zu dedizierten Recovery-Wearables
+- [ ] Bester Recovery-Tracker für Ausdauersportler:innen
+- [ ] Bester Stress-Tracker für Büroangestellte ohne Sport-Fokus
+- [ ] Polar Nightly Recharge vs. Oura Readiness: Wie unterscheiden sich die Ansätze?
+- [ ] Günstige Alternativen zu Whoop: Was leisten Budget-Wearables bei HRV-Tracking?
+- [ ] Brustgurt vs. optischer Sensor: Was ist für HRV-Training die bessere Wahl?
+- [ ] Samsung Galaxy Watch Stress-Tracking im Vergleich zur Konkurrenz
+- [ ] Fitbit Stress Management Score: Wie wird er berechnet, wie belastbar ist er?
+- [ ] Beste HRV-Biofeedback-Geräte für Atemübungen im Vergleich
+- [ ] Whoop 5.0 vs. 4.0: Was hat sich am Recovery-Algorithmus verändert?
+- [ ] Wearables mit EDA-Sensor im Vergleich: Wer misst tatsächlich Hautleitfähigkeit?
+- [ ] Ultrahuman vs. Oura: Recovery-Tracking im direkten Vergleich
+- [ ] Beste Wearables für Trainingssteuerung über HRV bei Ausdauersport
+- [ ] CGM plus HRV: Kombinierte Recovery-Trackingansätze im Überblick
+
+## H4. Stress & Erholung: Produktzyklus (8) — `category: produktzyklus` `ring: stress-erholung`
+
+- [ ] Whoop-Abomodell: Lohnt sich das Recovery-Tracking im Abo langfristig?
+- [ ] Garmin Firmware-Updates und Body-Battery-Algorithmus: Wie stark ändern sich Werte über Zeit?
+- [ ] Oura Gen 3 vs. Gen 4: Was hat sich an der Recovery-Berechnung geändert?
+- [ ] Whoop 4.0 vs. 5.0: Upgrade-Lohnt-sich-Check für Recovery-Nutzer:innen
+- [ ] Warum Hersteller Recovery-Algorithmen regelmäßig überarbeiten
+- [ ] Polar-Ökosystem-Wechsel: Was passiert mit historischen Recovery-Daten beim Gerätewechsel?
+- [ ] Gebrauchtmarkt für HRV-Wearables: Worauf beim Kauf gebrauchter Recovery-Tracker achten?
+- [ ] Software-Updates bei Fitbit Stress Management Score: Wie stabil bleiben Vergleichswerte über Jahre?
+
+## I1. Schlafumgebung: Grundlagen (18) — `category: grundlagen` `ring: schlafumgebung`
+
+- [ ] Warum eine kühle Raumtemperatur den Schlaf physiologisch begünstigt
+- [ ] Optimale Schlafzimmertemperatur laut Studienlage
+- [ ] Luftfeuchtigkeit im Schlafzimmer: Welcher Bereich gilt als günstig?
+- [ ] Lärm im Schlaf: Ab welchem Dezibel-Wert wird die Schlafarchitektur gestört?
+- [ ] Weißes Rauschen und Schlaf: Was die Studienlage zur Wirkung sagt
+- [ ] Verdunkelung und Melatoninausschüttung: Der Zusammenhang zwischen Licht und Schlaf
+- [ ] CO2-Konzentration im Schlafzimmer: Beeinflusst schlechte Luft die Schlafqualität?
+- [ ] Matratzenhärte und Schlafqualität: Was Studien zum Zusammenhang zeigen
+- [ ] Gewichtsdecken (Weighted Blankets): Wirkmechanismus und Studienlage
+- [ ] Kissenhöhe und Nackenposition: Auswirkung auf Schlafqualität und Rückenschmerzen
+- [ ] Bettwäsche-Material und Wärmeregulation im Schlaf
+- [ ] Ballistokardiographie: Wie Matratzensensoren Herzfrequenz und Bewegung erfassen
+- [ ] Aktive Kühlung im Bett: Physiologische Wirkung auf Tiefschlaf und Kerntemperatur
+- [ ] Farbtemperatur von Nachtlicht: Warum warmweißes Licht weniger stört
+- [ ] Schlafzimmer-Luftqualität und Allergien: Zusammenhang mit Schlafunterbrechungen
+- [ ] Der Erste-Nacht-Effekt in neuer Umgebung: Was dahintersteckt
+- [ ] Chronotyp-gerechte Schlafzimmergestaltung: Was die Forschung zu individuellen Unterschieden sagt
+- [ ] Elektromagnetische Felder im Schlafzimmer: Was Studien zur Schlafwirkung zeigen
+
+## I2. Schlafumgebung: Genauigkeits-Check (12) — `category: genauigkeits-check` `ring: schlafumgebung`
+
+- [ ] Wie genau erkennen Matratzensensoren Schlafstadien im Vergleich zu Polysomnographie?
+- [ ] Validierung von Eight Sleep Pod gegen klinische Schlafmessung
+- [ ] Smarte Thermostate und Schlaf-Tracking: Wie belastbar sind gekoppelte Auswertungen?
+- [ ] Genauigkeit von Raumklimasensoren: Wie zuverlässig sind Consumer-CO2-Messgeräte?
+- [ ] Wie gut korrelieren App-basierte Lärmmessungen mit tatsächlicher Schlafstörung?
+- [ ] Withings vs. Emfit: Messprinzip und Genauigkeit im Vergleich
+- [ ] Wie zuverlässig erkennen Smart-Home-Systeme optimale Einschlafzeitpunkte?
+- [ ] Validierungsstudien zu weißem Rauschen und objektiver Schlafqualität
+- [ ] Wie genau messen Wecklicht-Geräte den optimalen Aufwachzeitpunkt im leichten Schlafstadium?
+- [ ] Ballistokardiographie vs. Aktigraphie: Methodischer Genauigkeitsvergleich
+- [ ] Luftreiniger mit Schlaf-Tracking-Funktion: Was messen sie wirklich?
+- [ ] Wie stark schwanken Matratzensensor-Messwerte bei zwei Personen im selben Bett?
+
+## I3. Schlafumgebung: Kaufberatung (18) — `category: kaufberatung` `ring: schlafumgebung`
+
+- [ ] Matratzensensor oder Wearable: Welches Gerät passt zu welchem Nutzungsverhalten?
+- [ ] Bestes smartes Thermostat für Schlafzimmer-Temperaturregelung
+- [ ] Eight Sleep Pod vs. klassischer Wearable-Tracker: Aktive Kühlung vs. passives Tracking
+- [ ] Beste Weißes-Rauschen-Geräte für den Schlaf im Vergleich
+- [ ] Beste Verdunkelungslösungen fürs Schlafzimmer im Test der Studienlage
+- [ ] Günstige Alternativen zu Eight Sleep: Was leisten Budget-Matratzenauflagen?
+- [ ] Beste Luftreiniger fürs Schlafzimmer bei Allergien
+- [ ] Gewichtsdecken im Vergleich: Welches Gewicht ist für wen geeignet?
+- [ ] Smarte Wecklichter im Vergleich: Simulierter Sonnenaufgang als Kaufkriterium
+- [ ] Beste Kissen bei Nackenschmerzen laut orthopädischer Evidenz
+- [ ] CO2-Ampeln fürs Schlafzimmer im Vergleich
+- [ ] Emfit QS vs. Withings Sleep Analyzer: Matratzensensor-Vergleich
+- [ ] Beste Smart-Home-Integration für automatisierte Schlafzimmer-Optimierung
+- [ ] Ohrstöpsel vs. Weißes-Rauschen-Gerät: Was hilft nachweislich besser gegen Lärm?
+- [ ] Blaulichtfilter-Lampen fürs Schlafzimmer im Vergleich
+- [ ] Matratzen mit Klimaregulierung: Kaufkriterien jenseits des Marketings
+- [ ] Beste Luftbefeuchter für trockene Raumluft im Winter
+- [ ] Verdunkelungsvorhänge vs. Schlafmasken: Was ist wirksamer belegt?
+
+## I4. Schlafumgebung: Produktzyklus (6) — `category: produktzyklus` `ring: schlafumgebung`
+
+- [ ] Eight Sleep Pod 3 vs. Pod 4: Was hat sich an der Sensorik verändert?
+- [ ] Withings Sleep Analyzer: Firmware-Updates und ihre Auswirkung auf die Datenqualität
+- [ ] Gebrauchtmarkt für Matratzensensoren: Worauf beim Kauf gebrauchter Geräte achten?
+- [ ] Warum Hersteller von Smart-Home-Schlafsystemen Abomodelle einführen
+- [ ] Emfit-Produktgeneration im Vergleich: Wie hat sich die Ballistokardiographie-Auswertung entwickelt?
+- [ ] Software-Updates bei smarten Thermostaten: Auswirkung auf automatisierte Schlafzimmer-Programme
+
+---
+
 ## Nächste Schritte
 
 1. Cluster A–F priorisieren (z. B. zuerst B + F, weil sie das evidenzbasierte Profil der Seite

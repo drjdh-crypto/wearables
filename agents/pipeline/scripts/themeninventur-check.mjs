@@ -53,6 +53,14 @@ const CLUSTER_TO_CATEGORY = {
   'methodik-limitationen': 'genauigkeits-check',
 };
 
+// Neue Ring-Abschnitte (siehe data/themeninventur.md, Abschnitte H/I) taggen `category:` direkt
+// mit einem der vier finalen Werte, statt über die alten sechs Kern-Cluster umzuweisen — daher
+// hier direkt durchreichen, wenn der Tag bereits ein finaler Kategoriewert ist.
+const FINALE_KATEGORIEN = new Set(['grundlagen', 'genauigkeits-check', 'kaufberatung', 'produktzyklus']);
+function kategorieFuer(tag) {
+  return FINALE_KATEGORIEN.has(tag) ? tag : CLUSTER_TO_CATEGORY[tag];
+}
+
 function classify(titel, clusterDefault) {
   const t = titel.toLowerCase();
   const isProduktzyklus =
@@ -76,26 +84,29 @@ function parseThemen() {
   const md = readFileSync(SOURCE_MD, 'utf8');
   const lines = md.split('\n');
   let currentCluster = null;
+  let currentRing = 'kern';
   const themen = [];
   for (const line of lines) {
-    const clusterMatch = line.match(/^## [A-G]\..*`category: ([a-z-]+)`/);
+    // `ring:`-Tag optional — fehlt er, ist der Abschnitt Teil des Kerns (Abschnitte A-F).
+    const clusterMatch = line.match(/^## \S+\..*`category: ([a-z-]+)`(?:\s*`ring: ([a-z-]+)`)?/);
     if (clusterMatch) {
       currentCluster = clusterMatch[1];
+      currentRing = clusterMatch[2] ?? 'kern';
       continue;
     }
-    if (/^## [A-G]\./.test(line)) {
-      // Header ohne category-Backtick (z.B. "## G. Glossar…") — kein Kern-Cluster.
+    if (/^## \S+\./.test(line)) {
+      // Header ohne category-Backtick (z.B. "## G. Glossar…") — kein Themen-Abschnitt.
       currentCluster = null;
       continue;
     }
     const itemMatch = line.match(/^- \[ \] (.+)$/);
-    if (itemMatch && currentCluster && CLUSTER_TO_CATEGORY[currentCluster]) {
+    if (itemMatch && currentCluster && kategorieFuer(currentCluster)) {
       const titel = itemMatch[1].trim();
       themen.push({
         titel,
         cluster_original: currentCluster,
-        kategorie: classify(titel, CLUSTER_TO_CATEGORY[currentCluster]),
-        ring: 'kern',
+        kategorie: classify(titel, kategorieFuer(currentCluster)),
+        ring: currentRing,
       });
     }
   }

@@ -36,10 +36,11 @@ const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
 // Einzelthema). `match`: Regex gegen den deutschen Original-Titel, um Themen diesem Cluster
 // zuzuordnen.
 const CLUSTERS = [
-  // --- Mess-Mechanismen ---
+  // --- Mess-Mechanismen (layer: geraet-mechanismus) ---
   {
     id: 'ppg-sensorik',
     label: 'PPG-Sensorik',
+    layer: 'geraet-mechanismus',
     query: 'photoplethysmography wearable heart rate accuracy validation',
     match: /\bppg\b|photoplethysmog|pulsmessung|pulssensor/i,
   },
@@ -65,7 +66,9 @@ const CLUSTERS = [
     id: 'zirkadiane-rhythmik',
     label: 'Zirkadiane Rhythmik/Melatonin',
     query: 'circadian rhythm sleep melatonin regulation',
-    match: /zirkadian|melatonin|chronotyp|jetlag|schichtarbeit|schlafdruck|adenosin/i,
+    // Jetlag/Schichtarbeit bewusst NICHT hier (verschoben in die eigenen
+    // Phänomen-Cluster unten, um Doppelzuordnung zu vermeiden).
+    match: /zirkadian|melatonin|chronotyp|schlafdruck|adenosin/i,
   },
   {
     id: 'schlaf-architektur-grundlagen',
@@ -218,7 +221,70 @@ const CLUSTERS = [
     query: 'CPAP therapy adherence data sleep apnea',
     match: /\bcpap\b/i,
   },
-];
+].map((c) => ({ ...c, layer: 'geraet-mechanismus' }));
+
+// Zweite Cluster-Ebene: Phänomene/Populationen statt Geräte/Sensoren. Deckt genau die Art
+// Themen ab, die die Geräte-/Mechanismus-Cluster oben verpassen — "Praxis & Alltag" besteht
+// überwiegend aus Fragen wie "Wie wirkt Koffein auf den Schlaf?", die sich nicht auf ein
+// bestimmtes Gerät oder eine Sensor-Technologie beziehen, aber trotzdem einen geteilten
+// Quellenpool haben (alle Koffein-Themen ziehen aus derselben Koffein-Schlaf-Literatur).
+// Absichtlich schmal an der Nutzerliste orientiert (siehe Auftrag), nicht künstlich erweitert.
+const PHENOMENON_CLUSTERS = [
+  {
+    id: 'schichtarbeit-schlaf',
+    label: 'Schichtarbeit und Schlaf',
+    query: 'shift work sleep circadian misalignment health',
+    match: /schichtarbeit/i,
+  },
+  {
+    id: 'social-jetlag',
+    label: 'Wochenend-Jetlag/Social Jetlag',
+    query: 'social jetlag jet lag circadian misalignment sleep',
+    match: /jetlag|wochenend.{0,20}rhythmus/i,
+  },
+  {
+    id: 'alkohol-schlaf',
+    label: 'Alkohol und Schlaf',
+    query: 'alcohol sleep quality architecture effects',
+    match: /alkohol/i,
+  },
+  {
+    id: 'koffein-schlaf',
+    label: 'Koffein und Schlaf',
+    query: 'caffeine sleep quality half-life effects',
+    match: /koffein/i,
+  },
+  {
+    id: 'alter-schlafarchitektur',
+    label: 'Alter und Schlafarchitektur',
+    query: 'aging sleep architecture older adults normative changes',
+    match: /\balter\b|altern|älter|senior/i,
+  },
+  {
+    id: 'eltern-kleinkinder',
+    label: 'Schlaf bei Eltern kleiner Kinder',
+    query: 'parents infant sleep deprivation postpartum newborn',
+    match: /eltern|\bbaby\b|säugling|kleinkind|neugeboren/i,
+  },
+  {
+    id: 'hoehentraining-schlaf',
+    label: 'Höhentraining und Schlaf',
+    query: 'altitude training sleep hypoxia athletes',
+    match: /höhentraining|höhenlage|höhenmedizin/i,
+  },
+  {
+    id: 'menstruationszyklus-schlaf',
+    label: 'Menstruationszyklus und Schlaf',
+    query: 'menstrual cycle sleep quality hormones',
+    match: /menstruation/i,
+  },
+  {
+    id: 'licht-chronobiologie',
+    label: 'Licht/Chronobiologie',
+    query: 'light exposure circadian sleep chronobiology',
+    match: /\blicht\b|blaulicht|lichtexposition|lichttherapie/i,
+  },
+].map((c) => ({ ...c, layer: 'phaenomen-population' }));
 
 // Fängt Themen auf, die keinem der obigen Cluster zugeordnet werden können (generische
 // Wearable-/Tracker-Diskussion ohne Geräte-/Mechanismus-Bezug) — sonst würden sie ganz ohne
@@ -226,6 +292,7 @@ const CLUSTERS = [
 const FALLBACK_CLUSTER = {
   id: 'consumer-wearables-allgemein',
   label: 'Consumer-Wearables allgemein',
+  layer: 'geraet-mechanismus',
   query: 'consumer wearable sleep tracker accuracy validation',
   match: /wearable|tracker|schlaftrack|smartwatch|consumer/i,
 };
@@ -236,28 +303,38 @@ function parseThemen() {
   const md = readFileSync(SOURCE_MD, 'utf8');
   const lines = md.split('\n');
   let currentCluster = null;
+  let currentRing = 'kern';
   const themen = [];
   for (const line of lines) {
-    const clusterMatch = line.match(/^## [A-G]\..*`category: ([a-z-]+)`/);
+    const clusterMatch = line.match(/^## \S+\..*`category: ([a-z-]+)`(?:\s*`ring: ([a-z-]+)`)?/);
     if (clusterMatch) {
       currentCluster = clusterMatch[1];
+      currentRing = clusterMatch[2] ?? 'kern';
       continue;
     }
-    if (/^## [A-G]\./.test(line)) {
+    if (/^## \S+\./.test(line)) {
       currentCluster = null;
       continue;
     }
     const itemMatch = line.match(/^- \[ \] (.+)$/);
     if (itemMatch && currentCluster) {
-      themen.push({ titel: itemMatch[1].trim(), cluster_original: currentCluster, ring: 'kern' });
+      themen.push({ titel: itemMatch[1].trim(), cluster_original: currentCluster, ring: currentRing });
     }
   }
   return themen;
 }
 
-function ordneCluster(titel) {
-  const treffer = CLUSTERS.filter((c) => c.match.test(titel)).map((c) => c.id);
-  if (treffer.length === 0 && FALLBACK_CLUSTER.match.test(titel)) treffer.push(FALLBACK_CLUSTER.id);
+const ALLE_CLUSTER = [...CLUSTERS, ...PHENOMENON_CLUSTERS, FALLBACK_CLUSTER];
+
+// Ordnet ein Thema seinen Clustern zu — optional beschränkt auf eine Layer-Teilmenge, damit
+// sich der Beitrag der Phänomen-/Populations-Cluster gegenüber den Geräte-/Mechanismus-
+// Clustern isoliert ausweisen lässt (siehe run(), Vergleich "nur Geräte/Mechanismus" vs. "voll").
+function ordneCluster(titel, nurLayer) {
+  const kandidaten = nurLayer ? ALLE_CLUSTER.filter((c) => c.layer === nurLayer) : ALLE_CLUSTER;
+  const treffer = kandidaten.filter((c) => c.id !== FALLBACK_CLUSTER.id && c.match.test(titel)).map((c) => c.id);
+  if (treffer.length === 0 && FALLBACK_CLUSTER.match.test(titel) && (!nurLayer || nurLayer === FALLBACK_CLUSTER.layer)) {
+    treffer.push(FALLBACK_CLUSTER.id);
+  }
   return treffer;
 }
 
@@ -372,8 +449,23 @@ async function checkCluster(cluster, cachedOpenAlex) {
 
 // ---------- 5. Runner ----------
 
+// Pool: Summe über die DISTINKTEN zugeordneten Cluster — siehe docs/themeninventur.md für die
+// Einordnung dieses Werts als optimistische Obergrenze (mögliche Überlappung zwischen Clustern
+// wird nicht herausgerechnet), im Gegensatz zur konservativen Untergrenze der themenbasierten
+// Einzelmessung. null = nicht anwendbar (keine Cluster-Zuordnung in diesem Layer-Ausschnitt),
+// nicht false — kein Cluster heißt "diese Messung deckt das Thema nicht ab", nicht "nicht
+// tragfähig".
+function bewerteClusterPool(clusterIds, clusterById) {
+  const relevante = clusterIds.map((id) => clusterById.get(id)).filter(Boolean);
+  const poolHits = relevante.reduce((s, c) => s + c.hits, 0);
+  const poolReviews = relevante.reduce((s, c) => s + c.reviews, 0);
+  const poolRecent = relevante.reduce((s, c) => s + c.recent, 0);
+  const tragfaehig = clusterIds.length === 0 ? null : poolHits >= 6 && poolReviews >= 1 && poolRecent >= 2;
+  return { poolHits, poolReviews, poolRecent, tragfaehig };
+}
+
 async function run() {
-  const alleCluster = [...CLUSTERS, FALLBACK_CLUSTER];
+  const alleCluster = ALLE_CLUSTER;
   const cache = ladeClusterCheckpoint();
   console.log(`${alleCluster.length} Cluster definiert (${cache.size} mit Checkpoint-OpenAlex-Daten). Prüfe Cluster-Quellenlage...`);
 
@@ -397,31 +489,27 @@ async function run() {
 
   const alleThemen = parseThemen().slice(0, LIMIT);
   const themenErgebnisse = alleThemen.map((thema) => {
+    // Voll (alle Layer) — die eigentliche, maßgebliche clusterbasierte Bewertung.
     const clusterIds = ordneCluster(thema.titel);
-    const relevante = clusterIds.map((id) => clusterById.get(id)).filter(Boolean);
+    const voll = bewerteClusterPool(clusterIds, clusterById);
 
-    // Pool: Summe über die DISTINKTEN zugeordneten Cluster — siehe docs/themeninventur.md für
-    // die Einordnung dieses Werts als optimistische Obergrenze (mögliche Überlappung zwischen
-    // Clustern wird nicht herausgerechnet), im Gegensatz zur konservativen Untergrenze der
-    // themenbasierten Einzelmessung.
-    const poolHits = relevante.reduce((s, c) => s + c.hits, 0);
-    const poolReviews = relevante.reduce((s, c) => s + c.reviews, 0);
-    const poolRecent = relevante.reduce((s, c) => s + c.recent, 0);
-    // null = nicht anwendbar (kein Cluster zugeordnet, kein Geräte-/Mechanismus-Bezug im
-    // Titel) statt false — ein Thema ohne Cluster ist nicht "cluster-basiert nicht tragfähig",
-    // sondern von dieser Zweitmessung schlicht nicht abgedeckt (siehe docs/themeninventur.md).
-    const tragfaehigCluster = clusterIds.length === 0 ? null : poolHits >= 6 && poolReviews >= 1 && poolRecent >= 2;
+    // Nur Geräte-/Mechanismus-Layer — isoliert den Beitrag der neuen Phänomen-/Populations-
+    // Cluster (Layer-Vergleich, siehe docs/themeninventur.md, Abschnitt "Phänomen-Cluster").
+    const clusterIdsGeraet = ordneCluster(thema.titel, 'geraet-mechanismus');
+    const geraetOnly = bewerteClusterPool(clusterIdsGeraet, clusterById);
 
     return {
       ...thema,
       cluster: clusterIds,
-      poolHits,
-      poolReviews,
-      poolRecent,
-      tragfaehigCluster,
+      poolHits: voll.poolHits,
+      poolReviews: voll.poolReviews,
+      poolRecent: voll.poolRecent,
+      tragfaehigCluster: voll.tragfaehig,
+      clusterGeraetMechanismus: clusterIdsGeraet,
+      tragfaehigClusterGeraetMechanismus: geraetOnly.tragfaehig,
       begruendung: clusterIds.length === 0
-        ? 'Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich.'
-        : `Cluster [${clusterIds.join(', ')}]: ${poolHits} Treffer, ${poolReviews} Review(s), ${poolRecent} aktuelle im gepoolten Cluster-Sample → ${tragfaehigCluster ? 'erfüllt' : 'erfüllt nicht'} die Mindestschwelle (6/1/2).`,
+        ? 'Keinem Cluster zuordenbar (weder Geräte-/Mechanismus- noch Phänomen-/Populations-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich.'
+        : `Cluster [${clusterIds.join(', ')}]: ${voll.poolHits} Treffer, ${voll.poolReviews} Review(s), ${voll.poolRecent} aktuelle im gepoolten Cluster-Sample → ${voll.tragfaehig ? 'erfüllt' : 'erfüllt nicht'} die Mindestschwelle (6/1/2).`,
     };
   });
 
@@ -437,6 +525,14 @@ async function run() {
   const anwendbar = themenErgebnisse.length - ohneCluster;
   console.log(`\nFertig: ${tragfaehigCount}/${anwendbar} clusterbasiert-anwendbare Kern-Themen tragfähig (von ${themenErgebnisse.length} insgesamt). Ergebnis: ${OUTPUT_JSON}`);
   console.log(`${ohneCluster} Thema(en) ohne jede Cluster-Zuordnung (clusterbasierte Messung dort nicht anwendbar).`);
+
+  const praxisAlltag = themenErgebnisse.filter((t) => t.cluster_original === 'praxis-alltag');
+  const praxisNurGeraet = praxisAlltag.filter((t) => t.tragfaehigClusterGeraetMechanismus === true).length;
+  const praxisVoll = praxisAlltag.filter((t) => t.tragfaehigCluster === true).length;
+  console.log(
+    `Praxis & Alltag (${praxisAlltag.length} Themen): nur Geräte-/Mechanismus-Cluster ${praxisNurGeraet} tragfähig → mit Phänomen-/Populations-Clustern ${praxisVoll} tragfähig (Differenz: +${praxisVoll - praxisNurGeraet}).`,
+  );
+
   if (openAlexBudgetErschoepft) {
     console.log('OpenAlex-Budget während dieses Laufs erschöpft — Cluster-Zahlen basieren teilweise nur auf Europe PMC. Skript erneut ausführen, sobald das Budget zurückgesetzt ist (Checkpoint setzt bei den fehlenden Clustern fort).');
   }
