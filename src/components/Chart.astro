@@ -6,6 +6,8 @@ import { getEntry } from 'astro:content';
 import BarChart from './charts/BarChart.astro';
 import LineChart from './charts/LineChart.astro';
 import ScatterChart from './charts/ScatterChart.astro';
+import AnteileChart from './charts/AnteileChart.astro';
+import BereichChart from './charts/BereichChart.astro';
 
 interface Props {
   id: string;
@@ -19,3 +21,5 @@ const entry = await getEntry('charts', id);
 {entry && entry.data.typ === 'balken' && <BarChart {...entry.data} lang={lang} />}
 {entry && entry.data.typ === 'linie' && <LineChart {...entry.data} lang={lang} />}
 {entry && entry.data.typ === 'scatter' && <ScatterChart {...entry.data} lang={lang} />}
+{entry && entry.data.typ === 'anteile' && <AnteileChart {...entry.data} lang={lang} />}
+{entry && entry.data.typ === 'bereich' && <BereichChart {...entry.data} lang={lang} />}

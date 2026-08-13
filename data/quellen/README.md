@@ -64,6 +64,7 @@ gekennzeichnet (automatisch über `SourcesBox`, siehe `src/i18n/strings/*.json`)
 | `zitationen` | Zitationszahl aus OpenAlex (`cited_by_count`), Momentaufnahme zum `geprueft_am`-Datum |
 | `score`, `teilwerte`, `begruendung` | Quellen-Relevanzindex (0–100), von `agents/pipeline/scripts/score-quellen.mjs` berechnet. Gewichtung, Herleitung und Grenzen: `docs/quellenbewertung.md`. |
 | `zurueckgezogen` | Crossref-Retraction-Check — `true` bedeutet harter Ausschluss (Regel 6 in `validate-quellen.mjs`), niemals nur eine Abwertung. |
+| `praxisfazit` | Optional. Ein Satz "Was heißt das für die Praxis?", muss aus `kernbefund` folgen (CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle") — keine allgemeine Ratgeberweisheit. Nicht jede Quelle braucht eins (rein definitorische/methodische Quellen oft nicht). Wird über die `PraxisFazit`-Komponente inline im Artikel-Body gerendert, an der Stelle, wo die Quelle besprochen wird. |
 
 Nach der Recherche (Schritt 1) zusätzlich laufen lassen:
 `node agents/pipeline/scripts/score-quellen.mjs data/quellen/<slug>.json` — schreibt Score,

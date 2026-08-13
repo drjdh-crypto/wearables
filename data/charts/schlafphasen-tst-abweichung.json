@@ -1,0 +1,14 @@
+{
+  "typ": "bereich",
+  "titel": "Abweichung der Gesamtschlafzeit: Wearable vs. Polysomnographie",
+  "einheit": " Min.",
+  "daten": [
+    { "label": "Gesamtschlafzeit (Ø, 24 Studien)", "von": 0, "bis": -17 }
+  ],
+  "datenquelle": {
+    "zitat": "Lee YJ et al. (2025). Performance of consumer wrist-worn sleep tracking devices compared to polysomnography: a meta-analysis. Journal of Clinical Sleep Medicine, 21(3), 573–582.",
+    "doi": "10.5664/jcsm.11460",
+    "url": "https://doi.org/10.5664/jcsm.11460"
+  },
+  "hinweis": "Eigene Darstellung nach Lee YJ et al. (2025) — 0 = Polysomnographie-Referenzwert, negative Werte = Unterschätzung durch das Wearable im Mittel über 24 Studien."
+}

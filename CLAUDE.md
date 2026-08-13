@@ -38,7 +38,73 @@ nicht als "Expertenmeinung", außer sie ist explizit als Meinung einer
   (Feldnamen `quellen`, `doi`, `pubmed_id`, `studientyp` …) stehen im Artikel-Template unter
   `/content/README.md`.
 
-### Grafiken aus Studien
+### Sprache: Inhalt statt Prozess
+
+Der Fließtext beschreibt, **was die Wissenschaft zeigt** — nicht, wie wir recherchiert haben.
+Formulierungen wie „hinter einer Bezahlschranke", „nicht extrahierbar", „diese Recherche
+stützt sich auf …", „die Quellenlage gibt das nicht her" gehören **nicht** in den Artikeltext,
+auch wenn sie wahr sind. Sie beschreiben unseren Rechercheprozess, nicht die Sache selbst, und
+sind für Lesende ohne Mehrwert bis irreführend (klingt nach Ausrede statt nach Wissensstand).
+
+- Ist ein wissenschaftlicher Sachverhalt ungeklärt, wird das **inhaltlich** formuliert: „Wie
+  stark X wirkt, ist nicht abschließend geklärt." statt „Wir konnten das mit den verfügbaren
+  Quellen nicht klären." Der Unterschied: Der erste Satz macht eine Aussage über den
+  Wissensstand, der zweite über unsere Recherche.
+- Prozessdetails — warum eine bestimmte Quelle statt einer anderen gewählt wurde,
+  Zugriffsprobleme (Bezahlschranke, nicht extrahierbare Tabellen), einzelne
+  Verifikationsschritte, Unsicherheiten bei der Quellenauswahl — gehören ins **Review-Protokoll**
+  (`offenePunkte` im Frontmatter, sichtbar im mobilen Review-Block, nie auf der öffentlichen
+  Artikelseite), nicht in den Fließtext.
+- Diese Regel gilt für Artikeltext (auch Persona-Meinungen, siehe Abschnitt 5), nicht für
+  interne Dokumentation wie `docs/`, `agents/`, Commit-Nachrichten oder `offenePunkte` selbst —
+  dort ist Prozesssprache erwartet und richtig.
+
+### Praxis-Fazit je Quelle
+
+Wo eine zitierte Quelle eine sinnvolle praktische Konsequenz für Lesende hat, bekommt sie ein
+kompaktes Praxis-Fazit: ein einziger Satz, der beantwortet „Was heißt das für die Praxis?" —
+gerendert über die `PraxisFazit`-Komponente **direkt an der Stelle im Fließtext**, an der die
+zugehörige Quelle besprochen wird, nicht gesammelt in einem Abschnitt am Artikelende.
+
+- Der Satz **muss aus dem `kernbefund` der Quelle folgen** — keine allgemeine
+  Ratgeberweisheit, die auch ohne die konkrete Studie stimmen würde. Test: Ließe sich der Satz
+  genauso in einem Artikel ohne diese Quelle schreiben? Wenn ja, ist er zu allgemein.
+- Nicht jede Quelle braucht ein Praxis-Fazit — rein definitorische oder methodische Quellen
+  (z. B. eine Referenzquelle für Begriffsdefinitionen) oft nicht. Sinnvoll ist es, wo ein
+  Befund eine konkrete Handlungs- oder Interpretationsimplikation für Lesende hat.
+- Feld `praxisfazit` in `/data/quellen/<slug>.json` (siehe `/data/quellen/README.md`) und im
+  Frontmatter-Schema der jeweiligen Quelle (siehe `/content/README.md`).
+
+### Diagramme
+
+**Mobil zuerst.** Diagramme müssen auf einem schmalen Handydisplay ohne Zoom lesbar sein —
+das ist die Standard-Ansicht, nicht der Sonderfall. Kompakte Höhe statt breites Querformat,
+wenige Datenpunkte (im Zweifel mehrere kleine Diagramme statt eines großen mit vielen
+Kategorien), direkte Beschriftung an den Datenpunkten statt einer separaten Legende, keine
+Achse, die keine eigene Aussage trägt (z. B. keine y-Achsen-Beschriftung „Wert" ohne Einheit).
+
+**Diagrammtyp muss zur Aussage passen**, nicht umgekehrt:
+
+- Anteile einer Gesamtheit (z. B. Schlafphasen-Verteilung einer Nacht) → gestapeltes/
+  proportionales Diagramm, nicht mehrere separate Balken, die die Lesenden selbst zu 100%
+  addieren müssten.
+- Spannweiten/Unsicherheit (z. B. Genauigkeit schwankt je nach Gerät zwischen X und Y) →
+  Spannweiten-/Bereichsdiagramm, das die Bandbreite direkt zeigt statt nur eine einzelne
+  Kennzahl.
+- Abweichung von einer Referenz (z. B. Tracker misst X Minuten weniger als Polysomnographie) →
+  Diagramm mit sichtbarer Nulllinie/Referenzlinie, nicht ein Balken, der bei 0 beginnt und die
+  Abweichung dadurch verschleiert.
+- Echte Entwicklung über eine geordnete/kontinuierliche Achse (Zeit, Alter) → Liniendiagramm —
+  nur verwenden, wenn tatsächlich durchgehende, aus der Quelle rekonstruierbare Werte entlang
+  dieser Achse vorliegen, nicht für zwei, drei Stützpunkte.
+- Kein Diagramm ohne eigenen analytischen Punkt — ein Diagramm, das nur illustriert, was der
+  Satz daneben schon sagt, ohne zusätzliche Information (Bandbreite, Vergleich, Struktur) zu
+  liefern, wird weggelassen.
+
+**Kleine, eingebettete Diagramme sind besser als ein großes.** An jeder Stelle im Artikel, an
+der eine Zahl im Fließtext auftaucht, prüfen: Zeigt eine kleine Inline-Visualisierung direkt an
+dieser Textstelle den Punkt besser als der reine Zahlensatz? Wenn ja, dort einbetten — nicht
+alle Diagramme in einen einzigen Hero-Chart am Artikelanfang packen.
 
 Abbildungen/Diagramme aus Studien werden **nie kopiert** (Urheberrecht, aber auch redaktionelle
 Kontrolle über Darstellung) — sie werden aus den zugrunde liegenden Werten **neu erzeugt**.
@@ -47,7 +113,8 @@ Jede solche Grafik bekommt eine Bildunterschrift der Form:
 > Datenquelle: Nachname et al. (Jahr), DOI/PMID — eigene Darstellung.
 
 Wenn die Rohwerte aus der Studie nicht rekonstruierbar sind, wird keine Grafik erstellt,
-sondern die Kernzahl im Fließtext mit Kurzbeleg genannt.
+sondern die Kernzahl im Fließtext mit Kurzbeleg genannt. Die Quellenangabe (Bildunterschrift)
+bleibt bei jedem Diagramm immer sichtbar, auch bei kleinen Inline-Diagrammen.
 
 ## 3. Zitierformat
 

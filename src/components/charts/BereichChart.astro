@@ -1,0 +1,115 @@
+---
+// Spannweiten-/Abweichungs-Diagramm ("bereich", CLAUDE.md Abschnitt 2, "Diagramme") — ein oder
+// mehrere schwebende Balken von `von` bis `bis` auf einer gemeinsamen Achse mit sichtbarer
+// Referenzlinie. Für Genauigkeits-Bandbreiten ("0,26 bis 0,69 je nach Gerät") oder Abweichungen
+// von einem Referenzwert ("−17 Minuten ggü. Polysomnographie") — beides Fälle, in denen eine
+// einzelne Kennzahl die Aussage nicht trägt, die Spanne/Richtung aber schon.
+import ChartSource from './ChartSource.astro';
+import { linearScale, padDomain } from '../../lib/chart-scale';
+
+interface Props {
+  titel: string;
+  einheit?: string;
+  daten: { label: string; von: number; bis: number }[];
+  datenquelle: { zitat: string; doi?: string; url: string };
+  hinweis: string;
+  lang: string;
+  domain?: [number, number];
+}
+
+const { titel, einheit, daten, datenquelle, hinweis, lang, domain } = Astro.props;
+
+const width = 600;
+const rowHeight = 52;
+const marginLeft = 12;
+const marginRight = 12;
+const marginTop = 8;
+const plotWidth = width - marginLeft - marginRight;
+const height = marginTop + daten.length * rowHeight + 8;
+
+const allValues = daten.flatMap((d) => [d.von, d.bis, 0]);
+const [domainMin, domainMax] = domain ?? padDomain(Math.min(...allValues), Math.max(...allValues), 0.12);
+const xScale = linearScale([domainMin, domainMax], [marginLeft, width - marginRight]);
+const zeroVisible = domainMin < 0 && domainMax > 0;
+const zeroX = xScale(0);
+
+const fmt = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(2));
+
+const rows = daten.map((d, i) => {
+  const y = marginTop + i * rowHeight;
+  const x1 = xScale(Math.min(d.von, d.bis));
+  const x2 = xScale(Math.max(d.von, d.bis));
+  return { ...d, y, x1, x2, barY: y + 30 };
+});
+---
+
+<figure class="chart chart-bereich">
+  <p class="chart-title">{titel}{einheit ? ` (${einheit})` : ''}</p>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={titel} preserveAspectRatio="xMidYMid meet">
+    {zeroVisible && (
+      <line x1={zeroX} y1={marginTop - 2} x2={zeroX} y2={height - 4} class="bereich-zero" />
+    )}
+    {rows.map((row) => (
+      <>
+        <text x={marginLeft} y={row.y + 12} class="bereich-label">{row.label}</text>
+        <line x1={row.x1} y1={row.barY} x2={row.x2} y2={row.barY} class="bereich-bar" />
+        <circle cx={row.x1} cy={row.barY} r="4" class="bereich-cap" />
+        <circle cx={row.x2} cy={row.barY} r="4" class="bereich-cap" />
+        <text x={row.x1} y={row.barY - 8} text-anchor={row.x1 <= row.x2 ? 'end' : 'start'} class="bereich-value">
+          {fmt(row.von)}
+        </text>
+        <text x={row.x2} y={row.barY - 8} text-anchor={row.x2 >= row.x1 ? 'start' : 'end'} class="bereich-value bereich-value-end">
+          {fmt(row.bis)}{einheit ?? ''}
+        </text>
+      </>
+    ))}
+  </svg>
+  <ChartSource datenquelle={datenquelle} hinweis={hinweis} lang={lang} />
+</figure>
+
+<style>
+  .chart {
+    margin: var(--space-4) 0;
+  }
+
+  .chart-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .bereich-zero {
+    stroke: var(--color-border);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+  }
+
+  .bereich-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    fill: var(--color-ink-muted);
+  }
+
+  .bereich-bar {
+    stroke: var(--color-signal);
+    stroke-width: 6;
+    stroke-linecap: round;
+  }
+
+  .bereich-cap {
+    fill: var(--color-signal);
+  }
+
+  .bereich-value {
+    font-family: var(--font-mono-family);
+    font-size: 13px;
+    fill: var(--color-ink);
+  }
+</style>

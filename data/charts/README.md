@@ -26,11 +26,23 @@ aus einer Studie eingebettet (CLAUDE.md Abschnitt 2, "Grafiken aus Studien").
 }
 ```
 
-- `typ`: `balken` | `linie` | `scatter` — bestimmt Schema von `daten` und welche
-  Chart-Komponente `Chart.astro` rendert.
-  - `balken`: `daten: { label: string, wert: number }[]` (min. 1)
-  - `linie`: `daten: { x: string | number, y: number }[]` (min. 2, x-Achse ordinal)
+- `typ`: `balken` | `linie` | `scatter` | `anteile` | `bereich` — bestimmt Schema von `daten`
+  und welche Chart-Komponente `Chart.astro` rendert. Auswahlkriterien: CLAUDE.md Abschnitt 2,
+  "Diagramme" — Diagrammtyp muss zur Aussage passen, nicht umgekehrt.
+  - `balken`: `daten: { label: string, wert: number }[]` (min. 1) — Vergleich weniger Kategorien.
+  - `linie`: `daten: { x: string | number, y: number }[]` (min. 2, x-Achse ordinal) — echte
+    Entwicklung über eine geordnete/kontinuierliche Achse, nur mit tatsächlich aus der Quelle
+    rekonstruierbaren durchgehenden Werten, nicht für zwei-drei Stützpunkte.
   - `scatter`: `daten: { x: number, y: number, label?: string }[]` (min. 2, beide Achsen numerisch)
+  - `anteile`: `daten: { label: string, wert: number }[]` (min. 2) — Anteile einer Gesamtheit
+    (Werte sollten sich zu ~100 aufsummieren); rendert einen gestapelten Balken statt separater
+    Einzelbalken, mit Beschriftung direkt am Segment statt Legende.
+  - `bereich`: `daten: { label: string, von: number, bis: number }[]` (min. 1), optional
+    `domain: [number, number]` für einen inhaltlich sinnvollen Achsenbereich statt des
+    automatisch aus den Werten berechneten (z. B. `[0, 1]` für eine Sensitivitäts-/F1-Kennzahl)
+    — Spannweiten (Genauigkeit "0,26 bis 0,69 je nach Gerät") oder Abweichungen von einer
+    Referenz (Tracker misst X Minuten weniger als Polysomnographie), mit sichtbarer
+    Referenzlinie bei 0, sofern die Achse die 0 einschließt.
 - `datenquelle.zitat` + (`doi` oder `url`) sind Pflicht — wird von `ChartSource.astro` immer
   unter dem Chart gerendert, Format: „Datenquelle: Zitat, DOI/Link — Hinweis".
 - `hinweis` ist Pflicht (Default „Eigene Darstellung.", falls im JSON weggelassen) — macht

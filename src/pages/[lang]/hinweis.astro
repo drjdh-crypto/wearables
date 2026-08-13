@@ -1,0 +1,26 @@
+---
+// Gesundheitshinweis — rechtlich/redaktionell wichtige Klarstellung: keine Gesundheitsberatung,
+// kein Ersatz für ärztliche Diagnose/Behandlung. Von Footer, Artikelende und Methodik-Seite
+// verlinkt (siehe BaseLayout.astro, [lang]/artikel/[slug].astro, entwurf/[slug].astro,
+// [lang]/methodik.astro).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { enabledLocales } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return enabledLocales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('hinweis.heading')} description={t('hinweis.section.disclaimer.body')} path="/hinweis/">
+  <h1>{t('hinweis.heading')}</h1>
+
+  <h2>{t('hinweis.section.zweck.heading')}</h2>
+  <p>{t('hinweis.section.zweck.body')}</p>
+
+  <h2>{t('hinweis.section.disclaimer.heading')}</h2>
+  <p>{t('hinweis.section.disclaimer.body')}</p>
+</BaseLayout>

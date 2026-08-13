@@ -87,6 +87,10 @@ const geprueft = latestHistoryEntry(article.data.historie);
       <SourcesBox quellen={article.data.quellen} lang={lang} />
 
       <p class="ai-notice">{t('footer.ai_notice')}</p>
+      <p class="ai-notice">
+        {t('footer.health_notice_prefix')}
+        <a href={getRelativeLocaleUrl(lang, '/hinweis/')}>{t('nav.hinweis')}</a>.
+      </p>
 
       <ReviewBlock quellen={article.data.quellen} offenePunkte={article.data.offenePunkte} lang={lang} />
     </article>

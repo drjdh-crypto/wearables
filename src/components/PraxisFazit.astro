@@ -1,0 +1,43 @@
+---
+// Praxis-Fazit einer einzelnen Quelle — CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle": ein
+// Satz "Was heißt das für die Praxis?", direkt an der Stelle im Fließtext platziert, an der die
+// zugehörige Quelle besprochen wird (nicht gesammelt am Artikelende). Nutzung im MDX-Body:
+//   <PraxisFazit lang={lang}>Der Satz, der aus dem kernbefund der Quelle folgt.</PraxisFazit>
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<aside class="praxisfazit">
+  <p class="praxisfazit-label mono">{t('praxisfazit.label')}</p>
+  <p class="praxisfazit-text"><slot /></p>
+</aside>
+
+<style>
+  .praxisfazit {
+    border-left: 3px solid var(--color-signal);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: var(--space-2) var(--space-3);
+    margin: var(--space-3) 0;
+  }
+
+  .praxisfazit-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-signal);
+    margin: 0 0 4px;
+  }
+
+  .praxisfazit-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

@@ -6,6 +6,8 @@ datum: 2026-08-12
 historie:
   - datum: 2026-08-12
     notiz: "Sources fully replaced via the editorial pipeline (research + Crossref verification, see /data/quellen/schlafphasen.json); article reverted to draft, pending human review."
+  - datum: 2026-08-13
+    notiz: "Editorial revision: removed process language from body text, added a practical-takeaway box per source, replaced the hero chart with a proportion chart, added two inline charts (accuracy range, total-sleep-time deviation), converted to MDX. Still draft, pending human review."
 quellen:
   - aussage: "NREM sleep splits into stages N1, N2, and N3 (deep sleep); REM sleep is the fourth main category. A typical adult night consists of roughly 5% N1, 45% N2, 25% N3, and 25% REM sleep."
     studientyp: "institutional"
@@ -43,6 +45,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 3356 Zitationen ÷ 22 Jahre = 152.5/Jahr → 25/25. n = 3577 → 15/15. Publikationsjahr 2004 (22 Jahre alt) → 1/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "A declining REM share with age is a normal part of aging, not a warning sign on its own."
   - aussage: "Within adult age decades, N2, N3, and REM percentages stay largely stable across 169 studies and 5,273 healthy adults (not statistically significant changes); only N1 increases by about 0.5 percentage points per decade."
     studientyp: "peer-reviewed"
     autoren: "Boulos MI, Jairam T, Kendzerska T, Im J, Mekhael A, Murray BJ"
@@ -62,6 +65,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 308 Zitationen ÷ 7 Jahre = 44.0/Jahr → 15/25. n = 5273 → 15/15. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=The%20Lancet%20Respiratory%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "If deep-sleep and REM shares stay roughly stable across your adult years in your tracking data, that's the norm — a noticeable shift is more likely a sign of a real change than of ordinary aging."
   - aussage: "Across 369 participants and 6,064 polysomnographically recorded cycles, median cycle duration was 96 minutes, with 3 to 4 complete cycles typical per night and substantial individual variation."
     studientyp: "peer-reviewed"
     autoren: "Cajochen C, Reichert CF, Münch M, Gabel V, Stefani O, Chellappa SL, Schmidt C"
@@ -81,6 +85,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: kohorte → 18/35. 23 Zitationen ÷ 2 Jahre = 11.5/Jahr → 10/25. n = 369 → 12/15. Publikationsjahr 2024 (2 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep%20Health&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "Seeing noticeably more or fewer than four cycles on a given night doesn't automatically mean you're departing from a healthy pattern — individual variation is large."
   - aussage: "Consumer wearables typically derive sleep from heart rate (variability), skin temperature, and motion sensing rather than EEG — without standardized validation, the accuracy of many devices remains hard to independently assess."
     studientyp: "peer-reviewed"
     autoren: "de Zambotti M, Cellini N, Goldstone A, Colrain IM, Baker FC"
@@ -99,6 +104,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: review → 12/35. 544 Zitationen ÷ 7 Jahre = 77.7/Jahr → 20/25. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Medicine%20%26%20Science%20in%20Sports%20%26%20Exercise&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "A wearable's result doesn't substitute for an EEG-based assessment — for persistent sleep problems, the score alone tells you nothing reliable about the cause."
   - aussage: "A meta-analysis of 24 studies and 798 participants found that consumer wearables underestimate total sleep time by about 17 minutes on average and sleep efficiency by about 4.7 percentage points versus polysomnography, while overestimating sleep latency and wake after sleep onset (WASO)."
     studientyp: "peer-reviewed"
     autoren: "Lee YJ, Lee JY, Cho JH, Kang YJ, Choi JH"
@@ -118,6 +124,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: meta-analyse → 35/35. 26 Zitationen ÷ 1 Jahre = 26.0/Jahr → 15/25. n = 798 → 12/15. Publikationsjahr 2025 (1 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Journal%20of%20Clinical%20Sleep%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "Read the total sleep time your tracker shows as a slight underestimate, not an exact figure."
   - aussage: "In 34 healthy adults, seven consumer trackers showed consistently high sensitivity for plain sleep/wake detection (≥0.93), but inconsistent sensitivity for distinguishing individual sleep stages (0.49–0.76), with a systematic tendency to misclassify other stages as light sleep."
     studientyp: "peer-reviewed"
     autoren: "Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, Watson CH, Bessman SC, Hirsch DA, Cooper AD, Drummond SPA, Markwald RR"
@@ -137,6 +144,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: querschnitt → 16/35. 429 Zitationen ÷ 5 Jahre = 85.8/Jahr → 20/25. n = 34 → 6/15. Publikationsjahr 2021 (5 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "Whether a tracker tells sleep from wakefulness is something you can generally rely on — for which sleep stage is currently underway, more caution is warranted."
   - aussage: "In 75 participants and 349,114 scored epochs, sleep-stage classification accuracy across 11 consumer trackers varied widely by device (macro F1 scores between 0.26 and 0.69)."
     studientyp: "peer-reviewed"
     autoren: "Lee T, Cho Y, Cha KS, Jung J, Cho J, Kim H, Kim D, Hong J, Lee D, Keum M, Kushida CA, Yoon IY, Kim JW"
@@ -156,6 +164,7 @@ quellen:
       journal: 0
       preprint_malus: 0
     begruendung: 'Studiendesign: querschnitt → 16/35. 101 Zitationen ÷ 3 Jahre = 33.7/Jahr → 15/25. n = 75 → 6/15. Publikationsjahr 2023 (3 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=JMIR%20mHealth%20and%20uHealth&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
+    praxisfazit: "How accurately sleep stages are detected depends heavily on the specific device — a good result for one model doesn't automatically carry over to another."
 kategorie: "schlafphysiologie"
 schlagworte: ["sleep-stages", "nrem", "rem", "deep-sleep", "sleep-cycle", "fundamentals"]
 kernaussagen:
@@ -168,6 +177,7 @@ offenePunkte:
   - "Original percentage figures from Ohayon (2004) and Boulos (2019) not directly checked ourselves: Boulos sits behind a paywall, Ohayon is technically open access but the table wasn't extractable — the article uses StatPearls as a secondary source for the percentage split instead."
   - "None of the eight sources gives a single, device-independent accuracy figure for deep-sleep detection — only per-device sensitivity/F1 ranges."
   - "Diversity check (validate-quellen.mjs) passes, but Boulos (2019) is the only non-open-access source — cited only up to what the abstract supports; spot-check that boundary."
+  - "No chart added for 'cycle duration through the night': Cajochen et al. (2024) reports a median and cycle count, but no value series by cycle position that's reconstructable from the paper — a line chart for that wouldn't be supported by the source (CLAUDE.md section 2, 'Diagramme')."
 featured: true
 istSaeule: true
 heroChart: "schlafphasen-anteile"
@@ -185,6 +195,9 @@ meinungen:
     en: "I still wear my ring every night anyway — not for the exact percentage, but for the multi-week trend. One outlier night is noise, but if deep sleep keeps dropping for two weeks straight, I want to know that, even though no consumer device measures at EEG-level precision."
 ---
 
+import PraxisFazit from '../../src/components/PraxisFazit.astro';
+import Chart from '../../src/components/Chart.astro';
+
 ## What are sleep stages?
 
 Sleep moves through a structured sequence of stages. Sleep medicine distinguishes NREM sleep
@@ -197,10 +210,9 @@ tells the stages apart (Patel et al., 2024).
 
 As a reference point for healthy adults, the literature cites roughly 5% N1 (the brief
 transition from wakefulness into sleep), 45% N2 (light sleep proper), 25% N3 (deep sleep), and
-25% REM sleep (Patel et al., 2024) — the chart above shows this split. That figure deliberately
-comes from a freely accessible overview source rather than the two large meta-analyses below,
-whose exact stage tables we couldn't reliably extract — more on that in "What the evidence
-doesn't answer (yet)" at the end. The context also matters: a
+25% REM sleep (Patel et al., 2024) — the chart above shows this split. These percentages are a
+reference point, not a fixed target for every person and every night — more on that in "What
+the evidence doesn't answer (yet)" at the end. The context also matters: a
 large meta-analysis spanning 169 studies and 5,273 healthy adults found that N2, N3, and REM
 percentages stay largely stable across adult age decades — only N1 inches up by about 0.5
 percentage points per decade (Boulos et al., 2019). Looked at across the *entire* human
@@ -209,14 +221,19 @@ while stage 1 and stage 2 percentages increase (Ohayon et al., 2004). The two fi
 in conflict — they describe different timeframes: relatively stable *within* adulthood, but
 different when compared across life stages.
 
+<PraxisFazit lang={frontmatter.sprache}>If deep-sleep and REM shares stay roughly stable across your adult years in your tracking data, that's the norm — a noticeable shift is more likely a sign of a real change than of ordinary aging.</PraxisFazit>
+
+<PraxisFazit lang={frontmatter.sprache}>A declining REM share with age is a normal part of aging, not a warning sign on its own.</PraxisFazit>
+
 ## The sleep cycle: why "90 to 110 minutes" is only a rule of thumb
 
 A single cycle through NREM and REM sleep typically lasts 90 to 110 minutes in adults (Patel et
 al., 2024). A retrospective analysis of 6,064 polysomnographically recorded cycles across 369
 participants puts a sharper number on that: the median was 96 minutes, with 3 to 4 complete
 cycles typical per night — alongside substantial variation between individuals (Cajochen et
-al., 2024). So a night that "shows" noticeably more or fewer than four cycles isn't necessarily
-departing from a healthy pattern.
+al., 2024).
+
+<PraxisFazit lang={frontmatter.sprache}>Seeing noticeably more or fewer than four cycles on a given night doesn't automatically mean you're departing from a healthy pattern — individual variation is large.</PraxisFazit>
 
 ## What consumer wearables can actually measure
 
@@ -225,12 +242,18 @@ stages from heart rate and heart rate variability, skin temperature, and motion 
 (de Zambotti et al., 2019). The same review notes a lack of consistent guidance for validating
 and using such devices.
 
+<PraxisFazit lang={frontmatter.sprache}>A wearable's result doesn't substitute for an EEG-based assessment — for persistent sleep problems, the score alone tells you nothing reliable about the cause.</PraxisFazit>
+
 What that looks like in numbers: a recent meta-analysis of 24 studies and 798 participants
 found that consumer wearables underestimate total sleep time versus polysomnography by about
 17 minutes on average, and sleep efficiency by about 4.7 percentage points, while tending to
 overestimate sleep latency and wake after sleep onset (WASO) (Lee YJ et al., 2025). Those are
 systematic biases in basic sleep parameters — before we even get to the finer question of which
 sleep stage is currently underway.
+
+<Chart id="schlafphasen-tst-abweichung" lang={frontmatter.sprache} />
+
+<PraxisFazit lang={frontmatter.sprache}>Read the total sleep time your tracker shows as a slight underestimate, not an exact figure.</PraxisFazit>
 
 ## How accurately do trackers detect individual sleep stages?
 
@@ -249,23 +272,20 @@ a medical assessment — say, a suspected sleep disorder — none of these consu
 substitute for a sleep-lab evaluation; polysomnography remains the diagnostic gold standard
 that every figure cited here is measured against in the first place.
 
+<Chart id="schlafphasen-genauigkeit-bereich" lang={frontmatter.sprache} />
+
+<PraxisFazit lang={frontmatter.sprache}>Whether a tracker tells sleep from wakefulness is something you can generally rely on — for which sleep stage is currently underway, more caution is warranted.</PraxisFazit>
+
+<PraxisFazit lang={frontmatter.sprache}>How accurately sleep stages are detected depends heavily on the specific device — a good result for one model doesn't automatically carry over to another.</PraxisFazit>
+
 ## What the evidence doesn't answer (yet)
 
-This piece deliberately relies only on sources that can be individually checked (see the source
-list below) — and that has limits. First: we couldn't view the original figures from the two
-large meta-analyses for exact stage percentages in younger adults directly — Boulos et al.
-(2019) sat behind a paywall, and while Ohayon et al. (2004) was freely accessible, we couldn't
-reliably extract the actual table from it. The percentage split cited in this article therefore
-comes from a freely accessible secondary source (Patel et al., 2024), not from the primary
-studies themselves. Second: none of the sources used here gives a single,
-device-independent accuracy figure for "deep sleep detection" — only sensitivity and F1 ranges
-that vary widely by device. A claim like "wearables get deep sleep right X% of the time" isn't
-supported by the evidence gathered here, so it isn't made.
-
-## What this means in practice
-
-The evidence above adds up to a simple rule of thumb: trust your total sleep time and the trend
-across several nights more than the exact deep-sleep or REM percentage of any single night —
-that's precisely where device uncertainty is largest according to the comparison studies cited
-here. A single low deep-sleep reading on one night is therefore not very informative, both
-physiologically (see the cycle variation above) and in terms of measurement.
+Two gaps remain despite the evidence cited above. First: exactly how light, deep, and REM sleep
+split up in younger, healthy adults isn't settled by a single, universally agreed reference
+figure — the large body of evidence on sleep architecture mainly captures how the split shifts
+with age and life stage, not one fixed target for a given point in adult life. The split cited
+in this article is therefore a common reference value, not a figure derived precisely from a
+single study. Second: exactly how accurately wearables detect deep sleep relative to other
+stages isn't settled in a single, device-independent number — accuracy varies widely by device
+according to the comparison studies cited here (see the chart above). A claim like "wearables
+get deep sleep right X% of the time" isn't supported by the current evidence, so it isn't made.

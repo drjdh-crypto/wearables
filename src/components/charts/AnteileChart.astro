@@ -1,0 +1,114 @@
+---
+// Gestapelter Anteils-Balken ("Anteile einer Gesamtheit", CLAUDE.md Abschnitt 2,
+// "Diagramme") — ersetzt separate Einzelbalken für Werte, die sich zu 100% aufsummieren.
+// Mobil zuerst: eine Zeile Balken statt vier, Beschriftung über kurze Anschlusslinien direkt
+// am jeweiligen Segment statt einer separaten Legende.
+import ChartSource from './ChartSource.astro';
+
+interface Props {
+  titel: string;
+  einheit?: string;
+  daten: { label: string; wert: number }[];
+  datenquelle: { zitat: string; doi?: string; url: string };
+  hinweis: string;
+  lang: string;
+}
+
+const { titel, einheit, daten, datenquelle, hinweis, lang } = Astro.props;
+
+const width = 600;
+const barHeight = 44;
+const barY = 8;
+const gap = 2;
+const total = daten.reduce((s, d) => s + d.wert, 0) || 1;
+
+let cursor = 0;
+const segments = daten.map((d, i) => {
+  const segWidth = (d.wert / total) * width;
+  const seg = { ...d, x: cursor, width: Math.max(segWidth - (i < daten.length - 1 ? gap : 0), 0), center: cursor + segWidth / 2 };
+  cursor += segWidth;
+  return seg;
+});
+
+// Zweizeilig alternierend beschriften, mit kurzer Anschlusslinie vom Segment zum Label — so
+// bleibt auch ein schmales 5%-Segment lesbar, statt Text zu erzwingen, der dort nicht hinpasst.
+const labelRowY = [barY + barHeight + 20, barY + barHeight + 38];
+const tickEndY = [barY + barHeight + 12, barY + barHeight + 30];
+const height = labelRowY[1] + 8;
+---
+
+<figure class="chart chart-anteile">
+  <p class="chart-title">{titel}{einheit ? ` (${einheit})` : ''}</p>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={titel} preserveAspectRatio="xMidYMid meet">
+    {segments.map((seg, i) => (
+      <rect
+        x={seg.x}
+        y={barY}
+        width={seg.width}
+        height={barHeight}
+        opacity={1 - i * 0.18}
+        class="anteile-segment"
+      />
+    ))}
+    {segments.map((seg) => (
+      // Wert direkt im Segment, nur wenn genug Platz dafür ist — sonst reicht das Label unten.
+      seg.width > 70 && (
+        <text x={seg.center} y={barY + barHeight / 2 + 5} text-anchor="middle" class="anteile-inline-value">
+          {seg.wert}{einheit ?? '%'}
+        </text>
+      )
+    ))}
+    {segments.map((seg, i) => {
+      const row = i % 2;
+      return (
+        <>
+          <line x1={seg.center} y1={barY + barHeight} x2={seg.center} y2={tickEndY[row]} class="anteile-tick" />
+          <text x={seg.center} y={labelRowY[row]} text-anchor="middle" class="anteile-label">
+            {seg.label} · {seg.wert}{einheit ?? '%'}
+          </text>
+        </>
+      );
+    })}
+  </svg>
+  <ChartSource datenquelle={datenquelle} hinweis={hinweis} lang={lang} />
+</figure>
+
+<style>
+  .chart {
+    margin: var(--space-4) 0;
+  }
+
+  .chart-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .anteile-segment {
+    fill: var(--color-signal);
+  }
+
+  .anteile-inline-value {
+    font-family: var(--font-mono-family);
+    font-size: 14px;
+    fill: var(--color-signal-contrast);
+  }
+
+  .anteile-tick {
+    stroke: var(--color-border);
+    stroke-width: 1;
+  }
+
+  .anteile-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    fill: var(--color-ink-muted);
+  }
+</style>

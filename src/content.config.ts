@@ -79,6 +79,11 @@ const quelle = z
     // Hart ausgeschlossen (Crossref-Retraction-Check), niemals true in einem veröffentlichten
     // Artikel — score-quellen.mjs setzt in diesem Fall score auf 0.
     zurueckgezogen: z.boolean().default(false),
+    // Ein Satz "Was heißt das für die Praxis?", muss aus `kernbefund`/`aussage` dieser Quelle
+    // folgen (CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle") — keine allgemeine
+    // Ratgeberweisheit. Optional: nicht jede Quelle hat einen sinnvollen Praxisbezug. Wird über
+    // die PraxisFazit-Komponente inline im Fließtext gerendert, nicht automatisch platziert.
+    praxisfazit: z.string().optional(),
   })
   .refine((q) => q.studientyp !== 'peer-reviewed' || !!(q.doi || q.pubmed_id), {
     message: 'Peer-reviewte Quellen benötigen DOI oder PubMed-ID (CLAUDE.md Abschnitt 2).',
@@ -234,11 +239,31 @@ const chartBaseFields = {
 const balkenDatum = z.object({ label: z.string(), wert: z.number() });
 const linienDatum = z.object({ x: z.union([z.string(), z.number()]), y: z.number() });
 const scatterDatum = z.object({ x: z.number(), y: z.number(), label: z.string().optional() });
+// Spannweite (min/max) — z.B. Genauigkeit "0,26 bis 0,69 je nach Gerät" oder eine Abweichung
+// von einer Referenz ("von" = Referenzwert/0, "bis" = gemessener Wert). Siehe CLAUDE.md
+// Abschnitt 2, "Diagramme".
+const bereichDatum = z.object({ label: z.string(), von: z.number(), bis: z.number() });
 
 const chartSchema = z.discriminatedUnion('typ', [
   z.object({ typ: z.literal('balken'), ...chartBaseFields, daten: z.array(balkenDatum).min(1) }),
   z.object({ typ: z.literal('linie'), ...chartBaseFields, daten: z.array(linienDatum).min(2) }),
   z.object({ typ: z.literal('scatter'), ...chartBaseFields, daten: z.array(scatterDatum).min(2) }),
+  // Anteile einer Gesamtheit (z. B. Schlafphasen-Verteilung einer Nacht) — ein gestapelter
+  // Balken statt mehrerer separater, damit "das ergibt zusammen 100%" ohne Kopfrechnen sichtbar
+  // ist. `wert` in Prozentpunkten, sollte in der Summe ~100 ergeben.
+  z.object({ typ: z.literal('anteile'), ...chartBaseFields, daten: z.array(balkenDatum).min(2) }),
+  // Spannweiten/Abweichungen — ein oder mehrere schwebende Balken von `von` bis `bis` auf
+  // einer gemeinsamen Achse (die bei Bedarf die 0 mit einschließt), mit sichtbarer
+  // Referenzlinie. Für Genauigkeits-Bandbreiten und Abweichungen von einem Referenzwert.
+  // `domain` optional: erzwingt einen inhaltlich sinnvollen Achsenbereich statt der
+  // automatisch aus den Werten berechneten Spanne (z. B. [0, 1] für eine Sensitivitäts-/
+  // F1-Kennzahl, deren natürliche Grenzen 0 und 1 selbst die Aussage tragen).
+  z.object({
+    typ: z.literal('bereich'),
+    ...chartBaseFields,
+    daten: z.array(bereichDatum).min(1),
+    domain: z.tuple([z.number(), z.number()]).optional(),
+  }),
 ]);
 
 // Charts, siehe /data/charts/README.md. Werden über die Chart.astro-Komponente

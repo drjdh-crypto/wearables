@@ -59,18 +59,32 @@ quellen:
     journal: "Sensors"
     doi: "10.3390/s23135778"       # oder pubmed_id — mindestens eins bei peer-reviewed Pflicht
     url: "https://doi.org/10.3390/s23135778"
+    n: 120                          # optional, Stichprobengröße — zeigt SourcesBox neben studientyp
+    evidenzstufe: "kohorte"         # optional, siehe docs/quellenbewertung.md
+    score: 55                       # optional, Quellen-Relevanzindex — nur im ReviewBlock sichtbar
+    teilwerte: { studientyp: 18, zitationsrate: 10, n: 6, aktualitaet: 15, journal: 0, preprint_malus: 0 }
+    begruendung: "…"                # optional, Score-Herleitung — nur im ReviewBlock sichtbar
+    praxisfazit: "…"                # optional, ein Satz "Was heißt das für die Praxis?" (CLAUDE.md Abschnitt 2)
 ---
 ```
 
 `quellen` ist eine Liste — mehrere Behauptungen im Artikel referenzieren dieselbe oder
 unterschiedliche Einträge über `aussage`. Peer-reviewte Einträge (`studientyp:
 peer-reviewed`) brauchen zwingend `doi` oder `pubmed_id`, sonst schlägt der Build fehl (Zod-
-Validierung in `src/content.config.ts`).
+Validierung in `src/content.config.ts`). `n`, `evidenzstufe`, `score`, `teilwerte`,
+`begruendung` und `praxisfazit` kommen aus `agents/pipeline/scripts/score-quellen.mjs` bzw. aus
+Schritt 2 (Draft) — siehe `/data/quellen/README.md`.
 
 Artikel sind normalerweise `.md`. Wird ein Chart *mitten im Fließtext* gebraucht (nicht nur als
-Hero-Chart), die Datei stattdessen als `.mdx` anlegen und `<Chart id="…" lang={lang} />` direkt
-im Body verwenden (MDX-Integration ist installiert, Astro-Komponenten funktionieren dann in der
-Prosa).
+Hero-Chart) oder ein `<PraxisFazit>` inline platziert, die Datei stattdessen als `.mdx` anlegen
+und die Komponente direkt im Body verwenden (MDX-Integration ist installiert, Astro-Komponenten
+funktionieren dann in der Prosa):
+
+```mdx
+<Chart id="…" lang={lang} />
+
+<PraxisFazit lang={lang}>Der Satz, der aus dem `kernbefund` dieser Quelle folgt.</PraxisFazit>
+```
 
 Kategorien (`kategorie`) orientieren sich an der Themeninventur, siehe
 `/data/themeninventur.md`:
@@ -93,7 +107,9 @@ Die Artikel-Route (`src/pages/[lang]/artikel/[slug].astro`) baut sich in dieser 
 4. `KeyFindingsBox` — "Das sagt die Studienlage": `kernaussagen` + Quellenanzahl
 5. Inhaltsverzeichnis (`TableOfContents`, aus H2/H3 des Bodys) — Desktop: sticky Sidebar
 6. Fließtext, ~70 Zeichen Spaltenbreite (`.article-body`); Charts im Body dürfen breiter
-   ausbrechen (siehe MDX-Hinweis oben)
+   ausbrechen (siehe MDX-Hinweis oben). `<PraxisFazit>`-Boxen stehen jeweils direkt an der
+   Stelle, an der die zugehörige Quelle besprochen wird — nie gesammelt in einem eigenen
+   Abschnitt (CLAUDE.md Abschnitt 2, "Praxis-Fazit je Quelle").
 7. `ProductBox` je Eintrag in `produkte` (Werbekennzeichnung + regionsabhängiger Link)
 8. `PersonaOpinionBlock` — zeigt `meinungen`, falls im Frontmatter gesetzt (themenspezifische
    Statements aus Pipeline-Schritt 4, siehe `/agents/pipeline/04-persona-stimmen.md); sonst
