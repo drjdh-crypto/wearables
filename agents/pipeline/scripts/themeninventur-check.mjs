@@ -25,7 +25,12 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const SOURCE_MD = 'data/themeninventur.md';
 const OUTPUT_JSON = 'data/themeninventur.json';
 const CONTACT = 'pipeline@wearables-project.dev'; // OpenAlex "polite pool"
-const CONCURRENCY = 5;
+// Konservativ statt maximal: OpenAlex begrenzt inzwischen über ein Tagesbudget statt (nur)
+// über Request-Rate (siehe docs/themeninventur.md, "OpenAlex-Ausfall"). Niedrige Concurrency +
+// eine explizite Mindestpause zwischen OpenAlex-Anfragen sollen das knappe Budget nicht durch
+// unnötige Bursts verschwenden.
+const CONCURRENCY = 2;
+const OPENALEX_MIN_INTERVAL_MS = 300;
 const CURRENT_YEAR = new Date().getFullYear();
 const RECENT_CUTOFF = CURRENT_YEAR - 3;
 const LIMIT = process.env.LIMIT ? parseInt(process.env.LIMIT, 10) : Infinity;
@@ -278,10 +283,22 @@ async function fetchJson(url, attempt = 0) {
     const res = await fetch(url, {
       headers: { 'User-Agent': 'wearables-themeninventur/1.0 (mailto:' + CONTACT + ')' },
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
+    if (!res.ok) {
+      const err = new Error(`HTTP ${res.status} für ${url}`);
+      err.status = res.status;
+      try {
+        err.body = await res.text();
+      } catch {
+        /* Body nicht lesbar, ignorieren. */
+      }
+      throw err;
+    }
     return await res.json();
   } catch (err) {
-    if (attempt < 1) {
+    // Ein Budget-Fehler (429 "Insufficient budget") ist kein transientes Problem — ein
+    // sofortiger Retry würde nur eine zweite, ebenso sinnlose Anfrage verschwenden.
+    const istBudget = err?.status === 429 && typeof err.body === 'string' && err.body.includes('Insufficient budget');
+    if (attempt < 1 && !istBudget) {
       await sleep(500);
       return fetchJson(url, attempt + 1);
     }
@@ -289,15 +306,41 @@ async function fetchJson(url, attempt = 0) {
   }
 }
 
+// Wird nach der ersten erkannten Budget-Erschöpfung (429 "Insufficient budget") auf true
+// gesetzt — alle weiteren OpenAlex-Aufrufe in diesem Lauf werden dann sofort übersprungen
+// (kein sinnloses Weiterprobieren gegen 300 weitere Themen), und der nächste Lauf setzt dank
+// des Checkpoints (siehe run()) genau dort fort, wo dieser aufgehört hat.
+let openAlexBudgetErschoepft = false;
+let openAlexLetzterAufruf = 0;
+
+function istBudgetFehler(err) {
+  return err?.status === 429 && typeof err.body === 'string' && err.body.includes('Insufficient budget');
+}
+
 async function checkOpenAlex(query) {
+  if (openAlexBudgetErschoepft) {
+    const err = new Error('OpenAlex-Budget bereits in diesem Lauf erschöpft — übersprungen.');
+    err.budgetSkipped = true;
+    throw err;
+  }
+  // Konservative Mindestpause zwischen OpenAlex-Anfragen (siehe CONCURRENCY-Kommentar oben).
+  const wartezeit = OPENALEX_MIN_INTERVAL_MS - (Date.now() - openAlexLetzterAufruf);
+  if (wartezeit > 0) await sleep(wartezeit);
+  openAlexLetzterAufruf = Date.now();
+
   const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=25&mailto=${CONTACT}`;
-  const data = await fetchJson(url);
-  const results = data.results ?? [];
-  return {
-    hits: data.meta?.count ?? 0,
-    reviews_in_sample: results.filter((w) => w.type === 'review').length,
-    recent_in_sample: results.filter((w) => (w.publication_year ?? 0) >= RECENT_CUTOFF).length,
-  };
+  try {
+    const data = await fetchJson(url);
+    const results = data.results ?? [];
+    return {
+      hits: data.meta?.count ?? 0,
+      reviews_in_sample: results.filter((w) => w.type === 'review').length,
+      recent_in_sample: results.filter((w) => (w.publication_year ?? 0) >= RECENT_CUTOFF).length,
+    };
+  } catch (err) {
+    if (istBudgetFehler(err)) openAlexBudgetErschoepft = true;
+    throw err;
+  }
 }
 
 async function checkEuropePMC(query) {
@@ -323,12 +366,16 @@ async function checkDuckDuckGo(query) {
 
 // ---------- 4. Pro Thema prüfen ----------
 
-async function checkThema(thema) {
+// `cachedOpenAlex`: ein aus einem früheren Lauf bereits erfolgreich abgefragtes OpenAlex-
+// Ergebnis für dieses Thema (siehe Checkpoint-Logik in run()) — wird wiederverwendet statt
+// erneut abgefragt, damit ein Budget-Erschöpfungs-Fehler in einem späteren Lauf nicht bereits
+// erfolgreich geprüfte Themen wieder auf "Fehler" zurücksetzt.
+async function checkThema(thema, cachedOpenAlex) {
   const query = buildQuery(thema.titel);
   const fallback = { hits: 0, reviews_in_sample: 0, recent_in_sample: 0, fehler: true };
 
   const [openalex, europepmc, nachfragehinweis] = await Promise.all([
-    checkOpenAlex(query).catch(() => fallback),
+    cachedOpenAlex ? Promise.resolve(cachedOpenAlex) : checkOpenAlex(query).catch(() => fallback),
     checkEuropePMC(query).catch(() => fallback),
     checkDuckDuckGo(query),
   ]);
@@ -353,25 +400,57 @@ async function checkThema(thema) {
   };
 }
 
-// ---------- 5. Runner mit Concurrency-Pool ----------
+// ---------- 5. Checkpoint (Wiederaufnahme nach OpenAlex-Budget-Stopp) ----------
+
+// Lädt das Ergebnis eines früheren Laufs, falls vorhanden — Themen mit einem bereits
+// erfolgreichen (fehlerfreien) OpenAlex-Ergebnis werden für OpenAlex nicht erneut abgefragt.
+// So kann ein Lauf, der wegen erschöpften Budgets vorzeitig endet, im nächsten Aufruf genau
+// dort fortsetzen, statt wieder bei Thema 1 zu beginnen und dasselbe knappe Budget erneut auf
+// bereits geklärte Themen zu verschwenden.
+function ladeCheckpoint() {
+  try {
+    const bisher = JSON.parse(readFileSync(OUTPUT_JSON, 'utf8'));
+    const byTitel = new Map();
+    for (const t of bisher) {
+      if (t.openalex && !t.openalex.fehler) byTitel.set(t.titel, t.openalex);
+    }
+    return byTitel;
+  } catch {
+    return new Map();
+  }
+}
+
+// ---------- 6. Runner mit Concurrency-Pool ----------
 
 async function run() {
   const alleThemen = parseThemen().slice(0, LIMIT);
-  console.log(`${alleThemen.length} Kern-Themen geparst. Prüfe Quellenlage (OpenAlex + Europe PMC + DuckDuckGo)...`);
+  const cache = ladeCheckpoint();
+  console.log(
+    `${alleThemen.length} Kern-Themen geparst (${cache.size} davon mit bereits erfolgreichem OpenAlex-Ergebnis aus einem früheren Lauf). Prüfe Quellenlage (OpenAlex + Europe PMC + DuckDuckGo)...`,
+  );
 
-  const ergebnisse = new Array(alleThemen.length);
+  const ergebnisse = alleThemen.slice();
   let index = 0;
   let done = 0;
+  let wiederverwendet = 0;
+
+  function flush() {
+    writeFileSync(OUTPUT_JSON, JSON.stringify(ergebnisse, null, 2) + '\n');
+  }
 
   async function worker() {
     while (index < alleThemen.length) {
       const i = index++;
+      const thema = alleThemen[i];
+      const cachedOpenAlex = cache.get(thema.titel);
+      if (cachedOpenAlex) wiederverwendet++;
       try {
-        ergebnisse[i] = await checkThema(alleThemen[i]);
+        ergebnisse[i] = await checkThema(thema, cachedOpenAlex);
       } catch (err) {
-        ergebnisse[i] = { ...alleThemen[i], fehler: String(err), tragfaehig: false, begruendung: 'Abfragefehler.' };
+        ergebnisse[i] = { ...thema, fehler: String(err), tragfaehig: false, begruendung: 'Abfragefehler.' };
       }
       done++;
+      if (done % 10 === 0 || done === alleThemen.length) flush();
       if (done % 20 === 0 || done === alleThemen.length) {
         console.log(`  ${done}/${alleThemen.length} geprüft...`);
       }
@@ -379,12 +458,17 @@ async function run() {
   }
 
   await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
-
-  writeFileSync(OUTPUT_JSON, JSON.stringify(ergebnisse, null, 2) + '\n');
+  flush();
 
   const tragfaehigCount = ergebnisse.filter((t) => t.tragfaehig).length;
   const fehlerCount = ergebnisse.filter((t) => t.hatAbfragefehler || t.fehler).length;
   console.log(`\nFertig: ${tragfaehigCount}/${ergebnisse.length} Kern-Themen tragfähig. Ergebnis: ${OUTPUT_JSON}`);
+  console.log(`OpenAlex: ${wiederverwendet} Thema(en) aus Checkpoint wiederverwendet, ${done - wiederverwendet} neu abgefragt.`);
+  if (openAlexBudgetErschoepft) {
+    console.log(
+      `OpenAlex-Budget während dieses Laufs erschöpft — verbleibende Themen liefen nur mit Europe PMC. Skript erneut ausführen, sobald das Budget zurückgesetzt ist (siehe letzte 429-Antwort für den Reset-Zeitpunkt); dank Checkpoint werden dann nur noch die fehlenden Themen abgefragt.`,
+    );
+  }
   if (fehlerCount > 0) {
     console.log(`Achtung: ${fehlerCount} Thema/Themen hatten mindestens einen Abfragefehler (auch nach Retry) — deren "tragfähig:false" kann ein Messfehler statt ein echtes "nein" sein. Lauf ggf. wiederholen.`);
   }

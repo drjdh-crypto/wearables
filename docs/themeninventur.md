@@ -5,121 +5,197 @@ Automatisierte Prüfung, ob der Themenkern „Schlaf- und Recovery-Tracking" (30
 Redaktions-Pipeline (`agents/pipeline/01-recherche.md`) einzuhalten: 6–10 Quellen je Artikel,
 mindestens 1 Review/Meta-Analyse, mindestens 2 Arbeiten aus den letzten 3 Jahren.
 
-Skript: `agents/pipeline/scripts/themeninventur-check.mjs` · Rohdaten: `data/themeninventur.json`
-· Aufruf: `node agents/pipeline/scripts/themeninventur-check.mjs` (Testlauf mit
-`LIMIT=10 node ...`).
+Es gibt **zwei Messungen**, die zusammen gelesen werden müssen (Begründung siehe unten):
+
+| Skript | Rohdaten | Miss die Tragfähigkeit von... |
+|---|---|---|
+| `agents/pipeline/scripts/themeninventur-check.mjs` | `data/themeninventur.json` | ...jedem Thema für sich allein (direkte Literaturtreffer zum genauen Titel) |
+| `agents/pipeline/scripts/themeninventur-cluster-check.mjs` | `data/themeninventur-cluster.json` | ...dem geteilten Quellenpool des Geräts/Mechanismus, auf dem ein Thema aufbaut |
+
+## Warum zwei Messungen? Die themenbasierte Messung unterschätzt systematisch
+
+Die ursprüngliche, rein themenbasierte Messung prüft pro Einzelthema, ob GENAU dieser eine
+Titel genug direkte Literaturtreffer hat. Das ist zu streng: Ein Artikel zitiert in der Praxis
+nicht nur hochspezifische Literatur zu seinem exakten Titel, sondern schöpft aus dem
+Quellenpool des zugrunde liegenden Geräts oder Messmechanismus — und diesen Pool teilen sich
+viele Artikel. Ein Beispiel: Die Themen „Oura Ring 4: Wie genau ist die Schlafphasen-Erkennung?“,
+„Oura vs. Whoop: Recovery-Score im Vergleich“ und „Oura Gen 3 vs. Gen 4: Was hat sich an der
+Sensorik verändert?“ sind drei verschiedene Einzelthemen mit vermutlich je < 6 direkten
+Treffern — aber alle drei können aus derselben, deutlich größeren Oura-Studienlage zitieren.
+Die themenbasierte Messung sieht das nicht; die clusterbasierte Messung (neu) schon.
+
+Die clusterbasierte Messung ist im Gegenzug **optimistisch**: Sie summiert Treffer über alle
+einem Thema zugeordneten Cluster, ohne Überlappungen zwischen den Clustern herauszurechnen
+(ein Paper, das sowohl in der PPG- als auch in der HRV-Cluster-Suche auftaucht, wird potenziell
+doppelt gezählt). Die beiden Messungen sind deshalb bewusst als **Unter-** und **Obergrenze**
+zu lesen, nicht als zwei unabhängige, gleichwertige Schätzungen.
 
 ## Ergebnis auf einen Blick
 
-**22 von 305 Kern-Themen (7 %) sind nach der aktuellen Messung „tragfähig".** Das liegt weit
-unter dem Ziel von 300 — aber diese Zahl ist, wie unten erklärt, eine **Untergrenze aus einer
-beschädigten Messung**, keine verlässliche Endzahl. Der Hauptgrund steht unter „Grenzen dieser
-Messung".
-
-### Nach Kategorie
-
-| Kategorie | tragfähig | gesamt | Anteil |
+| Messung | Tragfähig | Basis | Charakter |
 |---|---|---|---|
-| grundlagen | 13 | 145 | 9 % |
-| genauigkeits-check | 5 | 95 | 5 % |
-| kaufberatung | 4 | 58 | 7 % |
-| produktzyklus | 0 | 7 | 0 % |
-| **Summe** | **22** | **305** | **7 %** |
+| Themenbasiert | 22 / 305 (7 %) | Direkte Treffer zum exakten Titel | Konservative Untergrenze |
+| Clusterbasiert | 219 / 221 anwendbar (99 %; 84 Themen ohne Cluster-Zuordnung) | Gepoolter Quellenpool der zugeordneten Geräte-/Mechanismus-Cluster | Optimistische Obergrenze (Überlappung nicht herausgerechnet) |
+| **Kombiniert** (thematisch **oder** clusterbasiert tragfähig) | **222 / 305 (73 %)** | Bestes verfügbares Bild aus beiden Messungen | Realistischste aktuell verfügbare Schätzung |
 
-### Nach Original-Cluster (aus `data/themeninventur.md`)
+**222 von 305 Kern-Themen (73 %) sind nach der kombinierten Messung tragfähig — deutlich näher
+am Ziel von 300 als die ursprüngliche themenbasierte Zahl (22/305), aber noch nicht dort.** Die
+Lücke von 78 Themen wird unten mit einer konkreten Ring-Öffnungsempfehlung adressiert. Beide
+Messungen laufen aktuell **ohne echte OpenAlex-Daten** (siehe nächster Abschnitt) — die
+kombinierte Zahl ist deshalb selbst noch eine Untergrenze der Untergrenze/Obergrenze-Spanne,
+kein Endergebnis.
 
-| Cluster | tragfähig | gesamt |
-|---|---|---|
-| Schlafphysiologie | 11 | 45 |
-| Tracking-Genauigkeit & Methodik | 2 | 60 |
-| HRV & Recovery | 2 | 45 |
-| Gerätevergleiche & Kaufberatung | 4 | 60 |
-| Praxis & Alltag | 0 | 65 |
-| Methodik-Kritik & Limitationen | 3 | 30 |
+### Warum die Differenz so groß ist (22 vs. 222)
+
+Am deutlichsten zeigt sich der Effekt in den geräte-/mechanismus-lastigen Kategorien — dort
+schließt die clusterbasierte Messung fast die gesamte Lücke:
+
+| Original-Cluster | Themenbasiert | Kombiniert | Differenz |
+|---|---|---|---|
+| Gerätevergleiche & Kaufberatung | 4/60 | **59/60** | +55 |
+| HRV & Recovery | 2/45 | **41/45** | +39 |
+| Tracking-Genauigkeit & Methodik | 2/60 | **44/60** | +42 |
+| Schlafphysiologie | 11/45 | 29/45 | +18 |
+| Methodik-Kritik & Limitationen | 3/30 | 17/30 | +14 |
+| Praxis & Alltag | 0/65 | 32/65 | +32 |
+
+„Gerätevergleiche & Kaufberatung" und „HRV & Recovery" sind nach der kombinierten Messung
+praktisch vollständig abgedeckt (98 % bzw. 91 %) — exakt die Kategorien, in denen Themen sich
+laut der ursprünglichen Konstruktionslogik der Liste (Geräte-Achse × Metriken-Achse, siehe
+`data/themeninventur.md`, Abschnitt „Methodik") am stärksten einen Quellenpool teilen. Das
+bestätigt die eingangs genannte Hypothese direkt.
+
+„Praxis & Alltag" bleibt mit 32/65 (49 %) am schwächsten — diese Kategorie besteht überwiegend
+aus Alltagsfragen (Koffein-Halbwertszeit, Sport am Abend, Erste-Nacht-Effekt, Winterzeitumstellung),
+die weder einem Gerät/Mechanismus noch einer eng gefassten Forschungsfrage entsprechen und
+deshalb von keiner der beiden Messungen gut erfasst werden — nicht, weil die Themen redaktionell
+unsinnig wären, sondern weil ihre Literatur breiter verteilt und schwerer automatisiert zu
+finden ist. 83 der 305 Themen erreichen auf keiner der beiden Messungen die Schwelle; die
+meisten davon fallen in genau dieses Muster.
+
+### Nach Kategorie (kombiniert)
+
+| Kategorie | Kombiniert | Gesamt | Anteil |
+|---|---|---|---|
+| grundlagen | 95 | 145 | 66 % |
+| genauigkeits-check | 65 | 95 | 68 % |
+| kaufberatung | 57 | 58 | 98 % |
+| produktzyklus | 5 | 7 | 71 % |
+| **Summe** | **222** | **305** | **73 %** |
 
 ### Nach Zwiebelring
 
-Alle 305 geprüften Themen liegen im **Kern** (Schlaf- und Recovery-Tracking) — `data/themeninventur.md`
-enthält aktuell keine Themen in den Ringen „Schlafumgebung" oder „Stress & Erholung", diese
-existieren nur als Kandidaten für eine mögliche Erweiterung (siehe Empfehlung unten).
+Alle 305 geprüften Themen liegen im **Kern**. Die Ringe „Schlafumgebung" und „Stress &
+Erholung" existieren nur als Kandidaten für eine mögliche Erweiterung (siehe Empfehlung unten)
+— für sie gibt es noch keine Themenliste und damit noch keine Messung, nur eine grobe
+Vergleichsschätzung auf Cluster-Ebene.
 
-## Warum 22/305 die tatsächliche Tragfähigkeit unterschätzt
+## OpenAlex-Nachlauf: Status und wie er weiterläuft
 
-Der Lauf hat eine **externe Störung** getroffen, die noch während dieser Session auftrat:
-**OpenAlex hat sein API-Modell auf ein Tagesbudget umgestellt** und lehnte ab einem bestimmten
-Punkt jede weitere Anfrage mit `429 Insufficient budget` ab (Reset erst um Mitternacht UTC).
-Das betraf **alle 305 Themen** in diesem Lauf — die Zahlen unten beruhen ausschließlich auf
-**Europe PMC**, nicht auf der Summe aus OpenAlex + Europe PMC wie ursprünglich vorgesehen.
+**Noch nicht möglich zum Zeitpunkt dieser Messung** — OpenAlex hat sein Tagesbudget weiterhin
+bei $0 (`429 Insufficient budget`, Reset laut letzter Antwort um Mitternacht UTC). Beide Skripte
+laufen deshalb bislang ausschließlich auf Europe-PMC-Daten; alle oben genannten Zahlen sind
+entsprechend vorläufig.
 
-Das ist relevant, weil OpenAlex und Europe PMC unterschiedliche Ausschnitte der Literatur
-indizieren: Europe PMC deckt vorwiegend biomedizinische/Life-Sciences-Literatur ab, während
-OpenAlex zusätzlich Technik-/Informatik-Venues (z. B. IEEE-Sensorik- und Algorithmus-Paper)
-mit abdeckt, die für Wearable-Genauigkeit und Sensor-Methodik relevant sind, in Europe PMC aber
-oft fehlen. Eine Stichprobe zur Einordnung: Bei 8 Vergleichs-Suchbegriffen aus dem Themenkern
-lag der OpenAlex-Treffer für "circadian rhythm" bei über 250.000 (vor dem Budget-Stopp
-gemessen, siehe Commit-Historie), während Europe PMC für dasselbe, sehr gut erforschte Thema
-deutlich niedriger liegt. **207 der 305 Themen (68 %) hatten in dieser Messung 0 Treffer
-insgesamt** — ein Wert, der für ein derart gut erforschtes Themenfeld unplausibel niedrig ist
-und größtenteils auf den fehlenden OpenAlex-Beitrag zurückgeht, nicht auf tatsächlich fehlende
-Literatur.
+Damit ein künftiger Lauf nicht wieder bei Thema 1 beginnt und dasselbe knappe Budget erneut auf
+bereits geklärte Themen verschwendet, wurden beide Skripte um drei Dinge ergänzt:
 
-**Empfehlung:** Lauf nach Mitternacht UTC (bzw. sobald `agents/pipeline/scripts/themeninventur-check.mjs`
-wieder erfolgreiche OpenAlex-Antworten liefert) wiederholen — Befehl unverändert:
-`node agents/pipeline/scripts/themeninventur-check.mjs`. Solange nur der Europe-PMC-Anteil
-verfügbar ist, sollte „tragfähig: false" nicht als endgültiges „kein Thema" gelesen werden.
+1. **`mailto`-Parameter** (polite pool) bei jeder OpenAlex-Anfrage — unverändert vorhanden.
+2. **Konservatives Rate-Limit:** Concurrency von 5 auf 2 gesenkt, plus eine explizite
+   Mindestpause von 300 ms zwischen OpenAlex-Anfragen. Zusätzlich erkennt das Skript den
+   spezifischen Budget-Fehler (429 mit „Insufficient budget" im Antworttext) und bricht
+   OpenAlex-Anfragen für den Rest des Laufs sofort ab, statt alle verbleibenden Themen einzeln
+   erfolglos durchzuprobieren.
+3. **Zwischenspeicherung/Checkpoint:** Beide Skripte laden vor dem Start das Ergebnis des
+   letzten Laufs. Themen/Cluster mit einem bereits **erfolgreichen** (fehlerfreien)
+   OpenAlex-Ergebnis werden nicht erneut abgefragt, sondern aus der vorherigen Datei
+   übernommen. Zusätzlich wird die Ausgabedatei alle 10 abgeschlossenen Themen auf die Platte
+   geschrieben (nicht erst am Ende), sodass auch ein hart abgebrochener Lauf seinen Fortschritt
+   nicht verliert. Verifiziert per Test: Ein Thema mit injiziertem Erfolgs-Ergebnis wurde beim
+   nächsten Lauf korrekt übernommen statt erneut abgefragt (siehe Commit-Historie).
 
-## Weitere Grenzen der Messung (unabhängig vom OpenAlex-Ausfall)
+**Nächster Schritt, sobald das Budget zurückgesetzt ist:** beide Skripte unverändert erneut
+ausführen —
 
-- **Deutsch→Englisch-Übersetzung ist ein Wörterbuch, kein MT-System.** Rund 200 wiederkehrende
-  Fachbegriffe aus den 305 Themen sind hinterlegt (`TRANSLATE` im Skript), aber seltene,
-  themenspezifische Wörter in einzelnen Titeln bleiben unübersetzt und schwächen die
-  Trefferquote für genau diese Themen. Stichprobenprüfung während der Entwicklung zeigte das
-  z. B. bei „Ausschüttung", „Mikroarousals" oder „Zusammenhang" — nachträglich ergänzt, aber
-  die Liste ist mit Sicherheit nicht vollständig.
-- **Review-/Aktualitäts-Erkennung ist stichprobenbasiert.** OpenAlex und Europe PMC liefern
-  pro Anfrage nur die ersten 25 Treffer zur Auswertung von `reviews_in_sample`/
-  `recent_in_sample`, nicht das vollständige Trefferset — bei sehr großen Trefferzahlen (z. B.
-  hunderttausende) ist das eine Stichprobe, kein vollständiger Zensus.
-- **Nachfragehinweis (DuckDuckGo-Autocomplete) ist ein kostenloser Proxy, kein Ersatz für ein
-  dediziertes Keyword-Tool** — die Vorschläge sind im JSON pro Thema hinterlegt, fließen aber
-  nicht in die harte „tragfähig"-Berechnung ein, nur als zusätzlicher Kontext.
-- **„Tragfähig" prüft nur Literaturvorkommen, nicht redaktionelle Eignung.** Kaufberatungs-
-  und Produktzyklus-Themen (z. B. „Bester Schlaftracker unter 100 Euro") sind per Natur keine
-  Forschungsfragen und werden von dieser Messung fast durchgängig als „nicht tragfähig"
-  eingestuft (produktzyklus: 0/7, kaufberatung: 4/58) — obwohl viele davon redaktionell
-  sinnvoll sind, weil sie *innerhalb* des Artikeltexts auf dieselben Genauigkeits-/Grundlagen-
-  Studien verweisen können, die andere Kern-Themen bereits abdecken. Diese Kategorien sollten
-  nicht 1:1 an derselben Schwelle gemessen werden wie „grundlagen"/„genauigkeits-check" —
-  ihre tatsächliche Tragfähigkeit hängt von der Literaturdeckung der referenzierten
-  Grundlagenthemen ab, nicht von eigenen Direkttreffern.
+```
+node agents/pipeline/scripts/themeninventur-check.mjs
+node agents/pipeline/scripts/themeninventur-cluster-check.mjs
+```
 
-## Empfehlung: welchen Ring öffnen?
+— und diesen Abschnitt sowie die Ergebnistabellen oben mit den dann echten OpenAlex-Zahlen
+aktualisieren, wobei die aktuellen (Europe-PMC-only) Zahlen als Vergleichswert stehen bleiben:
 
-Der Kern bleibt (selbst nach einem vollständigen Nachlauf mit OpenAlex) voraussichtlich unter
-300 tragfähigen Themen, sobald man die oben genannten Verzerrungen einrechnet — schon jetzt
-zeigen 8 weitere Themen "fast" tragfähig (Quellenzahl + Review erfüllt, nur an der
-Aktualitätsschwelle gescheitert). Um dauerhaft über 300 zu kommen, falls der Kern nach dem
-OpenAlex-Nachlauf tatsächlich knapp bleibt, wurde eine Vergleichsmessung für die beiden
-Kandidaten-Ringe durchgeführt (Europe-PMC-Trefferzahlen für je 6 repräsentative Suchbegriffe,
-12.08.2026):
-
-| Ring | Repräsentative Begriffe | Europe-PMC-Treffer (Median) |
+| Messung | Europe-PMC-only (13.08.2026, hier dokumentiert) | Mit OpenAlex (ausstehend) |
 |---|---|---|
-| Schlafumgebung (Matratze, Raumklima, Lärm, Verdunkelung) | 6 | ~2.335 |
-| Stress & Erholung (Cortisol, HRV-Biofeedback, Meditation, Burnout) | 6 | ~14.948 |
+| Themenbasiert | 22/305 | — |
+| Clusterbasiert (anwendbar) | 219/221 | — |
+| Kombiniert | 222/305 | — |
 
-**Empfehlung: Ring „Stress & Erholung" zuerst öffnen.** Begründung:
+## Weitere Grenzen der Messung
 
-1. Deutlich höhere und konsistentere Literaturdeckung in der Stichprobe (Median ~6× höher als
-   „Schlafumgebung").
-2. Inhaltliche Nähe zum bestehenden Cluster „HRV & Recovery" im Kern — Begriffe wie Cortisol,
-   autonomes Nervensystem und Recovery-Scores sind bereits im Übersetzungswörterbuch und in
-   bestehenden Artikeln verankert, was den redaktionellen Übergang erleichtert (weniger neue
-   Fachterminologie, mehr Anschlussfähigkeit an bereits recherchierte Quellen).
-3. „Schlafumgebung" bleibt als zweite Option sinnvoll (Matratzen/Raumklima-Themen haben klare
-   Kaufberatungs-Anschlussfähigkeit), sollte aber erst nach „Stress & Erholung" geprüft werden,
-   falls Letzterer allein nicht ausreicht.
+**Themenbasiert** (unverändert gegenüber der letzten Fassung dieses Dokuments):
 
-Nächster konkreter Schritt: `data/themeninventur.md` um einen neuen Abschnitt für den Ring
-„Stress & Erholung" ergänzen (Kandidatentitel sammeln, analog zu den bestehenden Sektionen A–F),
-dann `themeninventur-check.mjs` erneut darüber laufen lassen.
+- Deutsch→Englisch-Übersetzung ist ein ~200-Begriffe-Wörterbuch, kein MT-System — seltene,
+  themenspezifische Wörter bleiben vereinzelt unübersetzt.
+- Review-/Aktualitäts-Erkennung ist stichprobenbasiert (erste 25 Treffer je Anfrage).
+- Nachfragehinweis (DuckDuckGo-Autocomplete) ist ein kostenloser Proxy, fließt nicht in die
+  harte Berechnung ein.
+
+**Clusterbasiert** (neu):
+
+- **Pooling rechnet Überlappung nicht heraus** (siehe oben) — die 99 %-Quote unter den
+  anwendbaren Themen ist eine Obergrenze, kein Beleg, dass jedes einzelne Thema tatsächlich 6
+  nicht-überlappende, diverse Quellen bekäme. Vor der echten Recherche (Schritt 1 der Pipeline)
+  ersetzt das nicht die Diversitätsprüfung mit `validate-quellen.mjs`.
+- **84 von 305 Themen (28 %) sind keinem Cluster zuordenbar** — meist Alltags-/
+  Populationsthemen ohne Geräte-/Mechanismus-Bezug (Koffein, Sport-Timing, Jahreszeitwechsel,
+  Menstruationszyklus, Kurzschläfer-Gen). Für sie bleibt die themenbasierte Zahl maßgeblich,
+  die clusterbasierte Messung liefert dort explizit `null` (nicht anwendbar), nicht `false`.
+- **Zwei sehr kleine Geräte-Cluster fallen selbst gepoolt durch:** Ultrahuman (3 Treffer,
+  1 Thema) und Coros (4 Treffer, 1 Thema) — diese Marken haben schlicht noch kaum unabhängige
+  Validierungsliteratur, unabhängig von der Messmethode.
+- **Cluster-Zuordnung ist Keyword-basiert** (Regex gegen den deutschen Titel) — ein Thema, das
+  inhaltlich zu einem Cluster gehört, aber das Schlüsselwort nicht im Titel trägt (z. B.
+  „Warum Hautton die Genauigkeit optischer Sensoren beeinflussen kann" für PPG), wird verpasst
+  und landet in den 84 nicht zugeordneten Themen statt im richtigen Cluster.
+- **31 Cluster** decken die Geräte-Achse (19 Geräte/Systeme) und Mechanismus-/Metriken-Achse
+  (12) aus der ursprünglichen Konstruktionslogik der Themenliste ab (`data/themeninventur.md`,
+  Abschnitt „Methodik") — nicht jedes denkbare Cluster wurde einzeln modelliert.
+
+## Empfehlung: welche Ringe öffnen, in welcher Reihenfolge?
+
+**Ja — auch die kombinierte, deutlich großzügigere Messung bleibt mit 222/305 unter 300.** Die
+Lücke beträgt 78 Themen. Da für die Kandidaten-Ringe noch keine Themenliste existiert, lässt
+sich ihr Beitrag nicht direkt messen — hier eine Schätzung auf Basis der bereits am 12.08.2026
+durchgeführten Vergleichsmessung (Europe-PMC-Treffer für je 6 repräsentative Suchbegriffe) plus
+der heute gemessenen kombinierten Tragfähigkeitsquote:
+
+| Ring | Literaturdichte (Europe-PMC-Median, 6 Suchbegriffe) | Geschätzte Themenzahl bei ähnlicher Dichte wie bestehende Kategorien | Geschätzte tragfähige Themen (bei ~70–75 % kombinierter Quote) |
+|---|---|---|---|
+| Stress & Erholung | ~14.948 | 70–90 | ~50–65 |
+| Schlafumgebung | ~2.335 | 50–65 | ~35–45 |
+
+**Empfehlung: Beide Ringe öffnen, in dieser Reihenfolge — Stress & Erholung zuerst.**
+
+1. **Stress & Erholung zuerst:** höhere und konsistentere Literaturdichte (Median ~6× höher als
+   Schlafumgebung), inhaltliche Nähe zum bereits stark abgedeckten Kern-Cluster „HRV & Recovery"
+   (91 % kombiniert tragfähig) — neue Themen wie „Cortisol und HRV-Erholung nach Belastung" oder
+   „HRV-Biofeedback: Was zeigt die Studienlage" würden vermutlich direkt vom bestehenden
+   `hrv-messung`- und `recovery-score-algorithmus`-Cluster mitprofitieren, ohne dass neue
+   Cluster aufgebaut werden müssten. Geschätzter Beitrag: ~50–65 tragfähige Themen — allein
+   reicht das voraussichtlich **nicht**, um die Lücke von 78 vollständig zu schließen.
+2. **Schlafumgebung danach, falls nötig:** geringere, aber immer noch klar ausreichende
+   Literaturdichte (Matratze, Raumklima, Lärm, Verdunkelung), zusätzlich mit natürlicher
+   Kaufberatungs-Anschlussfähigkeit (Matratzen-/Kissen-Vergleiche). Geschätzter Beitrag: ~35–45
+   weitere tragfähige Themen.
+3. **Zusammen (~85–110 geschätzte neue tragfähige Themen)** würden die Lücke von 78 mit
+   Puffer schließen — vorausgesetzt, die tatsächliche Themenerstellung für beide Ringe erreicht
+   eine ähnliche Dichte wie der bestehende Kern. Das ist eine Schätzung, keine Messung: Erst
+   nach dem Anlegen konkreter Themenlisten für beide Ringe (analog zu den Abschnitten A–F in
+   `data/themeninventur.md`) liefern beide Check-Skripte echte Zahlen.
+
+**Nächster konkreter Schritt:** `data/themeninventur.md` um einen neuen Abschnitt „Stress &
+Erholung" ergänzen (Kandidatentitel sammeln, Geräte-/Mechanismus-Bezug wo möglich explizit im
+Titel benennen, damit die clusterbasierte Zuordnung greift — z. B. „HRV" statt nur
+„Erholung"), dann beide Check-Skripte erneut laufen lassen. Bei Bedarf danach „Schlafumgebung"
+ergänzen.

@@ -1,0 +1,4461 @@
+{
+  "geprueft_am": "2026-08-13T20:00:16.710Z",
+  "cluster": [
+    {
+      "id": "ppg-sensorik",
+      "label": "PPG-Sensorik",
+      "query": "photoplethysmography wearable heart rate accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 2743,
+        "reviews_in_sample": 9,
+        "recent_in_sample": 25
+      },
+      "hits": 2743,
+      "reviews": 9,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "aktigraphie",
+      "label": "Aktigraphie/Bewegungssensorik",
+      "query": "actigraphy accelerometer sleep wake accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 744,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 25
+      },
+      "hits": 744,
+      "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "hrv-messung",
+      "label": "HRV-Messung",
+      "query": "heart rate variability wearable measurement accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 8590,
+        "reviews_in_sample": 12,
+        "recent_in_sample": 24
+      },
+      "hits": 8590,
+      "reviews": 12,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "schlafstadien-klassifikation",
+      "label": "Schlafstadien-Klassifikation",
+      "query": "sleep stage classification algorithm wearable accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 3059,
+        "reviews_in_sample": 8,
+        "recent_in_sample": 24
+      },
+      "hits": 3059,
+      "reviews": 8,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "zirkadiane-rhythmik",
+      "label": "Zirkadiane Rhythmik/Melatonin",
+      "query": "circadian rhythm sleep melatonin regulation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 10559,
+        "reviews_in_sample": 16,
+        "recent_in_sample": 25
+      },
+      "hits": 10559,
+      "reviews": 16,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "schlaf-architektur-grundlagen",
+      "label": "Schlafarchitektur/-zyklen (Grundlagen)",
+      "query": "sleep architecture cycle duration efficiency healthy adults normative",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 558,
+        "reviews_in_sample": 11,
+        "recent_in_sample": 25
+      },
+      "hits": 558,
+      "reviews": 11,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "eeg-psg-referenz",
+      "label": "EEG/Polysomnographie als Referenz",
+      "query": "polysomnography EEG gold standard sleep validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 1551,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 25
+      },
+      "hits": 1551,
+      "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "hauttemperatur-sensorik",
+      "label": "Hauttemperatur-/Kerntemperatur-Sensorik",
+      "query": "skin temperature core body temperature wearable sleep measurement",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 1544,
+        "reviews_in_sample": 12,
+        "recent_in_sample": 25
+      },
+      "hits": 1544,
+      "reviews": 12,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "spo2-sensorik",
+      "label": "SpO2-/Sauerstoffsättigungs-Sensorik",
+      "query": "pulse oximetry oxygen saturation wearable accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 1098,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 25
+      },
+      "hits": 1098,
+      "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "atemfrequenz-sensorik",
+      "label": "Atemfrequenz-Sensorik",
+      "query": "respiratory rate wearable sleep measurement accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 3382,
+        "reviews_in_sample": 11,
+        "recent_in_sample": 24
+      },
+      "hits": 3382,
+      "reviews": 11,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "schlafapnoe-erkennung",
+      "label": "Schlafapnoe-Erkennung",
+      "query": "sleep apnea detection wearable screening accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 1248,
+        "reviews_in_sample": 5,
+        "recent_in_sample": 24
+      },
+      "hits": 1248,
+      "reviews": 5,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "recovery-score-algorithmus",
+      "label": "Recovery-Score/Trainingssteuerung",
+      "query": "recovery score training load heart rate variability algorithm athletes",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 669,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 25
+      },
+      "hits": 669,
+      "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "oura",
+      "label": "Oura",
+      "query": "Oura ring sleep tracking accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 235,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 25
+      },
+      "hits": 235,
+      "reviews": 7,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "whoop",
+      "label": "Whoop",
+      "query": "Whoop wearable recovery strain accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 41,
+        "reviews_in_sample": 14,
+        "recent_in_sample": 25
+      },
+      "hits": 41,
+      "reviews": 14,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "apple-watch",
+      "label": "Apple Watch",
+      "query": "Apple Watch sleep tracking accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 733,
+        "reviews_in_sample": 6,
+        "recent_in_sample": 25
+      },
+      "hits": 733,
+      "reviews": 6,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "garmin",
+      "label": "Garmin",
+      "query": "Garmin wearable sleep accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 526,
+        "reviews_in_sample": 4,
+        "recent_in_sample": 25
+      },
+      "hits": 526,
+      "reviews": 4,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "polar",
+      "label": "Polar",
+      "query": "Polar wearable heart rate sleep accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 540,
+        "reviews_in_sample": 9,
+        "recent_in_sample": 25
+      },
+      "hits": 540,
+      "reviews": 9,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "fitbit-pixel-watch",
+      "label": "Fitbit/Pixel Watch",
+      "query": "Fitbit wearable sleep tracking accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 944,
+        "reviews_in_sample": 8,
+        "recent_in_sample": 25
+      },
+      "hits": 944,
+      "reviews": 8,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "samsung-galaxy-watch",
+      "label": "Samsung Galaxy Watch",
+      "query": "Samsung Galaxy Watch sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 196,
+        "reviews_in_sample": 9,
+        "recent_in_sample": 25
+      },
+      "hits": 196,
+      "reviews": 9,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "withings",
+      "label": "Withings",
+      "query": "Withings sleep tracking device accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 195,
+        "reviews_in_sample": 8,
+        "recent_in_sample": 25
+      },
+      "hits": 195,
+      "reviews": 8,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "matratzensensorik",
+      "label": "Matratzensensorik (Eight Sleep, Emfit)",
+      "query": "under-mattress sensor ballistocardiography sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 50,
+        "reviews_in_sample": 7,
+        "recent_in_sample": 24
+      },
+      "hits": 50,
+      "reviews": 7,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "amazfit",
+      "label": "Amazfit",
+      "query": "Amazfit wearable sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 38,
+        "reviews_in_sample": 19,
+        "recent_in_sample": 24
+      },
+      "hits": 38,
+      "reviews": 19,
+      "recent": 24,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "coros",
+      "label": "Coros",
+      "query": "Coros wearable sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 4,
+        "reviews_in_sample": 1,
+        "recent_in_sample": 4
+      },
+      "hits": 4,
+      "reviews": 1,
+      "recent": 4,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "ultrahuman",
+      "label": "Ultrahuman",
+      "query": "Ultrahuman ring wearable sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 3,
+        "reviews_in_sample": 2,
+        "recent_in_sample": 3
+      },
+      "hits": 3,
+      "reviews": 2,
+      "recent": 3,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "circul-plus",
+      "label": "Circul+",
+      "query": "Circul ring pulse oximetry sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 11,
+        "reviews_in_sample": 6,
+        "recent_in_sample": 4
+      },
+      "hits": 11,
+      "reviews": 6,
+      "recent": 4,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "muse-s",
+      "label": "Muse S",
+      "query": "Muse S EEG headband sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 66,
+        "reviews_in_sample": 12,
+        "recent_in_sample": 25
+      },
+      "hits": 66,
+      "reviews": 12,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "biostrap",
+      "label": "Biostrap",
+      "query": "Biostrap wearable sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 21,
+        "reviews_in_sample": 15,
+        "recent_in_sample": 12
+      },
+      "hits": 21,
+      "reviews": 15,
+      "recent": 12,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "ringconn",
+      "label": "RingConn",
+      "query": "RingConn smart ring sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 4,
+        "reviews_in_sample": 3,
+        "recent_in_sample": 4
+      },
+      "hits": 4,
+      "reviews": 3,
+      "recent": 4,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "movano",
+      "label": "Movano",
+      "query": "Movano wearable ring sleep tracking accuracy",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 3,
+        "reviews_in_sample": 1,
+        "recent_in_sample": 2
+      },
+      "hits": 3,
+      "reviews": 1,
+      "recent": 2,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "cpap-oekosysteme",
+      "label": "CPAP-Ökosysteme",
+      "query": "CPAP therapy adherence data sleep apnea",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 4630,
+        "reviews_in_sample": 6,
+        "recent_in_sample": 25
+      },
+      "hits": 4630,
+      "reviews": 6,
+      "recent": 25,
+      "hatAbfragefehler": true
+    },
+    {
+      "id": "consumer-wearables-allgemein",
+      "label": "Consumer-Wearables allgemein",
+      "query": "consumer wearable sleep tracker accuracy validation",
+      "openalex": {
+        "hits": 0,
+        "reviews_in_sample": 0,
+        "recent_in_sample": 0,
+        "fehler": true
+      },
+      "europepmc": {
+        "hits": 531,
+        "reviews_in_sample": 9,
+        "recent_in_sample": 25
+      },
+      "hits": 531,
+      "reviews": 9,
+      "recent": 25,
+      "hatAbfragefehler": true
+    }
+  ],
+  "themen": [
+    {
+      "titel": "Was passiert im Körper während der Tiefschlafphase?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "REM-Schlaf: Funktion, Dauer, warum Tracker ihn oft falsch erkennen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Leichtschlaf vs. Tiefschlaf: Warum die Grenze fließend ist",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlafzyklen verstehen: Wie viele Zyklen pro Nacht sind normal?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Der zirkadiane Rhythmus einfach erklärt",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Melatonin: Wirkung, Ausschüttung, Messbarkeit",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kerntemperatur und Schlaf: Warum Wearables Hauttemperatur statt Körperkerntemperatur messen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "hauttemperatur-sensorik"
+      ],
+      "poolHits": 1544,
+      "poolReviews": 12,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hauttemperatur-sensorik]: 1544 Treffer, 12 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlafdruck (Adenosin) vs. zirkadianer Rhythmus: Das Zwei-Prozess-Modell",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum wir nachts aufwachen — normale Mikroarousals vs. Störung",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie viel Schlaf brauchen Erwachsene wirklich? Was die Evidenz sagt",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schlafeffizienz: Definition, Berechnung, sinnvoller Zielwert",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sleep Onset Latency: Warum die Einschlafzeit so schwer zu messen ist",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Was ist eine \"normale\" Schlafarchitektur nach Alter?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Frauen und Männer unterschiedliche Schlafmuster haben können",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Der Einfluss des Menstruationszyklus auf Schlafparameter",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wechseljahre und Schlaf: Was sich verändert und was Tracker davon sehen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaf und Gedächtniskonsolidierung: Was Tiefschlaf wirklich leistet",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Träumen und REM-Schlaf: Zusammenhang und Missverständnisse",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Schlafbedarf individuell und teils genetisch bestimmt ist",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kurzschläfer-Gen (DEC2): Mythos oder Realität?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Was ist Schlafschuld (\"Sleep Debt\") — und kann man sie wirklich nachholen?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Power Napping: Optimale Dauer laut Forschung",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein \"perfekter\" Schlaf-Score nicht immer gesunden Schlaf bedeutet",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Atmung im Schlaf: Was normale Atemfrequenz-Schwankungen bedeuten",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "atemfrequenz-sensorik"
+      ],
+      "poolHits": 3382,
+      "poolReviews": 11,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [atemfrequenz-sensorik]: 3382 Treffer, 11 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Herzfrequenz im Schlaf: Warum sie nachts absinkt und was das aussagt",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Körpertemperaturkurve über die Nacht: Was sie über Schlafqualität verrät",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "hauttemperatur-sensorik"
+      ],
+      "poolHits": 1544,
+      "poolReviews": 12,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hauttemperatur-sensorik]: 1544 Treffer, 12 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bewegung im Schlaf: Wie viel ist normal, wann wird es zum Warnsignal?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schlafspindeln und K-Komplexe: Was EEG sieht, was Wearables nicht sehen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "eeg-psg-referenz"
+      ],
+      "poolHits": 1551,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [eeg-psg-referenz]: 1551 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Schlaf nicht linear \"besser\" mit mehr Tiefschlaf wird",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Der Erste-Nacht-Effekt: Warum neue Umgebungen den Schlaf stören",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Sozialer Jetlag: Wenn Wochenend- und Wochentag-Rhythmus auseinanderdriften",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Licht am Abend und Melatoninsuppression: Was Studien zeigen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Blaulichtfilter: Wirkt das wirklich auf den Schlaf?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Koffein-Halbwertszeit und Schlaf: Wie lange wirkt ein Nachmittagskaffee nach?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Alkohol und Schlafarchitektur: Warum die \"Einschlafhilfe\" den Tiefschlaf stört",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 3617,
+      "poolReviews": 19,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, schlaf-architektur-grundlagen]: 3617 Treffer, 19 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sport am Abend: Fördert oder stört es den Schlaf?",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schlaf und Blutzucker: Wechselwirkungen, die CGM-Nutzer:innen sehen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Thermoregulation im Schlaf: Warum eine kühle Umgebung hilft",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schichtarbeit und zirkadiane Fehlanpassung",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Jetlag: Wie schnell sich der Rhythmus wirklich anpasst",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Winterzeit/Sommerzeit-Umstellung: Messbare Effekte auf Schlafdaten",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schlafapnoe verstehen: Was physiologisch passiert, was SpO2-Tracking zeigt",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik",
+        "schlafapnoe-erkennung"
+      ],
+      "poolHits": 2346,
+      "poolReviews": 12,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik, schlafapnoe-erkennung]: 2346 Treffer, 12 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Insomnie: Physiologische und psychologische Mechanismen",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Restless-Legs-Syndrom und Schlaftracking",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaf im Alter: Warum sich Architektur und Bedarf verändern",
+      "cluster_original": "schlafphysiologie",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie funktioniert PPG (photoplethysmographische) Pulsmessung am Handgelenk/Finger?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "ppg-sensorik"
+      ],
+      "poolHits": 2743,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [ppg-sensorik]: 2743 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "EKG vs. PPG: Unterschiede in Genauigkeit und Einsatzzweck",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "ppg-sensorik"
+      ],
+      "poolHits": 2743,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [ppg-sensorik]: 2743 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie erkennen Wearables Schlafstadien überhaupt? (Algorithmus-Grundlagen)",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Aktigraphie erklärt: Bewegung als Proxy für Schlaf/Wachzustand",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "aktigraphie"
+      ],
+      "poolHits": 744,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [aktigraphie]: 744 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Was ist SpO2-Tracking und wie zuverlässig ist es am Handgelenk?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik"
+      ],
+      "poolHits": 1098,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik]: 1098 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Hauttemperatur-Sensoren: Was sie messen und was nicht",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "hauttemperatur-sensorik"
+      ],
+      "poolHits": 1544,
+      "poolReviews": 12,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hauttemperatur-sensorik]: 1544 Treffer, 12 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Hautton die Genauigkeit optischer Sensoren beeinflussen kann",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Abtastrate und Batterie: Der technische Kompromiss hinter \"24/7 HRV\"",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kontaktlose Schlaftracker (Radar/Sonar): Wie Somnofy & Co. funktionieren",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Matratzensensoren (Withings, Emfit) vs. Wearables: Messprinzip im Vergleich",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "withings",
+        "matratzensensorik"
+      ],
+      "poolHits": 245,
+      "poolReviews": 15,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [withings, matratzensensorik]: 245 Treffer, 15 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Machine-Learning-Modelle in Schlaf-Apps: Black Box oder nachvollziehbar?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum Firmware-Updates die \"Genauigkeit\" eines Geräts über Nacht verändern können",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Kalibrierung bei Wearables: Was Nutzer:innen selbst beeinflussen können",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Bewegungsartefakte die häufigste Fehlerquelle bei Schlaftracking sind",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "aktigraphie"
+      ],
+      "poolHits": 744,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [aktigraphie]: 744 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sensordrift: Warum ältere Geräte ungenauer werden können",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie liest man eine Wearable-Validierungsstudie richtig?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sensitivität vs. Spezifität: Was diese Kennzahlen bei Schlaftrackern bedeuten",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Epoch-by-Epoch-Vergleich: Der Standard für Schlafstadien-Validierung",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum PSG (Polysomnographie) der Goldstandard bleibt — und wo sie an Grenzen stößt",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "eeg-psg-referenz"
+      ],
+      "poolHits": 1551,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [eeg-psg-referenz]: 1551 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bland-Altman-Plots verstehen: Wie Genauigkeit statistisch dargestellt wird",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum kleine Stichproben (n<30) Validierungsstudien angreifbar machen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Herstellerfinanzierte Studien: Wie man Interessenkonflikte erkennt",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum \"klinisch validiert\" nicht dasselbe ist wie \"medizinisch zugelassen\"",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "FDA-Zulassung vs. CE-Kennzeichnung: Was Wearables tatsächlich dürfen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Consumer-Wearable oder Medizinprodukt? Die regulatorische Grauzone",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Labor- und Feldstudien (in-lab vs. at-home) unterschiedliche Ergebnisse liefern",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie oft werden Wearable-Algorithmen tatsächlich unabhängig nachgetestet?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Meta-Analysen zu Consumer-Schlaftrackern: Was der Forschungsstand insgesamt zeigt",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum \"Genauigkeit\" je nach Schlafstadium stark variiert (Tiefschlaf schwerer als Gesamtschlafzeit)",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Reproduzierbarkeit: Warum dieselbe Person in zwei Nächten unterschiedliche Werte bekommt",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Oura Ring (Gen 3/4): Was Validierungsstudien zur Schlafstadien-Genauigkeit zeigen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "oura"
+      ],
+      "poolHits": 3294,
+      "poolReviews": 15,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, oura]: 3294 Treffer, 15 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Whoop 4.0/5.0: Wie genau ist die Schlafstadien-Erkennung wirklich?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "whoop"
+      ],
+      "poolHits": 3100,
+      "poolReviews": 22,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, whoop]: 3100 Treffer, 22 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Apple Watch Schlaftracking: Genauigkeit im Studienvergleich",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "apple-watch"
+      ],
+      "poolHits": 733,
+      "poolReviews": 6,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [apple-watch]: 733 Treffer, 6 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Garmin Schlaf-Tracking (Elevate-Sensor): Was Studien zur Genauigkeit sagen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "garmin"
+      ],
+      "poolHits": 526,
+      "poolReviews": 4,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin]: 526 Treffer, 4 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Fitbit/Google Pixel Watch: Genauigkeit der Schlafstadien im Test",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "fitbit-pixel-watch"
+      ],
+      "poolHits": 4003,
+      "poolReviews": 16,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, fitbit-pixel-watch]: 4003 Treffer, 16 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Samsung Galaxy Watch Schlaftracking: Validierungsstand",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "samsung-galaxy-watch"
+      ],
+      "poolHits": 196,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [samsung-galaxy-watch]: 196 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Polar Nightly Recharge & Schlaftracking: Wie zuverlässig ist der Vantage/Ignite-Algorithmus?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "polar"
+      ],
+      "poolHits": 540,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [polar]: 540 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Withings Sleep Analyzer (Matte): Genauigkeit ohne Tragekomfort-Nachteil",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "withings"
+      ],
+      "poolHits": 195,
+      "poolReviews": 8,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [withings]: 195 Treffer, 8 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Ultrahuman Ring Air: Unabhängige Validierungsdaten im Überblick",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "ultrahuman"
+      ],
+      "poolHits": 3,
+      "poolReviews": 2,
+      "poolRecent": 3,
+      "tragfaehigCluster": false,
+      "begruendung": "Cluster [ultrahuman]: 3 Treffer, 2 Review(s), 3 aktuelle im gepoolten Cluster-Sample → erfüllt nicht die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Eight Sleep Pod: Wie misst die Matratzenauflage Schlafstadien?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "matratzensensorik"
+      ],
+      "poolHits": 3109,
+      "poolReviews": 15,
+      "poolRecent": 48,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, matratzensensorik]: 3109 Treffer, 15 Review(s), 48 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Emfit QS: Ballistokardiographie-basiertes Tracking im Genauigkeitsvergleich",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "matratzensensorik"
+      ],
+      "poolHits": 50,
+      "poolReviews": 7,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [matratzensensorik]: 50 Treffer, 7 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Amazfit Schlaftracking: Was unabhängige Tests zeigen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "amazfit"
+      ],
+      "poolHits": 38,
+      "poolReviews": 19,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [amazfit]: 38 Treffer, 19 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Coros Schlaf- und Recovery-Tracking: Genauigkeit für Ausdauersportler:innen",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "coros"
+      ],
+      "poolHits": 4,
+      "poolReviews": 1,
+      "poolRecent": 4,
+      "tragfaehigCluster": false,
+      "begruendung": "Cluster [coros]: 4 Treffer, 1 Review(s), 4 aktuelle im gepoolten Cluster-Sample → erfüllt nicht die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "RingConn und Movano Evie: Neue Ring-Anbieter im Genauigkeitscheck",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "ringconn",
+        "movano"
+      ],
+      "poolHits": 7,
+      "poolReviews": 4,
+      "poolRecent": 6,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [ringconn, movano]: 7 Treffer, 4 Review(s), 6 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Biostrap: Wie unterscheidet sich der Ansatz von Ring/Uhr-Trackern?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "biostrap"
+      ],
+      "poolHits": 21,
+      "poolReviews": 15,
+      "poolRecent": 12,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [biostrap]: 21 Treffer, 15 Review(s), 12 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Circul+ (Ring mit kontinuierlichem SpO2): Genauigkeit bei Sauerstoffsättigung",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik",
+        "circul-plus"
+      ],
+      "poolHits": 1109,
+      "poolReviews": 13,
+      "poolRecent": 29,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik, circul-plus]: 1109 Treffer, 13 Review(s), 29 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Muse S (EEG-Stirnband): Wie nah kommt konsumentennahes EEG an PSG heran?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "eeg-psg-referenz",
+        "muse-s"
+      ],
+      "poolHits": 1617,
+      "poolReviews": 19,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [eeg-psg-referenz, muse-s]: 1617 Treffer, 19 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sleep-Cycle-App (mikrofonbasiert): Wie zuverlässig ist Tracking ganz ohne Wearable?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "AutoSleep (Apple-Watch-Companion-App): Bringt die App mehr Genauigkeit als Apples Bordmittel?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "SpO2-Genauigkeit im Vergleich: Ring vs. Uhr vs. medizinisches Pulsoxymeter",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik"
+      ],
+      "poolHits": 1098,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik]: 1098 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV nachts: Wie genau messen Consumer-Geräte im Vergleich zum EKG-Brustgurt?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Atemfrequenz-Tracking im Schlaf: Genauigkeit verschiedener Gerätekategorien",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "atemfrequenz-sensorik"
+      ],
+      "poolHits": 3382,
+      "poolReviews": 11,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [atemfrequenz-sensorik]: 3382 Treffer, 11 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum CPAP-integrierte Schlafdaten oft genauer sind als externe Wearables",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "cpap-oekosysteme"
+      ],
+      "poolHits": 4630,
+      "poolReviews": 6,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [cpap-oekosysteme]: 4630 Treffer, 6 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie gut erkennen Wearables Schlafapnoe-Verdachtsfälle wirklich?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "schlafapnoe-erkennung"
+      ],
+      "poolHits": 1248,
+      "poolReviews": 5,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafapnoe-erkennung]: 1248 Treffer, 5 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "EKG-Funktion in Uhren: Wie zuverlässig für Vorhofflimmern-Screening?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Was leisten günstige Fitness-Tracker (<50 €) beim Schlaftracking wirklich?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Brustgurt vs. Handgelenk vs. Ring: Wo sitzt der genaueste Pulssensor?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "ppg-sensorik"
+      ],
+      "poolHits": 2743,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [ppg-sensorik]: 2743 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Genauigkeit bei dunkler Hautfarbe in manchen Studien schlechter ausfällt",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie verändert sich Trackinggenauigkeit bei Bewegungsstörungen (z. B. PLMD)?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Unabhängige Testlabore für Wearables: Wer prüft eigentlich, was Hersteller behaupten?",
+      "cluster_original": "tracking-genauigkeit",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Was ist Herzfrequenzvariabilität (HRV) eigentlich?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "RMSSD vs. SDNN: Welche HRV-Kennzahl nutzen welche Anbieter?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum HRV-Werte zwischen Oura, Whoop und Garmin so unterschiedlich ausfallen",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung",
+        "oura",
+        "whoop",
+        "garmin"
+      ],
+      "poolHits": 9392,
+      "poolReviews": 37,
+      "poolRecent": 99,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung, oura, whoop, garmin]: 9392 Treffer, 37 Review(s), 99 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Baseline-Denken: Warum absolute HRV-Werte wenig aussagen",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie stark schwankt HRV natürlicherweise von Tag zu Tag?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Recovery-Score-Algorithmen im Vergleich: Was fließt wirklich ein?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Whoop Recovery vs. Oura Readiness vs. Garmin Body Battery: Methodik im Vergleich",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "whoop",
+        "garmin"
+      ],
+      "poolHits": 802,
+      "poolReviews": 25,
+      "poolRecent": 75,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, whoop, garmin]: 802 Treffer, 25 Review(s), 75 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum ein niedriger Recovery-Score nicht automatisch \"Trainingspause\" bedeutet",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV und Übertraining: Was die Sportwissenschaft wirklich zeigt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung",
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 9259,
+      "poolReviews": 19,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung, recovery-score-algorithmus]: 9259 Treffer, 19 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Overreaching erkennen: Welche HRV-Muster sind Warnsignale?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV-geführtes Training: Bringt es nachweislich bessere Ergebnisse als starre Pläne?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Ruheherzfrequenz als Recovery-Indikator: Aussagekraft und Grenzen",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum HRV bei Frauen über den Zyklus systematisch schwankt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Alkohol und HRV: Wie stark und wie lange ist der Effekt messbar?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Krankheit erkennen, bevor Symptome auftreten: Was HRV-Abfälle wirklich vorhersagen können",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Atemübungen und HRV: Kurzfristige Biofeedback-Effekte vs. langfristige Trends",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kälteexposition (Eisbad, kalte Dusche) und HRV: Was Studien zeigen",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Koffein und HRV: Messbarer Effekt oder Rauschen?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Stress-Tracking über HRV: Wie zuverlässig erkennen Wearables mentalen Stress?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum HRV-Trends aussagekräftiger sind als Tageswerte",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Trainingsbelastung (Load) vs. Recovery: Wie Wearables beides gegenrechnen",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Tapering vor Wettkämpfen: Wie Recovery-Daten die Planung unterstützen können",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "HRV bei Ausdauersportler:innen vs. Kraftsportler:innen: Unterschiedliche Zielbereiche?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Altersnormwerte für HRV mit Vorsicht zu genießen sind",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Genetische Einflussfaktoren auf die individuelle HRV-Bandbreite",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wearable-HRV vs. EKG-Brustgurt-HRV: Wann reicht welche Genauigkeit?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Body-Battery-Konzept (Garmin) im Detail erklärt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "garmin"
+      ],
+      "poolHits": 526,
+      "poolReviews": 4,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin]: 526 Treffer, 4 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Was bedeutet ein \"grüner\", \"gelber\", \"roter\" Readiness-Score wirklich?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "HRV-gestützte Periodisierung im Ausdauersport: Praxisleitfaden",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Reisen und Zeitzonenwechsel HRV-Daten verzerren",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Menstruationszyklus-Phasen und Trainingssteuerung über Recovery-Daten",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV in der Schwangerschaft: Was sich verändert und was Tracking zeigt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Post-virale Recovery: Wie HRV-Daten nach Infekten den Wiedereinstieg begleiten können",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Übertrainingssyndrom: Diagnosekriterien vs. das, was ein Recovery-Score zeigt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum ein \"schlechter\" Recovery-Score nach hartem Training normal ist",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV-Apps ohne Wearable (kamerabasiert am Smartphone): Wie genau sind sie?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Elite HRV, Kubios & Co.: Spezial-Apps für HRV-Analyse im Vergleich zu Consumer-Wearables",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie beeinflusst Schlafmangel die HRV am Folgetag?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung",
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 9148,
+      "poolReviews": 23,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung, schlaf-architektur-grundlagen]: 9148 Treffer, 23 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Autonomes Nervensystem verstehen: Sympathikus/Parasympathikus einfach erklärt",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum manche Menschen dauerhaft niedrige HRV-Werte haben, ohne krank zu sein",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Recovery-Tracking für Kraftsport: Sinnvoll oder Overkill?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wearable-Daten und Return-to-Play nach Verletzungen im Leistungssport",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Stimmung und subjektives Befinden oft schlechter mit HRV korrelieren als gedacht",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "HRV-Coaching-Programme: Was steckt hinter automatisierten Trainingsempfehlungen?",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Grenzen von Recovery-Scores: Wann man ihnen bewusst nicht folgen sollte",
+      "cluster_original": "hrv-recovery",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Oura Ring vs. Whoop: Welches Gerät für welchen Nutzertyp?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "whoop"
+      ],
+      "poolHits": 276,
+      "poolReviews": 21,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, whoop]: 276 Treffer, 21 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Oura Ring vs. Ultrahuman Ring Air: Ring-Duell im Detailvergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "ultrahuman"
+      ],
+      "poolHits": 238,
+      "poolReviews": 9,
+      "poolRecent": 28,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, ultrahuman]: 238 Treffer, 9 Review(s), 28 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Whoop vs. Garmin: Recovery-Tracking im direkten Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "whoop",
+        "garmin"
+      ],
+      "poolHits": 567,
+      "poolReviews": 18,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [whoop, garmin]: 567 Treffer, 18 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Apple Watch vs. Oura Ring: Alltagstauglichkeit vs. Spezialisierung",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "apple-watch"
+      ],
+      "poolHits": 968,
+      "poolReviews": 13,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, apple-watch]: 968 Treffer, 13 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Garmin vs. Polar: Welche Marke für Ausdauersportler:innen?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "garmin",
+        "polar"
+      ],
+      "poolHits": 1066,
+      "poolReviews": 13,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin, polar]: 1066 Treffer, 13 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Fitbit vs. Apple Watch: Schlaftracking im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "apple-watch",
+        "fitbit-pixel-watch"
+      ],
+      "poolHits": 1677,
+      "poolReviews": 14,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [apple-watch, fitbit-pixel-watch]: 1677 Treffer, 14 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Samsung Galaxy Watch vs. Apple Watch: Schlaf- und Recovery-Features",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "apple-watch",
+        "samsung-galaxy-watch"
+      ],
+      "poolHits": 929,
+      "poolReviews": 15,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [apple-watch, samsung-galaxy-watch]: 929 Treffer, 15 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Whoop 4.0 vs. Whoop 5.0/MG: Lohnt sich das Upgrade?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "whoop"
+      ],
+      "poolHits": 41,
+      "poolReviews": 14,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [whoop]: 41 Treffer, 14 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Oura Gen3 vs. Gen4: Was hat sich wirklich verbessert?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura"
+      ],
+      "poolHits": 235,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura]: 235 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Ring vs. Uhr vs. Brustgurt: Formfaktor-Vergleich für Schlaftracking",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Withings Sleep Analyzer vs. Ring/Uhr: Matte gegen Wearable",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "withings"
+      ],
+      "poolHits": 195,
+      "poolReviews": 8,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [withings]: 195 Treffer, 8 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Eight Sleep vs. klassischer Wearable-Tracker: Aktive Kühlung vs. passives Tracking",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "matratzensensorik"
+      ],
+      "poolHits": 50,
+      "poolReviews": 7,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [matratzensensorik]: 50 Treffer, 7 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Garmin Venu vs. Garmin Forerunner: Welche Serie fürs Schlaftracking?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "garmin"
+      ],
+      "poolHits": 526,
+      "poolReviews": 4,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin]: 526 Treffer, 4 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Polar Vantage vs. Polar Ignite: Unterschiede im Recovery-Feature-Set",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "polar"
+      ],
+      "poolHits": 540,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [polar]: 540 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Amazfit vs. Xiaomi Mi Band: Budget-Tracker im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "amazfit"
+      ],
+      "poolHits": 38,
+      "poolReviews": 19,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [amazfit]: 38 Treffer, 19 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Coros vs. Garmin: Recovery-Metriken für Ultra-Ausdauersportler:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "garmin",
+        "coros"
+      ],
+      "poolHits": 530,
+      "poolReviews": 5,
+      "poolRecent": 29,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin, coros]: 530 Treffer, 5 Review(s), 29 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Ultrahuman vs. Circul+: Ring-Vergleich mit Fokus auf SpO2",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik",
+        "ultrahuman",
+        "circul-plus"
+      ],
+      "poolHits": 1112,
+      "poolReviews": 15,
+      "poolRecent": 32,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik, ultrahuman, circul-plus]: 1112 Treffer, 15 Review(s), 32 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Muse S vs. klassische Wearables: EEG-Stirnband als Alternative?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "eeg-psg-referenz",
+        "muse-s"
+      ],
+      "poolHits": 1617,
+      "poolReviews": 19,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [eeg-psg-referenz, muse-s]: 1617 Treffer, 19 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sleep-Cycle-App vs. Wearable-Tracking: Reicht das Smartphone-Mikrofon?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Emfit QS vs. Withings Sleep Analyzer: Kontaktlose Systeme im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "withings",
+        "matratzensensorik"
+      ],
+      "poolHits": 245,
+      "poolReviews": 15,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [withings, matratzensensorik]: 245 Treffer, 15 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "RingConn vs. Oura: Günstige Alternative oder echte Konkurrenz?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "ringconn"
+      ],
+      "poolHits": 239,
+      "poolReviews": 10,
+      "poolRecent": 29,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, ringconn]: 239 Treffer, 10 Review(s), 29 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Movano Evie vs. Oura: Ring-Tracking mit Fokus auf Frauengesundheit",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "movano"
+      ],
+      "poolHits": 238,
+      "poolReviews": 8,
+      "poolRecent": 27,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, movano]: 238 Treffer, 8 Review(s), 27 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Google Pixel Watch vs. Fitbit-Geräte seit der Google-Übernahme",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "fitbit-pixel-watch"
+      ],
+      "poolHits": 944,
+      "poolReviews": 8,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [fitbit-pixel-watch]: 944 Treffer, 8 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Biostrap vs. Whoop: Unterschiedliche Zielgruppen im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "whoop",
+        "biostrap"
+      ],
+      "poolHits": 62,
+      "poolReviews": 29,
+      "poolRecent": 37,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [whoop, biostrap]: 62 Treffer, 29 Review(s), 37 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Garmin Body Battery vs. Whoop Recovery vs. Oura Readiness: Methodik-Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "whoop",
+        "garmin"
+      ],
+      "poolHits": 802,
+      "poolReviews": 25,
+      "poolRecent": 75,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, whoop, garmin]: 802 Treffer, 25 Review(s), 75 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "CPAP-Tracking-Apps (ResMed myAir, Philips DreamMapper) vs. externe Wearables",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "cpap-oekosysteme"
+      ],
+      "poolHits": 4630,
+      "poolReviews": 6,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [cpap-oekosysteme]: 4630 Treffer, 6 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kostenloses Schlaftagebuch vs. Premium-Wearable: Was bringt der Umstieg wirklich?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Whoop-Abo vs. Kaufgerät: Geschäftsmodelle im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "whoop"
+      ],
+      "poolHits": 41,
+      "poolReviews": 14,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [whoop]: 41 Treffer, 14 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Oura vs. Apple Watch Ultra für Trailrunning und Schlaf zugleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "apple-watch"
+      ],
+      "poolHits": 968,
+      "poolReviews": 13,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, apple-watch]: 968 Treffer, 13 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Garmin Instinct vs. Fenix: Recovery-Features je Preisklasse",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "garmin"
+      ],
+      "poolHits": 526,
+      "poolReviews": 4,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [garmin]: 526 Treffer, 4 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker 2026: Übersicht nach Nutzertyp",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Ausdauersportler:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Kraftsportler:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker unter 100 Euro",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker ohne Abo-Zwang",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Ring-Tracker im Vergleich",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Beste Smartwatch mit Schlaftracking für Alltagsnutzer:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Schichtarbeiter:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Schwangere",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Menschen mit Schlafapnoe-Verdacht",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "schlafapnoe-erkennung"
+      ],
+      "poolHits": 1248,
+      "poolReviews": 5,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafapnoe-erkennung]: 1248 Treffer, 5 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Beste kontaktlose Schlaftracking-Lösung (ohne Wearable am Körper)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Senior:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Teenager/junge Erwachsene",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester wasserdichter Schlaftracker für Schwimmer:innen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker mit langer Akkulaufzeit",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für CPAP-Nutzer:innen (Formfaktor-Frage)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "cpap-oekosysteme"
+      ],
+      "poolHits": 4630,
+      "poolReviews": 6,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [cpap-oekosysteme]: 4630 Treffer, 6 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Beste App zur Schlafanalyse ganz ohne Wearable",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Recovery-Tracker für HYROX/Functional Fitness",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Reisende/Vielflieger:innen (Jetlag-Tracking)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester günstiger Einstieg ins Schlaftracking unter 50 Euro",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker mit Smart-Alarm-Funktion",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Paare (getrennte Auswertung im Doppelbett)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker mit Raumklima-Sensor (Licht, Lärm, Temperatur)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker mit medizinisch anmutenden Zusatzfeatures (EKG, SpO2-Alarm)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik"
+      ],
+      "poolHits": 1098,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik]: 1098 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker für Kinder (mit Datenschutz-Einordnung)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester minimalistischer Tracker ohne Smartwatch-Funktionen",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Bester Schlaftracker mit langfristiger Trendanalyse (Jahresverlauf)",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kaufberatung: Lohnt sich ein Wechsel vom Fitness-Tracker zum Spezial-Schlaftracker?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kaufberatung: Wann reicht die Smartphone-App statt Hardware?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wearable-Refurbished/Gebrauchtmarkt: Worauf beim Gebrauchtkauf achten?",
+      "cluster_original": "geraete-vergleich",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum zeigt mein Tracker plötzlich viel weniger Tiefschlaf an?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum unterscheiden sich die Werte von zwei Geräten in derselben Nacht so stark?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Tracker erkennt Einschlafzeit falsch: Ursachen und Abhilfe",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "schlaf-architektur-grundlagen"
+      ],
+      "poolHits": 558,
+      "poolReviews": 11,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlaf-architektur-grundlagen]: 558 Treffer, 11 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum \"0 % Tiefschlaf\"-Nächte meist ein Messfehler sind, kein Alarmsignal",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie interpretiere ich einen dauerhaft niedrigen Schlaf-Score richtig?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum mein Recovery-Score trotz gutem Gefühl niedrig ist — und umgekehrt",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Akku leer über Nacht: Wie Datenlücken die Trendanalyse verfälschen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum Nickerchen die Nachtschlaf-Statistik verzerren können",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Tracker im Flugzeug/Zeitzonenwechsel: Warum die App durcheinanderkommt",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie exportiere und sichere ich meine eigenen Schlafdaten? (anbieterübergreifend)",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum Firmware-Updates rückwirkend alte Nächte neu bewerten können",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Sync-Probleme zwischen Wearable und App: Häufige Ursachen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Ringe bei kalten Händen ungenauer messen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein zu lockeres/zu enges Armband die Messqualität beeinflusst",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie lese ich meinen persönlichen HRV-Trend richtig, statt Tageswerte zu überinterpretieren",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Alkohol am Vorabend am nächsten Morgen die Werte \"einbrechen\" lässt",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie verändert ein Haustier im Bett die Trackinggenauigkeit?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum Paare im selben Bett gegenseitig ihre Bewegungsdaten verfälschen können",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Tracker zeigt \"wach\" trotz Schlaf: Häufige Fehlklassifikation und Ursachen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie oft sollte man Sensoren/Ring/Uhr reinigen, damit die Messung stabil bleibt?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Orthosomnie: Wenn die Jagd nach dem perfekten Schlaf-Score selbst zum Problem wird",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein täglicher Blick auf den Score Angst statt Beruhigung auslösen kann",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Digital Detox vom eigenen Schlaftracker: Wann eine Pause sinnvoll ist",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Placebo- und Nocebo-Effekte durch Schlaf-Scores",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie Schlaf-Scores das subjektive Schlafempfinden verzerren können",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein \"schlechter\" Score nicht automatisch schlechten Schlaf bedeutet",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Tracking als Beruhigung bei Insomnie: Hilfreich oder kontraproduktiv?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie man Schlafdaten nutzt, ohne in Kontrollzwang zu verfallen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Gamification von Schlaf: Motivierend oder Druck erzeugend?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie Therapeut:innen Wearable-Daten in der Schlaftherapie sinnvoll einsetzen (oder bewusst weglassen)",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking in der Schwangerschaft: Was sich in den Daten typischerweise verändert",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking im Wochenbett: Realistische Erwartungen an Datenqualität",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Baby-Schlaftracker: Was sie leisten und wo die Grenzen liegen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking bei Kindern: Ab welchem Alter sinnvoll, was ist Spielerei?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking für Senior:innen: Sturzsensoren, Nachtaufwachen, Besonderheiten",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schichtarbeit: Wie Trackingdaten bei Tagschlaf anders interpretiert werden müssen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking auf Reisen: Praktische Tipps gegen Jetlag mit Datenunterstützung",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "zirkadiane-rhythmik"
+      ],
+      "poolHits": 10559,
+      "poolReviews": 16,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [zirkadiane-rhythmik]: 10559 Treffer, 16 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking im Homeoffice: Nickerchen, unregelmäßige Zeiten, was die Daten zeigen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking während Diäten/Kalorienrestriktion: Bekannte Wechselwirkungen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking bei Menschen mit ADHS: Besonderheiten und Grenzen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking bei Depression/Angststörungen: Chancen und Risiken",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wearables und Wechseljahresbeschwerden: Was Hitzewallungen in den Daten zeigen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Schlaftracking für Vegetarier:innen/Veganer:innen: Ernährungsbedingte Unterschiede in HRV/Schlaf?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Studierende und unregelmäßiger Schlaf: Was Trackingdaten über Prüfungsphasen zeigen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Schlaftracking im Pflegeberuf/Schichtdienst: Besondere Herausforderungen",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Sleep as Android: Funktionsumfang und Einordnung",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "SnoreLab & Co.: Schnarch-Tracking-Apps im Überblick",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie offene Schnittstellen (Apple Health, Google Fit) Trackerdaten bündeln",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Datenexport zwischen Anbietern oft schwieriger ist, als er sein sollte",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Drittanbieter-Dashboards (z. B. für Oura/Whoop-Daten): Sinnvoll oder Datenschutzrisiko?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "oura",
+        "whoop"
+      ],
+      "poolHits": 276,
+      "poolReviews": 21,
+      "poolRecent": 50,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [oura, whoop]: 276 Treffer, 21 Review(s), 50 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Automatisierungen mit Schlafdaten (z. B. Smart-Home-Wecklicht per API)",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie KI-gestützte Coaching-Features in Apps tatsächlich funktionieren",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum manche Apps Schlafdaten mit Kalender/Wetter/Zyklus-Apps verknüpfen — und was das bringt",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Kostenlose vs. Premium-Tier-Features gängiger Schlaf-Apps im Überblick",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie verlässlich sind Community-/Crowd-Vergleichswerte in Schlaf-Apps?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Was passiert mit meinen Schlafdaten? Ein Blick in die Datenschutzerklärungen großer Anbieter",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Sind Schlafdaten \"Gesundheitsdaten\" im Sinne der DSGVO?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie lange speichern Hersteller Schlaf- und HRV-Daten — und wo?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "hrv-messung"
+      ],
+      "poolHits": 8590,
+      "poolReviews": 12,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [hrv-messung]: 8590 Treffer, 12 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Was bedeutet die Übernahme eines Anbieters (z. B. Fitbit → Google) für die eigenen Daten?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "fitbit-pixel-watch"
+      ],
+      "poolHits": 944,
+      "poolReviews": 8,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [fitbit-pixel-watch]: 944 Treffer, 8 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Können Krankenversicherungen Zugriff auf Wearable-Daten verlangen?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wearable-Daten vor Gericht: Wurden Schlafdaten schon als Beweismittel genutzt?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Kinder-Schlaftracker und Datenschutz: Worauf Eltern achten sollten",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Wie man Schlafdaten dauerhaft löschen lässt (anbieterübergreifende Anleitung)",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Cloud- vs. lokale Speicherung von Schlafdaten: Was bieten die Hersteller wirklich?",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Medizinprodukt-Zulassung einfach erklärt: Was \"FDA-cleared\" bei einer Smartwatch bedeutet",
+      "cluster_original": "praxis-alltag",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum kein Consumer-Wearable eine Schlafapnoe-Diagnose ersetzen kann",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "schlafapnoe-erkennung"
+      ],
+      "poolHits": 1248,
+      "poolReviews": 5,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafapnoe-erkennung]: 1248 Treffer, 5 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Die Grenzen der Schlafstadien-Erkennung ohne EEG",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation",
+        "eeg-psg-referenz"
+      ],
+      "poolHits": 4610,
+      "poolReviews": 15,
+      "poolRecent": 49,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation, eeg-psg-referenz]: 4610 Treffer, 15 Review(s), 49 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum \"97 % Genauigkeit\" in Herstellerangaben oft irreführend ist",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Confirmation Bias beim Interpretieren eigener Trackingdaten",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein einzelner schlechter Score-Tag statistisch kaum Aussagekraft hat",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Der Unterschied zwischen Korrelation und Kausalität in Wearable-Marketing",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Alterseffekte in Normwerten oft auf zu kleinen Stichproben beruhen",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie Hersteller \"wissenschaftlich validiert\" nutzen, ohne die Studie offenzulegen",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum proprietäre Algorithmen die unabhängige Überprüfung erschweren",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Publikationsbias: Warum überwiegend positive Wearable-Studien veröffentlicht werden",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum manche Wearable-Studien vom Hersteller selbst durchgeführt werden — und was das für die Aussagekraft bedeutet",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Der Mythos \"80 % Genauigkeit bei Schlafstadien\" — was diese Zahl wirklich (nicht) bedeutet",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "schlafstadien-klassifikation"
+      ],
+      "poolHits": 3059,
+      "poolReviews": 8,
+      "poolRecent": 24,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [schlafstadien-klassifikation]: 3059 Treffer, 8 Review(s), 24 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Recovery-Scores keine medizinischen Biomarker sind",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum sich Wearable-Algorithmen über Softwareupdates ändern, ohne dass Nutzer:innen es merken",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum internationale Studienpopulationen nicht 1:1 auf jede Nutzergruppe übertragbar sind",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Die Grenzen von Aktigraphie bei der Erkennung von \"wach, aber bewegungslos\"",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "aktigraphie"
+      ],
+      "poolHits": 744,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [aktigraphie]: 744 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Schlaf-Scores zwischen Herstellern nicht direkt vergleichbar sind (unterschiedliche Formeln)",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Survivorship Bias in Erfahrungsberichten zu Wearables",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum manche vielzitierten Wearable-Studien nie repliziert wurden",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Die Rolle von Marketing-Sprache (\"klinisch getestet\") vs. tatsächlicher Evidenzlage",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum ein hoher Preis nicht automatisch höhere Messgenauigkeit bedeutet",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Grenzen der SpO2-Messung am Handgelenk bei Bewegung",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "spo2-sensorik"
+      ],
+      "poolHits": 1098,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [spo2-sensorik]: 1098 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum manche gesundheitlichen \"Trends\" in Wearable-Apps reines Rauschen sind",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Die Debatte um Wearables als Frühwarnsystem für Infekte: Wie belastbar ist die Evidenz wirklich?",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum unabhängige Studien oft Jahre nach Produkteinführung erst erscheinen",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Wie Algorithmus-Änderungen rückwirkende Vergleiche über Jahre unmöglich machen",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Warum \"mehr Daten\" nicht automatisch \"bessere Entscheidungen\" bedeutet",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    },
+    {
+      "titel": "Die Grenzen von Recovery-Scores bei psychischer statt körperlicher Belastung",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "recovery-score-algorithmus"
+      ],
+      "poolHits": 669,
+      "poolReviews": 7,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [recovery-score-algorithmus]: 669 Treffer, 7 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Warum Studienteilnehmer:innen in Wearable-Validierungen oft jung und gesund sind — ein Selektionsproblem",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [
+        "consumer-wearables-allgemein"
+      ],
+      "poolHits": 531,
+      "poolReviews": 9,
+      "poolRecent": 25,
+      "tragfaehigCluster": true,
+      "begruendung": "Cluster [consumer-wearables-allgemein]: 531 Treffer, 9 Review(s), 25 aktuelle im gepoolten Cluster-Sample → erfüllt die Mindestschwelle (6/1/2)."
+    },
+    {
+      "titel": "Regression-zur-Mitte-Effekt: Warum extreme Score-Tage oft von selbst \"besser\" werden",
+      "cluster_original": "methodik-limitationen",
+      "ring": "kern",
+      "cluster": [],
+      "poolHits": 0,
+      "poolReviews": 0,
+      "poolRecent": 0,
+      "tragfaehigCluster": null,
+      "begruendung": "Keinem Cluster zuordenbar (weder Geräte- noch Mechanismus-Keyword im Titel gefunden) — clusterbasierte Messung nicht anwendbar, themenbasierte Messung bleibt maßgeblich."
+    }
+  ]
+}
