@@ -26,29 +26,24 @@ richtige Weg, kein Risiko — ein Pull-Request-Umweg würde nur Reibung erzeugen
 zusätzliche Sicherheit zu bringen, solange die Freigabe-Regel unten (kein Schritt setzt
 `entwurf: false` außer dem expliziten Befehl) eingehalten wird.
 
-### Voraussetzung: Hosting
+### Hosting
 
-Damit „die fertige Entwurfs-URL zum Antippen" tatsächlich vom Handy aus erreichbar ist, muss
-dieses Repo an ein Hosting angebunden sein (geplant: Cloudflare Pages, siehe `CLAUDE.md`
-Abschnitt 8). **Das ist aktuell nicht der Fall** (Stand: kein GitHub Pages, keine Deployments,
-keine Commit-Checks auf dem Repo) — und das kann ich nicht selbst einrichten, weil es Zugriff
-auf ein Cloudflare-Konto braucht, das nur der Mensch hat. Einmalige Einrichtung (danach läuft
-jeder Push automatisch):
+Live auf **Cloudflare Pages**, Git-verbunden mit `drjdh-crypto/wearables` (Branch `main` →
+Production, Build-Befehl `npm run build`, Ausgabe `dist`, kein Adapter/Functions nötig — die
+Seite ist komplett statisch). Jeder Push auf `main` deployed automatisch.
 
-1. Auf [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create** →
-   **Pages** → **Connect to Git** → dieses Repo (`drjdh-crypto/wearables`) auswählen.
-2. Build-Einstellungen: Framework-Preset „Astro", Build-Befehl `npm run build`,
-   Build-Ausgabe-Verzeichnis `dist`. Kein Adapter, keine Functions nötig — die Seite ist
-   komplett statisch.
-3. Deploy bestätigen. Cloudflare vergibt eine `*.pages.dev`-URL (oder eine eigene Domain, falls
-   verbunden).
-4. Mir die resultierende URL einmal mitteilen — ich hinterlege sie dann als `SITE_URL` für die
-   Skripte (`status.mjs`, Freigabe-/Pipeline-Ausgabe), damit „Status" und die
-   Entwurfs-URL-Ausgabe direkt vollständige, tappbare Links liefern statt reiner Pfade.
+**Basis-URL:** `https://wearables.pages.dev` — als `DEFAULT_SITE_URL` in
+`agents/pipeline/scripts/status.mjs` hinterlegt, damit „Status" und die
+Pipeline-/Freigabe-Ausgabe immer vollständige, tappbare Links liefern.
 
-Bis dahin gebe ich bei „Status" und am Ende eines Pipeline-Laufs reine Pfade aus
-(`/entwurf/<id>/`) und sage explizit dazu, dass noch kein Hosting verbunden ist — keine
-erfundenen URLs.
+**Bekannte Falle:** Die Git-Verbindung kann sich lösen (GitHub-App-Berechtigung entzogen),
+ohne dass das Cloudflare-Projekt selbst „disconnected" meldet — Symptom: neue Pushes lösen
+keinen Build aus, die Seite bleibt auf einem alten Stand stehen, obwohl im Cloudflare-Dashboard
+unter „Git repository" weiterhin das Repo eingetragen ist. Fix (nur der Mensch kann das, da es
+GitHub-Kontozugriff braucht): github.com → Settings → Applications → Installed GitHub Apps →
+Cloudflare Pages → Repository-Zugriff prüfen/`wearables` freigeben → Save. Falls danach immer
+noch kein neuer Build kommt: einen neuen Commit pushen (z. B. `git commit --allow-empty`), um
+den Webhook erneut anzustoßen.
 
 ## Die Redaktions-Pipeline
 

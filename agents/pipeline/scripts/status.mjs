@@ -3,14 +3,17 @@
 // Zustand (Entwurf/veröffentlicht) und URL, für den Handy-Workflow.
 //
 // Aufruf: node agents/pipeline/scripts/status.mjs
-// Optional: SITE_URL=https://example.com node agents/pipeline/scripts/status.mjs
-//           (sobald Cloudflare Pages verbunden ist, siehe /agents/README.md)
+// Override bei Bedarf (z. B. Preview-Deployments): SITE_URL=https://... node agents/pipeline/scripts/status.mjs
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, basename, extname } from 'node:path';
 
 const ARTICLES_DIR = 'content/articles';
-const SITE_URL = process.env.SITE_URL ?? null;
+// Cloudflare Pages, Git-verbunden mit drjdh-crypto/wearables (main → Production).
+// Siehe /agents/README.md, "Hosting", falls die Git-Verbindung
+// je wieder getrennt wird (GitHub → Settings → Applications → Cloudflare Pages).
+const DEFAULT_SITE_URL = 'https://wearables.pages.dev';
+const SITE_URL = process.env.SITE_URL ?? DEFAULT_SITE_URL;
 
 function extractField(frontmatter, key) {
   const match = frontmatter.match(new RegExp(`^${key}:\\s*"?([^"\\n]+?)"?\\s*$`, 'm'));
@@ -42,9 +45,6 @@ for (const r of rows) {
   console.log(`  ${r.url}`);
 }
 
-if (!SITE_URL) {
-  console.log(
-    '\nHinweis: SITE_URL nicht gesetzt — die obigen URLs sind reine Pfade, kein Hosting' +
-      ' verbunden bzw. Basis-URL nicht bekannt. Siehe /agents/README.md ("Handy-Workflow").',
-  );
+if (SITE_URL !== DEFAULT_SITE_URL) {
+  console.log(`\nHinweis: SITE_URL überschrieben auf ${SITE_URL} (Standard: ${DEFAULT_SITE_URL}).`);
 }
