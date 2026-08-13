@@ -14,6 +14,16 @@ quellen:
     titel: "Physiology, Sleep Stages"
     journal: "StatPearls [Internet], NCBI Bookshelf (NBK526132)"
     url: "https://www.ncbi.nlm.nih.gov/books/NBK526132/"
+    evidenzstufe: "sonstige"
+    score: 23
+    teilwerte:
+      studientyp: 8
+      zitationsrate: 0
+      n: 0
+      aktualitaet: 15
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: sonstige → 8/35. Keine Zitationsdaten verfügbar (0/25) — üblich bei nicht in OpenAlex indizierten Referenzwerken, kein Qualitätsmangel per se. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2024 (2 Jahre alt) → 15/15. Kein Journal (Referenzwerk) — 0/10.'
   - aussage: "Across 65 studies and 3,577 healthy people aged 5 to 102, REM percentage decreases with age while stage 1 and stage 2 percentages increase."
     studientyp: "peer-reviewed"
     autoren: "Ohayon MM, Carskadon MA, Guilleminault C, Vitiello MV"
@@ -22,6 +32,17 @@ quellen:
     journal: "Sleep, 27(7), 1255–1273"
     doi: "10.1093/sleep/27.7.1255"
     url: "https://doi.org/10.1093/sleep/27.7.1255"
+    n: 3577
+    evidenzstufe: "meta-analyse"
+    score: 76
+    teilwerte:
+      studientyp: 35
+      zitationsrate: 25
+      n: 15
+      aktualitaet: 1
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: meta-analyse → 35/35. 3356 Zitationen ÷ 22 Jahre = 152.5/Jahr → 25/25. n = 3577 → 15/15. Publikationsjahr 2004 (22 Jahre alt) → 1/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "Within adult age decades, N2, N3, and REM percentages stay largely stable across 169 studies and 5,273 healthy adults (not statistically significant changes); only N1 increases by about 0.5 percentage points per decade."
     studientyp: "peer-reviewed"
     autoren: "Boulos MI, Jairam T, Kendzerska T, Im J, Mekhael A, Murray BJ"
@@ -30,6 +51,17 @@ quellen:
     journal: "The Lancet Respiratory Medicine, 7(6), 533–543"
     doi: "10.1016/S2213-2600(19)30057-8"
     url: "https://doi.org/10.1016/S2213-2600(19)30057-8"
+    n: 5273
+    evidenzstufe: "meta-analyse"
+    score: 73
+    teilwerte:
+      studientyp: 35
+      zitationsrate: 15
+      n: 15
+      aktualitaet: 8
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: meta-analyse → 35/35. 308 Zitationen ÷ 7 Jahre = 44.0/Jahr → 15/25. n = 5273 → 15/15. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=The%20Lancet%20Respiratory%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "Across 369 participants and 6,064 polysomnographically recorded cycles, median cycle duration was 96 minutes, with 3 to 4 complete cycles typical per night and substantial individual variation."
     studientyp: "peer-reviewed"
     autoren: "Cajochen C, Reichert CF, Münch M, Gabel V, Stefani O, Chellappa SL, Schmidt C"
@@ -38,6 +70,17 @@ quellen:
     journal: "Sleep Health, 10(1), S52–S62"
     doi: "10.1016/j.sleh.2023.09.002"
     url: "https://doi.org/10.1016/j.sleh.2023.09.002"
+    n: 369
+    evidenzstufe: "kohorte"
+    score: 55
+    teilwerte:
+      studientyp: 18
+      zitationsrate: 10
+      n: 12
+      aktualitaet: 15
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: kohorte → 18/35. 23 Zitationen ÷ 2 Jahre = 11.5/Jahr → 10/25. n = 369 → 12/15. Publikationsjahr 2024 (2 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep%20Health&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "Consumer wearables typically derive sleep from heart rate (variability), skin temperature, and motion sensing rather than EEG — without standardized validation, the accuracy of many devices remains hard to independently assess."
     studientyp: "peer-reviewed"
     autoren: "de Zambotti M, Cellini N, Goldstone A, Colrain IM, Baker FC"
@@ -46,6 +89,16 @@ quellen:
     journal: "Medicine & Science in Sports & Exercise, 51(7), 1538–1557"
     doi: "10.1249/MSS.0000000000001947"
     url: "https://doi.org/10.1249/MSS.0000000000001947"
+    evidenzstufe: "review"
+    score: 40
+    teilwerte:
+      studientyp: 12
+      zitationsrate: 20
+      n: 0
+      aktualitaet: 8
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: review → 12/35. 544 Zitationen ÷ 7 Jahre = 77.7/Jahr → 20/25. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Medicine%20%26%20Science%20in%20Sports%20%26%20Exercise&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "A meta-analysis of 24 studies and 798 participants found that consumer wearables underestimate total sleep time by about 17 minutes on average and sleep efficiency by about 4.7 percentage points versus polysomnography, while overestimating sleep latency and wake after sleep onset (WASO)."
     studientyp: "peer-reviewed"
     autoren: "Lee YJ, Lee JY, Cho JH, Kang YJ, Choi JH"
@@ -54,6 +107,17 @@ quellen:
     journal: "Journal of Clinical Sleep Medicine, 21(3), 573–582"
     doi: "10.5664/jcsm.11460"
     url: "https://doi.org/10.5664/jcsm.11460"
+    n: 798
+    evidenzstufe: "meta-analyse"
+    score: 77
+    teilwerte:
+      studientyp: 35
+      zitationsrate: 15
+      n: 12
+      aktualitaet: 15
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: meta-analyse → 35/35. 26 Zitationen ÷ 1 Jahre = 26.0/Jahr → 15/25. n = 798 → 12/15. Publikationsjahr 2025 (1 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Journal%20of%20Clinical%20Sleep%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "In 34 healthy adults, seven consumer trackers showed consistently high sensitivity for plain sleep/wake detection (≥0.93), but inconsistent sensitivity for distinguishing individual sleep stages (0.49–0.76), with a systematic tendency to misclassify other stages as light sleep."
     studientyp: "peer-reviewed"
     autoren: "Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, Watson CH, Bessman SC, Hirsch DA, Cooper AD, Drummond SPA, Markwald RR"
@@ -62,6 +126,17 @@ quellen:
     journal: "Sleep, 44(5), zsaa291"
     doi: "10.1093/sleep/zsaa291"
     url: "https://doi.org/10.1093/sleep/zsaa291"
+    n: 34
+    evidenzstufe: "querschnitt"
+    score: 54
+    teilwerte:
+      studientyp: 16
+      zitationsrate: 20
+      n: 6
+      aktualitaet: 12
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: querschnitt → 16/35. 429 Zitationen ÷ 5 Jahre = 85.8/Jahr → 20/25. n = 34 → 6/15. Publikationsjahr 2021 (5 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
   - aussage: "In 75 participants and 349,114 scored epochs, sleep-stage classification accuracy across 11 consumer trackers varied widely by device (macro F1 scores between 0.26 and 0.69)."
     studientyp: "peer-reviewed"
     autoren: "Lee T, Cho Y, Cha KS, Jung J, Cho J, Kim H, Kim D, Hong J, Lee D, Keum M, Kushida CA, Yoon IY, Kim JW"
@@ -70,6 +145,17 @@ quellen:
     journal: "JMIR mHealth and uHealth, 11, e50983"
     doi: "10.2196/50983"
     url: "https://doi.org/10.2196/50983"
+    n: 75
+    evidenzstufe: "querschnitt"
+    score: 49
+    teilwerte:
+      studientyp: 16
+      zitationsrate: 15
+      n: 6
+      aktualitaet: 12
+      journal: 0
+      preprint_malus: 0
+    begruendung: 'Studiendesign: querschnitt → 16/35. 101 Zitationen ÷ 3 Jahre = 33.7/Jahr → 15/25. n = 75 → 6/15. Publikationsjahr 2023 (3 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=JMIR%20mHealth%20and%20uHealth&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes "niedrige Qualität". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist.'
 kategorie: "schlafphysiologie"
 schlagworte: ["sleep-stages", "nrem", "rem", "deep-sleep", "sleep-cycle", "fundamentals"]
 kernaussagen:

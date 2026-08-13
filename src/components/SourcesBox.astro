@@ -13,6 +13,10 @@ interface Quelle {
   doi?: string;
   pubmed_id?: string;
   url: string;
+  // Stichprobengröße, aus dem Quellen-Relevanzindex (docs/quellenbewertung.md) — hier gezeigt
+  // als schnell einschätzbarer Belastbarkeits-Hinweis, bewusst statt der Rohpunktzahl
+  // (`score`), die nur im Review-Block auftaucht, siehe ReviewBlock.astro.
+  n?: number;
 }
 
 interface Props {
@@ -50,6 +54,9 @@ const countLabel =
         {quellen.map((quelle) => (
           <li>
             <span class="tag sources-type">{typLabel[quelle.studientyp]}</span>{' '}
+            {quelle.n != null && (
+              <span class="tag sources-n">{t('sources.n', { n: quelle.n })}</span>
+            )}{' '}
             <span class="sources-citation">
               {quelle.autoren ? `${quelle.autoren} ` : ''}
               {`(${quelle.jahr}). `}

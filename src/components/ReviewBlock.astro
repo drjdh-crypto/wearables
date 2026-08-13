@@ -13,6 +13,12 @@ interface Quelle {
   doi?: string;
   pubmed_id?: string;
   url: string;
+  // Quellen-Relevanzindex (0-100) + Begründung, siehe docs/quellenbewertung.md — nur hier im
+  // Review-Block sichtbar (fürs menschliche Gegenprüfen vor "Gib frei"), nicht in der
+  // öffentlichen SourcesBox (die zeigt bewusst nur Studientyp + n, keine Rohpunktzahl).
+  score?: number;
+  begruendung?: string;
+  zurueckgezogen?: boolean;
 }
 
 interface Props {
@@ -47,15 +53,31 @@ function linkFor(q: Quelle): string {
     {
       quellen.map((quelle) => (
         <li class="review-source-item">
-          <a class="review-source-link" href={linkFor(quelle)} rel="noopener" target="_blank">
+          <a
+            class:list={['review-source-link', quelle.zurueckgezogen && 'review-source-retracted']}
+            href={linkFor(quelle)}
+            rel="noopener"
+            target="_blank"
+          >
             <span class="review-source-top">
               <span class="tag">{typLabel[quelle.studientyp]}</span>
+              {quelle.score != null && (
+                <span class="tag review-source-score mono">
+                  {t('review.score', { score: quelle.score })}
+                </span>
+              )}
               <span class="review-source-year mono">{quelle.jahr}</span>
             </span>
             <span class="review-source-citation">
               {quelle.autoren ?? t('sources.view_link')}
             </span>
             <span class="review-source-claim">{quelle.aussage}</span>
+            {quelle.begruendung && (
+              <span class="review-source-begruendung">{quelle.begruendung}</span>
+            )}
+            {quelle.zurueckgezogen && (
+              <span class="review-source-retracted-warning">{t('review.retracted_warning')}</span>
+            )}
             <span class="review-source-tap mono" aria-hidden="true">
               {t('review.open_link')} →
             </span>
@@ -149,6 +171,34 @@ function linkFor(q: Quelle): string {
     color: var(--color-ink-muted);
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+
+  .review-source-score {
+    color: var(--color-signal);
+    border-color: var(--color-signal);
+  }
+
+  .review-source-begruendung {
+    display: block;
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px dashed var(--color-border);
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .review-source-retracted {
+    border-color: var(--color-signal);
+    border-width: 2px;
+  }
+
+  .review-source-retracted-warning {
+    display: block;
+    margin-top: var(--space-2);
+    font-weight: 600;
+    color: var(--color-signal);
+    font-size: 0.85rem;
   }
 
   .review-source-tap {

@@ -6,6 +6,7 @@
     "journal": "Sleep",
     "jahr": 2004,
     "studientyp": "peer-reviewed",
+    "studiendesign": "meta-analyse",
     "ist_uebersichtsarbeit": true,
     "forschungsgruppe": null,
     "n": 3577,
@@ -16,7 +17,18 @@
     "url": "https://doi.org/10.1093/sleep/27.7.1255",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 76,
+    "teilwerte": {
+      "studientyp": 35,
+      "zitationsrate": 25,
+      "n": 15,
+      "aktualitaet": 1,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: meta-analyse → 35/35. 3356 Zitationen ÷ 22 Jahre = 152.5/Jahr → 25/25. n = 3577 → 15/15. Publikationsjahr 2004 (22 Jahre alt) → 1/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.1016/S2213-2600(19)30057-8",
@@ -25,6 +37,7 @@
     "journal": "The Lancet Respiratory Medicine",
     "jahr": 2019,
     "studientyp": "peer-reviewed",
+    "studiendesign": "meta-analyse",
     "ist_uebersichtsarbeit": true,
     "forschungsgruppe": null,
     "n": 5273,
@@ -35,7 +48,18 @@
     "url": "https://doi.org/10.1016/S2213-2600(19)30057-8",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 73,
+    "teilwerte": {
+      "studientyp": 35,
+      "zitationsrate": 15,
+      "n": 15,
+      "aktualitaet": 8,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: meta-analyse → 35/35. 308 Zitationen ÷ 7 Jahre = 44.0/Jahr → 15/25. n = 5273 → 15/15. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=The%20Lancet%20Respiratory%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.1249/MSS.0000000000001947",
@@ -44,6 +68,7 @@
     "journal": "Medicine & Science in Sports & Exercise",
     "jahr": 2019,
     "studientyp": "peer-reviewed",
+    "studiendesign": "review",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": "de-zambotti-lab",
     "n": null,
@@ -54,7 +79,18 @@
     "url": "https://doi.org/10.1249/MSS.0000000000001947",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 40,
+    "teilwerte": {
+      "studientyp": 12,
+      "zitationsrate": 20,
+      "n": 0,
+      "aktualitaet": 8,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: review → 12/35. 544 Zitationen ÷ 7 Jahre = 77.7/Jahr → 20/25. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2019 (7 Jahre alt) → 8/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Medicine%20%26%20Science%20in%20Sports%20%26%20Exercise&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.2196/50983",
@@ -63,6 +99,7 @@
     "journal": "JMIR mHealth and uHealth",
     "jahr": 2023,
     "studientyp": "peer-reviewed",
+    "studiendesign": "querschnitt",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": null,
     "n": 75,
@@ -73,7 +110,18 @@
     "url": "https://doi.org/10.2196/50983",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 49,
+    "teilwerte": {
+      "studientyp": 16,
+      "zitationsrate": 15,
+      "n": 6,
+      "aktualitaet": 12,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: querschnitt → 16/35. 101 Zitationen ÷ 3 Jahre = 33.7/Jahr → 15/25. n = 75 → 6/15. Publikationsjahr 2023 (3 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=JMIR%20mHealth%20and%20uHealth&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.1016/j.sleh.2023.09.002",
@@ -82,6 +130,7 @@
     "journal": "Sleep Health",
     "jahr": 2024,
     "studientyp": "peer-reviewed",
+    "studiendesign": "kohorte",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": null,
     "n": 369,
@@ -92,7 +141,18 @@
     "url": "https://doi.org/10.1016/j.sleh.2023.09.002",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 55,
+    "teilwerte": {
+      "studientyp": 18,
+      "zitationsrate": 10,
+      "n": 12,
+      "aktualitaet": 15,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: kohorte → 18/35. 23 Zitationen ÷ 2 Jahre = 11.5/Jahr → 10/25. n = 369 → 12/15. Publikationsjahr 2024 (2 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep%20Health&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.1093/sleep/zsaa291",
@@ -101,6 +161,7 @@
     "journal": "Sleep",
     "jahr": 2021,
     "studientyp": "peer-reviewed",
+    "studiendesign": "querschnitt",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": null,
     "n": 34,
@@ -111,7 +172,18 @@
     "url": "https://doi.org/10.1093/sleep/zsaa291",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 54,
+    "teilwerte": {
+      "studientyp": 16,
+      "zitationsrate": 20,
+      "n": 6,
+      "aktualitaet": 12,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: querschnitt → 16/35. 429 Zitationen ÷ 5 Jahre = 85.8/Jahr → 20/25. n = 34 → 6/15. Publikationsjahr 2021 (5 Jahre alt) → 12/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Sleep&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": "10.5664/jcsm.11460",
@@ -120,6 +192,7 @@
     "journal": "Journal of Clinical Sleep Medicine",
     "jahr": 2025,
     "studientyp": "peer-reviewed",
+    "studiendesign": "meta-analyse",
     "ist_uebersichtsarbeit": true,
     "forschungsgruppe": null,
     "n": 798,
@@ -130,7 +203,18 @@
     "url": "https://doi.org/10.5664/jcsm.11460",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 77,
+    "teilwerte": {
+      "studientyp": 35,
+      "zitationsrate": 15,
+      "n": 12,
+      "aktualitaet": 15,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: meta-analyse → 35/35. 26 Zitationen ÷ 1 Jahre = 26.0/Jahr → 15/25. n = 798 → 12/15. Publikationsjahr 2025 (1 Jahre alt) → 15/15. OpenAlex-Journalmetrik nicht verfügbar (HTTP 429 für https://api.openalex.org/sources?search=Journal%20of%20Clinical%20Sleep%20Medicine&per-page=1&mailto=pipeline@wearables-project.dev) — 0/10 vergeben, kein echtes \"niedrige Qualität\". Nachlauf empfohlen, sobald OpenAlex wieder erreichbar ist."
   },
   {
     "doi": null,
@@ -139,6 +223,7 @@
     "journal": null,
     "jahr": 2024,
     "studientyp": "institutional",
+    "studiendesign": "sonstige",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": null,
     "n": null,
@@ -149,6 +234,17 @@
     "url": "https://www.ncbi.nlm.nih.gov/books/NBK526132/",
     "verifiziert": true,
     "verifikationsmethode": "direkter-abruf",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 23,
+    "teilwerte": {
+      "studientyp": 8,
+      "zitationsrate": 0,
+      "n": 0,
+      "aktualitaet": 15,
+      "journal": 0,
+      "preprint_malus": 0
+    },
+    "zurueckgezogen": false,
+    "begruendung": "Studiendesign: sonstige → 8/35. Keine Zitationsdaten verfügbar (0/25) — üblich bei nicht in OpenAlex indizierten Referenzwerken, kein Qualitätsmangel per se. Keine eigene Stichprobe (0/15) — erwartet bei Übersichtsarbeiten/Methodenpapieren ohne eigene Kohorte. Publikationsjahr 2024 (2 Jahre alt) → 15/15. Kein Journal (Referenzwerk) — 0/10."
   }
 ]

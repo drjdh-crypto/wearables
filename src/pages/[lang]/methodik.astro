@@ -22,6 +22,16 @@ const sections = ['selection', 'sources', 'conflicts', 'ai', 'personas'] as cons
       <section>
         <h2>{t(`methodik.section.${section}.heading`)}</h2>
         <p>{t(`methodik.section.${section}.body`)}</p>
+        {section === 'sources' && (
+          <p>
+            <a
+              href="https://github.com/drjdh-crypto/wearables/blob/main/docs/quellenbewertung.md"
+              rel="noopener"
+            >
+              {t('methodik.section.sources.link')}
+            </a>
+          </p>
+        )}
       </section>
     ))
   }

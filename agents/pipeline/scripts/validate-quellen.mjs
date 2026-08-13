@@ -61,6 +61,18 @@ for (const [gruppe, count] of byGroup) {
   if (count > 2) errors.push(`${count} Quellen derselben Forschungsgruppe "${gruppe}" (maximal 2 erlaubt).`);
 }
 
+// Regel 6: keine zurückgezogenen Quellen — hart ausgeschlossen, siehe docs/quellenbewertung.md.
+// Nur relevant, nachdem score-quellen.mjs gelaufen ist (setzt `zurueckgezogen`); vor dem
+// ersten Scoring-Lauf ist das Feld noch nicht vorhanden, dann greift diese Regel nicht.
+const zurueckgezogen = quellen.filter((q) => q.zurueckgezogen === true);
+if (zurueckgezogen.length > 0) {
+  errors.push(
+    `${zurueckgezogen.length} zurückgezogene Quelle(n) in der Liste (Crossref-Retraction-Check): ${zurueckgezogen
+      .map((q) => q.titel)
+      .join('; ')} — entfernen, niemals nur abwerten.`,
+  );
+}
+
 // Weich: Open-Access-Bevorzugung — nur Warnung, kein harter Fehler, aber Pflicht-Erinnerung
 // an die Abstract-only-Regel (CLAUDE.md Abschnitt 2 / 01-recherche.md).
 const closed = quellen.filter((q) => q.open_access === false);

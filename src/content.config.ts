@@ -32,6 +32,30 @@ export const CATEGORY_VALUES = [
 
 const category = z.enum(CATEGORY_VALUES);
 
+// Studiendesign nach Evidenzpyramide, siehe docs/quellenbewertung.md — wird vom
+// Quellen-Relevanzindex (agents/pipeline/scripts/score-quellen.mjs) vergeben, mit
+// Studiendesign als höchstem Gewicht.
+const evidenzstufe = z.enum([
+  'meta-analyse',
+  'systematisches-review',
+  'rct',
+  'kohorte',
+  'querschnitt',
+  'review',
+  'fallserie',
+  'sonstige',
+]);
+
+// Teilwerte des Quellen-Relevanzindex (0-100 gesamt), siehe docs/quellenbewertung.md.
+const quelleTeilwerte = z.object({
+  studientyp: z.number(),
+  zitationsrate: z.number(),
+  n: z.number(),
+  aktualitaet: z.number(),
+  journal: z.number(),
+  preprint_malus: z.number(),
+});
+
 // Eine Quelle im Sinne der Evidenzpflicht aus CLAUDE.md Abschnitt 2: DOI oder
 // PubMed-ID, sonst gilt eine peer-reviewte Behauptung nicht als belegt.
 const quelle = z
@@ -45,9 +69,22 @@ const quelle = z
     doi: z.string().optional(),
     pubmed_id: z.string().optional(),
     url: z.string().url(),
+    n: z.number().int().optional(),
+    // Quellen-Relevanzindex (0-100), siehe docs/quellenbewertung.md. Optional, weil ältere
+    // Artikel vor Einführung dieses Index noch keine Scores haben.
+    evidenzstufe: evidenzstufe.optional(),
+    score: z.number().min(0).max(100).optional(),
+    teilwerte: quelleTeilwerte.optional(),
+    begruendung: z.string().optional(),
+    // Hart ausgeschlossen (Crossref-Retraction-Check), niemals true in einem veröffentlichten
+    // Artikel — score-quellen.mjs setzt in diesem Fall score auf 0.
+    zurueckgezogen: z.boolean().default(false),
   })
   .refine((q) => q.studientyp !== 'peer-reviewed' || !!(q.doi || q.pubmed_id), {
     message: 'Peer-reviewte Quellen benötigen DOI oder PubMed-ID (CLAUDE.md Abschnitt 2).',
+  })
+  .refine((q) => !q.zurueckgezogen, {
+    message: 'Zurückgezogene Quellen dürfen nicht in einem Artikel zitiert werden (Retraction-Check, docs/quellenbewertung.md).',
   });
 
 // Ein Eintrag in der Update-Historie eines Artikels. Der jüngste Eintrag

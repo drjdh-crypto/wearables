@@ -32,6 +32,7 @@ gekennzeichnet (automatisch über `SourcesBox`, siehe `src/i18n/strings/*.json`)
     "journal": "Journal-Name",
     "jahr": 2023,
     "studientyp": "peer-reviewed",
+    "studiendesign": "kohorte",
     "ist_uebersichtsarbeit": false,
     "forschungsgruppe": null,
     "n": 120,
@@ -42,7 +43,11 @@ gekennzeichnet (automatisch über `SourcesBox`, siehe `src/i18n/strings/*.json`)
     "url": "https://doi.org/10.xxxx/xxxxx",
     "verifiziert": true,
     "verifikationsmethode": "crossref-doi",
-    "geprueft_am": "2026-08-12"
+    "geprueft_am": "2026-08-12",
+    "score": 55,
+    "teilwerte": { "studientyp": 16, "zitationsrate": 15, "n": 6, "aktualitaet": 12, "journal": 0, "preprint_malus": 0 },
+    "zurueckgezogen": false,
+    "begruendung": "…"
   }
 ]
 ```
@@ -51,11 +56,18 @@ gekennzeichnet (automatisch über `SourcesBox`, siehe `src/i18n/strings/*.json`)
 |---|---|
 | `n` | Stichprobengröße, `null` bei Übersichts-/Methodenarbeiten ohne eigene Kohorte |
 | `doi` | `null` bei institutionellen Quellen ohne DOI — dann `verifikationsmethode: "direkter-abruf"` |
+| `studiendesign` | Einordnung nach Evidenzpyramide: `meta-analyse` \| `systematisches-review` \| `rct` \| `kohorte` \| `querschnitt` \| `review` (narrativ) \| `fallserie` \| `sonstige`. Von Schritt 1 (Recherche) zu setzen; fehlt es, schätzt `score-quellen.mjs` einen konservativen Wert und markiert ihn als geschätzt in `begruendung`. |
 | `ist_uebersichtsarbeit` | `true` nur bei echten systematischen Reviews/Meta-Analysen, nicht bei narrativen Übersichtsarbeiten oder Methodenpapieren |
 | `forschungsgruppe` | Kurztag, wenn eine bekannte Autor:innen-Überschneidung mit einer anderen Quelle im selben Set besteht (z. B. gemeinsame:r Senior-Autor:in), sonst `null` |
 | `open_access` | Über Unpaywall geprüft — bei `false` gilt: im Artikel nicht über das per Abstract Zugängliche hinaus behaupten |
 | `preprint` | `true` → Artikel kennzeichnet als „Preprint, nicht begutachtet" |
 | `zitationen` | Zitationszahl aus OpenAlex (`cited_by_count`), Momentaufnahme zum `geprueft_am`-Datum |
+| `score`, `teilwerte`, `begruendung` | Quellen-Relevanzindex (0–100), von `agents/pipeline/scripts/score-quellen.mjs` berechnet. Gewichtung, Herleitung und Grenzen: `docs/quellenbewertung.md`. |
+| `zurueckgezogen` | Crossref-Retraction-Check — `true` bedeutet harter Ausschluss (Regel 6 in `validate-quellen.mjs`), niemals nur eine Abwertung. |
+
+Nach der Recherche (Schritt 1) zusätzlich laufen lassen:
+`node agents/pipeline/scripts/score-quellen.mjs data/quellen/<slug>.json` — schreibt Score,
+Teilwerte, Begründung und Retraction-Status direkt in dieselbe Datei zurück.
 
 ## Diversitätsregeln (hart geprüft)
 

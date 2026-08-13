@@ -34,9 +34,12 @@ als Umgebungsvariable erwartet, nie hartcodiert.
    abdecken. Reviews/Metaanalysen sind willkommen, ersetzen aber nicht komplett Primärstudien,
    wo es um konkrete Zahlen geht.
 2. Für jede Kandidatenstudie erfassen: DOI, Titel, Autor:innen, Journal, Jahr, Studientyp
-   (`peer-reviewed` | `preprint` | `institutional` | `manufacturer`), ob es sich um ein
-   systematisches Review/eine Meta-Analyse handelt (`ist_uebersichtsarbeit`), Stichprobengröße
-   `n` (falls zutreffend/berichtet), Kernbefund in **einem** Satz, Quell-URL.
+   (`peer-reviewed` | `preprint` | `institutional` | `manufacturer`), Studiendesign nach
+   Evidenzpyramide (`studiendesign`: `meta-analyse` | `systematisches-review` | `rct` |
+   `kohorte` | `querschnitt` | `review` | `fallserie` | `sonstige` — siehe
+   `docs/quellenbewertung.md`), ob es sich um ein systematisches Review/eine Meta-Analyse
+   handelt (`ist_uebersichtsarbeit`), Stichprobengröße `n` (falls zutreffend/berichtet),
+   Kernbefund in **einem** Satz, Quell-URL.
 3. **Pflicht:** Jede DOI einzeln gegen die Crossref-API auflösen —
    `GET https://api.crossref.org/works/{doi}` — und `title`/`published`-Jahr aus der
    Crossref-Antwort gegen die Kandidatenangabe abgleichen (Titel muss inhaltlich
@@ -78,6 +81,12 @@ gleichwertige aus einem anderen Journal/einer anderen Gruppe ersetzen — nicht 
 ignorieren. Ein Beispiel für so einen Ersatz (Journal-Häufung „Sleep" 3×→2×, gelöst durch
 Austausch gegen eine 2025er Meta-Analyse aus einem anderen Journal) steht in der
 Commit-Historie zu `data/quellen/schlafphasen.json`.
+
+Direkt danach, bevor an Schritt 2 übergeben wird, den Quellen-Relevanzindex berechnen:
+`node agents/pipeline/scripts/score-quellen.mjs data/quellen/<slug>.json` — schreibt Score,
+Teilwerte und Begründung je Quelle zurück in dieselbe Datei und prüft per Crossref, ob eine
+Quelle zurückgezogen wurde (dann bricht `validate-quellen.mjs` beim nächsten Lauf hart ab,
+Regel 6). Gewichtung und Grenzen: `docs/quellenbewertung.md`.
 
 Zusätzlich (weich, als Warnung, kein harter Abbruch):
 
