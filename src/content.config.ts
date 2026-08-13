@@ -101,6 +101,10 @@ const baseArticleSchema = z.object({
   // Chart-ID aus /data/charts/ für den Hero-Chart auf Startseite/Artikelkopf.
   heroChart: z.string().optional(),
   entwurf: z.boolean().default(false),
+  // Offene Punkte aus Recherche/Quality-Gate, die vor "Gib frei" gegengeprüft werden sollten
+  // (Pipeline-Schritt 3/5, siehe /agents/pipeline/05-review-uebergabe.md) — erscheinen im
+  // mobilen Review-Block auf /entwurf/<slug>/, nie auf der öffentlichen Artikelseite.
+  offenePunkte: z.array(z.string()).default([]),
 });
 
 const articles = defineCollection({

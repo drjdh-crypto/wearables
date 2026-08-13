@@ -78,6 +78,10 @@ kernaussagen:
   - "Consumer wearables reliably tell sleep from wakefulness but underestimate total sleep time by about 17 minutes on average and show widely varying accuracy when distinguishing individual sleep stages by device — the evidence doesn't support a single accuracy figure that applies across devices."
 affiliate: true
 entwurf: true
+offenePunkte:
+  - "Original percentage figures from Ohayon (2004) and Boulos (2019) not directly checked ourselves: Boulos sits behind a paywall, Ohayon is technically open access but the table wasn't extractable — the article uses StatPearls as a secondary source for the percentage split instead."
+  - "None of the eight sources gives a single, device-independent accuracy figure for deep-sleep detection — only per-device sensitivity/F1 ranges."
+  - "Diversity check (validate-quellen.mjs) passes, but Boulos (2019) is the only non-open-access source — cited only up to what the abstract supports; spot-check that boundary."
 featured: true
 istSaeule: true
 heroChart: "schlafphasen-anteile"

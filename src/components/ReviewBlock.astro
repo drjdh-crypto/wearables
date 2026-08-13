@@ -1,0 +1,175 @@
+---
+// Mobiler Review-Block für die Entwurfs-Vorschau (/entwurf/[slug].astro) —
+// NIE auf der öffentlichen Artikelseite. Zweck: die komplette Quellenprüfung
+// soll per Scrollen auf dem Handy möglich sein, ohne extra Fenster/Tabs zu
+// öffnen — jede Quelle ist ein großzügig antippbarer Link direkt zu DOI/PMID/URL.
+import { useTranslations } from '../i18n/utils';
+
+interface Quelle {
+  aussage: string;
+  studientyp: 'peer-reviewed' | 'preprint' | 'manufacturer' | 'institutional';
+  autoren?: string;
+  jahr: number;
+  doi?: string;
+  pubmed_id?: string;
+  url: string;
+}
+
+interface Props {
+  quellen: Quelle[];
+  offenePunkte: string[];
+  lang: string;
+}
+
+const { quellen, offenePunkte, lang } = Astro.props;
+const t = useTranslations(lang);
+
+const typLabel: Record<Quelle['studientyp'], string> = {
+  'peer-reviewed': t('sources.type.peer-reviewed'),
+  preprint: t('sources.type.preprint'),
+  manufacturer: t('sources.type.manufacturer'),
+  institutional: t('sources.type.institutional'),
+};
+
+function linkFor(q: Quelle): string {
+  if (q.doi) return `https://doi.org/${q.doi}`;
+  if (q.pubmed_id) return `https://pubmed.ncbi.nlm.nih.gov/${q.pubmed_id}/`;
+  return q.url;
+}
+---
+
+<section class="review-block" aria-label={t('review.heading')}>
+  <p class="tag review-badge">{t('review.heading')}</p>
+  <p class="review-intro">{t('review.intro')}</p>
+
+  <h2 class="review-subheading">{t('review.sources_heading')}</h2>
+  <ul class="review-source-list">
+    {
+      quellen.map((quelle) => (
+        <li class="review-source-item">
+          <a class="review-source-link" href={linkFor(quelle)} rel="noopener" target="_blank">
+            <span class="review-source-top">
+              <span class="tag">{typLabel[quelle.studientyp]}</span>
+              <span class="review-source-year mono">{quelle.jahr}</span>
+            </span>
+            <span class="review-source-citation">
+              {quelle.autoren ?? t('sources.view_link')}
+            </span>
+            <span class="review-source-claim">{quelle.aussage}</span>
+            <span class="review-source-tap mono" aria-hidden="true">
+              {t('review.open_link')} →
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    offenePunkte.length > 0 && (
+      <>
+        <h2 class="review-subheading">{t('review.open_points_heading')}</h2>
+        <ul class="review-open-points">
+          {offenePunkte.map((punkt) => (
+            <li>{punkt}</li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</section>
+
+<style>
+  .review-block {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 2px solid var(--color-signal);
+  }
+
+  .review-badge {
+    display: inline-block;
+  }
+
+  .review-intro {
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+    margin: var(--space-2) 0 var(--space-4);
+  }
+
+  .review-subheading {
+    font-size: 1rem;
+    margin: var(--space-4) 0 var(--space-2);
+  }
+
+  .review-source-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  /* Großzügiger Tap-Target: die ganze Karte ist der Link, nicht nur ein Wort. */
+  .review-source-link {
+    display: block;
+    min-height: 44px;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+
+  .review-source-link:active {
+    border-color: var(--color-signal);
+  }
+
+  .review-source-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .review-source-year {
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+
+  .review-source-citation {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  .review-source-claim {
+    display: block;
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .review-source-tap {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: 0.75rem;
+    color: var(--color-signal);
+  }
+
+  .review-open-points {
+    padding-left: 1.2rem;
+    display: grid;
+    gap: var(--space-2);
+    font-size: 0.9rem;
+    color: var(--color-ink-muted);
+  }
+
+  /* Auf schmalen Viewports noch etwas mehr Luft zwischen den Tap-Targets. */
+  @media (max-width: 480px) {
+    .review-source-link {
+      padding: var(--space-4) var(--space-3);
+    }
+  }
+</style>

@@ -38,7 +38,9 @@ kernaussagen:                 # 1–5 Sätze, empfohlen genau 3 — Kernaussagen
   - "…"
   - "…"
 affiliate: false               # true, sobald der Artikel mind. einen Eintrag in `produkte` hat
-entwurf: false                 # true = wird nicht gebaut/gelistet
+entwurf: false                 # true = wird nicht öffentlich gebaut/gelistet, aber unter /entwurf/<id>/ vorschaubar
+offenePunkte:                  # optional, nur relevant solange entwurf:true — erscheint im mobilen
+  - "…"                          # ReviewBlock auf /entwurf/<id>/ (siehe /agents/commands/freigabe.md)
 featured: false                # true = Aufmacher der Startseite (max. 1 Artikel gleichzeitig sinnvoll)
 istSaeule: false                # true = Säulen-Artikel der Pillar-Seite dieser kategorie+sprache
 heroChart: "schlafphasen-anteile"   # optional, Chart-ID aus /data/charts/
@@ -99,6 +101,10 @@ Die Artikel-Route (`src/pages/[lang]/artikel/[slug].astro`) baut sich in dieser 
    `voices.<lang>.intro`. Immer als "KI-Perspektive: [Name]" gekennzeichnet
 9. `SourcesBox` — nummeriertes Quellenverzeichnis aus `quellen`, mit DOI-/PubMed-Links
 10. Dezenter KI-Kennzeichnungshinweis am Artikelende (CLAUDE.md Abschnitt 4)
+
+Solange `entwurf: true`, existiert zusätzlich `src/pages/entwurf/[slug].astro` unter
+`/entwurf/<id>/` — dasselbe Layout, `noindex`, plus mobiler `ReviewBlock` mit `quellen` als
+antippbaren Links und `offenePunkte`. Siehe `/agents/README.md`, „Entwurfs-Vorschau".
 
 `Footnotes` (`src/components/Footnotes.astro`) steht optional zur Verfügung für redaktionelle
 Anmerkungen, die keine Quelle im Sinne von `SourcesBox` sind.

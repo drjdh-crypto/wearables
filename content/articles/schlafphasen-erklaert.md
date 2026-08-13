@@ -78,6 +78,10 @@ kernaussagen:
   - "Consumer-Wearables erkennen Schlaf gegenüber Wachsein zuverlässig, unterschätzen die Gesamtschlafzeit aber im Mittel um rund 17 Minuten und liefern bei der Unterscheidung einzelner Schlafphasen je nach Gerät stark schwankende Genauigkeit — eine einzelne, für alle Geräte gültige Prozentzahl gibt die Studienlage nicht her."
 affiliate: true
 entwurf: true
+offenePunkte:
+  - "Original-Prozentwerte aus Ohayon (2004) und Boulos (2019) selbst nicht direkt geprüft: Boulos hinter Bezahlschranke, Ohayon technisch Open Access, Tabelle aber nicht extrahierbar — Artikel nutzt stattdessen StatPearls als Sekundärquelle für die Prozentverteilung."
+  - "Keine der acht Quellen liefert eine einzelne, geräteübergreifende Genauigkeitszahl für Tiefschlaf-Erkennung — nur Sensitivitäts-/F1-Bereiche je Gerät."
+  - "Diversitätsprüfung (validate-quellen.mjs) läuft grün, aber Boulos (2019) ist die einzige Nicht-Open-Access-Quelle — im Text nur über das per Abstract Zugängliche hinaus zitiert, stichprobenartig gegenprüfen."
 featured: true
 istSaeule: true
 heroChart: "schlafphasen-anteile"

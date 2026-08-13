@@ -16,9 +16,16 @@ interface Props {
   path?: string;
   /** Wider content column for hub/listing pages (homepage, cluster pages) — article pages stay at the default, narrower reading width. */
   wide?: boolean;
+  /**
+   * Draft previews (/entwurf/<slug>/, see src/pages/entwurf/[slug].astro): adds
+   * robots noindex,nofollow and skips hreflang/LanguageSwitcher, since the page
+   * doesn't exist at an equivalent path in other locales. Never set on public
+   * article/hub pages.
+   */
+  noindex?: boolean;
 }
 
-const { lang, title, description, path = '/', wide = false } = Astro.props;
+const { lang, title, description, path = '/', wide = false, noindex = false } = Astro.props;
 const t = useTranslations(lang);
 const pageDescription = description ?? t('site.description');
 ---
@@ -33,10 +40,16 @@ const pageDescription = description ?? t('site.description');
     <meta name="description" content={pageDescription} />
     <title>{title}</title>
 
-    {enabledLocales.map((locale) => (
-      <link rel="alternate" hreflang={locale} href={getRelativeLocaleUrl(locale, path)} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={getRelativeLocaleUrl('de', path)} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    {!noindex && (
+      <>
+        {enabledLocales.map((locale) => (
+          <link rel="alternate" hreflang={locale} href={getRelativeLocaleUrl(locale, path)} />
+        ))}
+        <link rel="alternate" hreflang="x-default" href={getRelativeLocaleUrl('de', path)} />
+      </>
+    )}
 
     <script is:inline>
       // Applies stored theme/mode preferences before paint to avoid a flash of
@@ -67,7 +80,7 @@ const pageDescription = description ?? t('site.description');
         <a href={getRelativeLocaleUrl(lang, '/methodik/')}>{t('nav.methodik')}</a>
       </nav>
       <div class="site-switchers">
-        <LanguageSwitcher lang={lang} path={path} />
+        {!noindex && <LanguageSwitcher lang={lang} path={path} />}
         <RegionSwitcher lang={lang} />
         <ThemeSwitcher lang={lang} />
         <ModeToggle lang={lang} />
